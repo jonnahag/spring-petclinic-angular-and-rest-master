@@ -10,8 +10,6 @@ pipeline {
     stage('Build Rest-API') {
       steps {
         sh 'cd spring-petclinic-rest-master'
-      }
-      steps {
         sh 'mvn spring-boot:run'
       }
     }
