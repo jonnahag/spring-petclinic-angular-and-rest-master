@@ -13,7 +13,7 @@ pipeline {
       }
       steps {
         sh 'mvn spring-boot:run'
-    
+      }
     }
         
     stage('Test') {
