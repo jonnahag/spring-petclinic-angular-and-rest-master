@@ -3,19 +3,21 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh "mvn compile"
+        sh 'mvn compile'
       }
     }
     
     stage('Build Rest-API') {
       steps {
-        sh "cd spring-petclinic-rest-master/spring-petclinic-rest-master"
+        sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master'
+        sh 'mvn spring-boot:run'
       }
+     
     }
         
     stage('Test') {
       steps {
-        sh "mvn test"
+        sh 'mvn test'
       }
      post {
       always {
