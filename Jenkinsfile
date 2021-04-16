@@ -10,7 +10,7 @@ pipeline {
     stage('Build Rest-API') {
       steps {
         sh 'git clone https://github.com/spring-petclinic/spring-petclinic-rest.git'
-        sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master'
+        sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master/spring-petclinic-rest-master'
         sh 'mvn spring-boot:run'
       }
      
