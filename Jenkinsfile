@@ -9,7 +9,7 @@ pipeline {
     
     stage('Build Rest-API') {
       steps {
-        sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master'
+        sh 'cd spring-petclinic-rest-master'
       }
       steps {
         sh 'mvn spring-boot:run'
