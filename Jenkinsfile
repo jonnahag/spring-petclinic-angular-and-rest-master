@@ -4,7 +4,9 @@ pipeline {
     
     stage('Build Rest-API') {
       steps {
-        sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run'
+        sh '''  cd spring-petclinic-rest-master/spring-petclinic-rest-master 
+                mvn spring-boot:run 
+           '''
       }
     }
     stage('Build Angular-Front End') {
@@ -34,7 +36,7 @@ pipeline {
   }
       stage('newman') {
         steps {
-           sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master mvn spring-boot:run -- newman run Spring_PetClinic_Copy.postman_collection.json -- environment PetClinic_Environment.postman_environment.json -- reporters junit'
+           sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run -- newman run Spring_PetClinic_Copy.postman_collection.json -- environment PetClinic_Environment.postman_environment.json -- reporters junit'
              }
       post {
         always {
