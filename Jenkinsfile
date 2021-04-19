@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Build Rest-API') {
             steps {
-                sh "mvn compile"
+                sh "cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run"
             }
         }
         stage('Test') {
