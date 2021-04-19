@@ -3,12 +3,10 @@ pipeline {
     stages {
         stage('Build Rest-API') {
             steps {
-                script {
-                    withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
-                        sh "cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run"
-                    }
-                }
-
+                sh '''
+                cd spring-petclinic-rest-master/spring-petclinic-rest-master
+                mvn spring-boot:run
+                '''
             }
         }
 
