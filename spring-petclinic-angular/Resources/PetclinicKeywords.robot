@@ -9,34 +9,43 @@ Go To Web Page
 Load Page
      Go to                                            ${URL}
 Verify Page Loaded
-    ${actualTerm}                                     get text                              xpath:/html/body/app-root/app-welcome/h1
-    Should Be Equal                                   Welcome to Petclinic                  ${actualTerm}
-Pet Types
-    Click Element                                    xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]/a/span[2]
-    Click Element                                    xpath:/html/body/app-root/app-pettype-list/div/div/div/button[2]
-Add Pet
-    [Arguments]                                      ${Pet_Type}
-    Pet Type                                         ${Pet_Type}
-    Click Element                                    xpath://*[@id="pettype"]/div[2]/div/button
-Pet Type
-    [Arguments]                                      ${Pet_Type}
-    Input Text                                       id=name                               ${Pet_Type}
-
-Verify Pet Type Added
-    [Arguments]                                      ${petType_name}
-    Verify Added
-Verify Added
-     ${petType_name}                                 get text                             id=6
-     Should Contain                                  Rabbit                              ${petType_name}
-Edit A Pet
-    Click Element                                    xpath://*[@id="pettypes"]/tbody/tr[4]/td[2]/button[1]
-    #Give a New Pet name                              ${editPetType_name}
+    ${actualTerm}                                     get text                            xpath:/html/body/app-root/app-welcome/h1
+    Should Be Equal                                   Welcome to Petclinic                ${actualTerm}
+Owners
+    Click Element                                    xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/a
+    Click Element                                    xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a/span[2]
+Add New Pet
+    Click Element                                    xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[9]/td[1]/a
+    Click Element                                    xpath:/html/body/app-root/app-owner-detail/div/div/button[3]
+Input New Pet Detalis
+    Click Element                                    id=name
+Pet Details
+    [Arguments]                                      ${Pet_Name}                          ${Birth_Date}
+    Name                                             ${Pet_Name}
+    Birth Date                                       ${Birth_Date}
+    Click Element                                    id=type
+    Click Element                                    xpath://*[@id="type"]/option[2]
+    Click Element                                    xpath:/html/body/app-root/app-pet-add/div/div/form/div[6]/div/button[2]
+Name
+    [Arguments]                                       ${Pet_Name}
+    Input Text                                        id=name                             ${Pet_Name}
+Birth Date
+    [Arguments]                                       ${Birth_Date}
+    Input Text                                        xpath:/html/body/app-root/app-pet-add/div/div/form/div[4]/div/input          ${Birth_Date}
+Verify Pet Adedd To owner
+    ${actual_owner}                                  Get Text                            xpath:/html/body/app-root/app-owner-detail/div/div/table[1]/tr[1]/td/b
+    ${actual_pet}                                    Get Text                            xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list[1]/table/tr/td[1]/dl/dd[1]
+    Should Be Equal                                  David Schroeder                     ${actual_owner}
+    Should Be Equal                                  Tommy                               ${actual_pet}
+Edit a Pet
+    Click Element                                    xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[6]/td[1]/a
+    Click Element                                    xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list[2]/table/tr/td[1]/dl/button[1]
 Give a New Pet name
-    [Arguments]                                      ${editPetType_name}
-    Input Text                                       id=name                              ${editPetType_name}
-    Click Element                                    xpath://*[@id="pettype"]/div[2]/div/button[1]
+    [Arguments]                                      ${editPet_name}
+    Input Text                                       id=name                               ${editPet_name}
+    Click Element                                    xpath:/html/body/app-root/app-pet-edit/div/div/form/div[6]/div/button[2]
 Verify New Edited Pet
-     ${newPetType_name}                              get text                             id=3
-     Should Contain                                  Squirelll                                ${newPetType_name}
+    ${newPet_name}                                  get text                               xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list[2]/table/tr/td[1]/dl/dd[1]
+    Should Contain                                  Storm                                  ${newPet_name}
 End Web Test
     close browser
