@@ -6,6 +6,11 @@ pipeline {
       steps {
         sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run'
       }
+      post {
+        always {
+          junit '**/TEST*.xml'
+        } 
+      }
     }
     stage('Build Angular-Front End') {
       steps {
