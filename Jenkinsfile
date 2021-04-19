@@ -3,8 +3,10 @@ pipeline {
     stages {
         stage('Build Rest-API') {
             steps {
-                keepRunning {
-                    sh "cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run"
+                script {
+                    withEnv(['JENKINS_NODE_COOKIE=dontkill']) {
+                        sh "cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run"
+                    }
                 }
 
             }
@@ -12,10 +14,7 @@ pipeline {
 
         stage('Build Angular-Front End') {
               steps {
-                keepRunning {
-                    sh 'cd spring-petclinic-angular/static-content -- curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar -- java -jar ./rawhttp.jar serve . -p 4200'
-                }
-
+                sh "cd spring-petclinic-angular/static-content -- curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar -- java -jar ./rawhttp.jar serve . -p 4200"
               }
         }
 
@@ -43,9 +42,7 @@ pipeline {
 
         stage('Postman') {
             steps {
-                sh ''' newman run Spring_PetClinic_Copy.postman_collection.json
-                environment PetClinic_Environment.postman_environment.json
-                reporters junit '''
+                sh "newman run Spring_PetClinic_Copy.postman_collection.json -- environment PetClinic_Environment.postman_environment.json -- reporters junit"
             }
             post {
                 always {
