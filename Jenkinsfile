@@ -37,7 +37,7 @@ pipeline {
   }
       stage('newman') {
         steps {
-           sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run -- newman run Spring_PetClinic_Copy.postman_collection.json -- environment PetClinic_Environment.postman_environment.json -- reporters junit'
+           sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run -- newman run PetClinic_Project.postman_collection.json -- environment PetClinic_Environment.postman_environment.json -- reporters junit'
              }
       post {
         always {
@@ -46,30 +46,7 @@ pipeline {
           }
        }
     
-    stage('Robot Framework System tests with Selenium') {
-            steps {
-                sh 'robot --variable BROWSER:headlesschrome -d seleniumLab/Results  seleniumLab/Tests'
-            }
-            post {
-                always {
-                    script {
-                          step(
-                                [
-                                  $class              : 'RobotPublisher',
-                                  outputPath          : 'seleniumLab/Results',
-                                  outputFileName      : '**/output.xml',
-                                  reportFileName      : '**/report.html',
-                                  logFileName         : '**/log.html',
-                                  disableArchiveOutput: false,
-                                  passThreshold       : 50,
-                                  unstableThreshold   : 40,
-                                  otherFiles          : "**/*.png,**/*.jpg",
-                                ]
-                          )
-                    }
-                }
-            }
-        }
+    
     
     
     
