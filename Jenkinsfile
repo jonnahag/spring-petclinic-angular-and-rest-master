@@ -34,7 +34,7 @@ pipeline {
   }
       stage('newman') {
         steps {
-           sh 'newman run Spring_PetClinic_Copy.postman_collection.json --environment PetClinic_Environment.postman_environment.json --reporters junit'
+           sh 'newman run spring-petclinic-rest-master/spring-petclinic-rest-master/Spring_PetClinic_Copy.postman_collection.json --environment spring-petclinic-rest-master/spring-petclinic-rest-master/PetClinic_Environment.postman_environment.json --reporters junit'
       }
       post {
         always {
