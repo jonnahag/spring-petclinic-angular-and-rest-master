@@ -45,7 +45,7 @@ pipeline {
        }
     stage('Robot Framework System tests with Selenium') {
             steps {
-                sh 'robot --Variables BROWSER:headlesschrome -d spring-petclinic-angular/Results  spring-petclinic-angular/Tests'
+                sh 'robot --variable BROWSER:chrome -d spring-petclinic-angular/Results  spring-petclinic-angular/Tests'
             }
             post {
                 always {
