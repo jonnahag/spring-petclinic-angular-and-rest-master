@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "f7bfc67b-adbd-4e1a-ad39-a635992e5c37",
+		"name": "PetClinic Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Owners",
+			"item": [
+				{
+					"name": "New Request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Add Pet status code is 201\",() => pm.response.to.have.status(201));\r",
+									"pm.test(\"Add Pet Response time Should be below 1s\",() => pm.expect(pm.response.responseTime).to.be.below(10000));\r",
+									"\r",
+									"const id =pm.response.json().id; \r",
+									"\r",
+									"var url = pm.environment.get(\"url\")  +  id;\r",
+									"console.log(url)\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"pm.sendRequest(getRequest, function (err, res) {\r",
+									"    if (err) { \r",
+									"        console.log(err);\r",
+									"    }\r",
+									"    pm.test(\"Get New Petbdetails\", () => {\r",
+									"        const jsonData = pm.response.json(); \r",
+									"        pm.expect(jsonData.name).to.eql(\"Slushy\");\r",
+									"        pm.expect(jsonData.birthDate).to.eql(\"2021/04/19\");\r",
+									"        pm.expect(jsonData.type.name).to.eql(\"cat\");\r",
+									"        pm.expect(jsonData.owner.firstName).to.eql(\"Betty\");\r",
+									"        pm.expect(jsonData.owner.lastName).to.eql(\"Davis\");\r",
+									"    });\r",
+									" });\r",
+									"var jsonData=pm.response.json();\r",
+									"pm.globals.set(\"id\",jsonData.id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": 17,\r\n        \"name\": \"Slushy\",\r\n        \"birthDate\": \"2021/04/19\",\r\n        \"type\": {\r\n            \"id\": 1,\r\n            \"name\": \"cat\"\r\n        },\r\n        \"owner\": {\r\n            \"id\": 2,\r\n            \"firstName\": \"Betty\",\r\n            \"lastName\": \"Davis\",\r\n            \"address\": \"638 Cardinal Ave.\",\r\n            \"city\": \"Sun Prairie\",\r\n            \"telephone\": \"6085551749\"\r\n        },\r\n        \"visits\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}",
+							"host": [
+								"{{url}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
