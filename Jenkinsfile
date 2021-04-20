@@ -14,24 +14,15 @@ pipeline {
       }
     }
         
-    stage('Test') {
+  stage('Test') {
       steps {
-        sh 'mvn test'
+        sh "mvn test"
       }
      post {
       always {
-        junit '**/TEST*.xml'
-          step(
-                         [
-                                  $class           : 'JacocoPublisher',
-                                  execPattern      : 'build/jacoco/jacoco.exec',
-                                  classPattern     : 'build/classes/main',
-                                  sourcePattern    : 'src/main/java',
-                                  exclusionPattern : '**/*Test.class'
-                         ]
-                     )
+         junit '**/TEST*.xml'
       }
-    }
+     }
   }
         stage('newman') {
         steps {
