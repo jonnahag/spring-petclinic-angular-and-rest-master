@@ -4,8 +4,19 @@ pipeline {
 
         stage('Build Rest-API') {
             steps {
-                sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run'
+                sh '''
+                cd spring-petclinic-rest-master/spring-petclinic-rest-master
+                mvn spring-boot:run
+                '''
             }
+        }
+        void BuildWithFlag(String flag) {
+            skipCondition = false
+            <setup-steps>
+            catchError(buildResult: 'SUCCESS', stageResult: 'NOT_BUILT') {
+                    error "Skipping..." // Force an error so we can set the stageResult
+                }
+                return
         }
 
         stage('Build Angular-Front End') {
@@ -84,5 +95,6 @@ pipeline {
 
     }
 }
+
 
 
