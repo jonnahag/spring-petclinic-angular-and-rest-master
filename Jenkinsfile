@@ -35,8 +35,7 @@ pipeline {
   }
    stage('newman') {
         steps {
-           sh 'cd spring-petclinic-angular/static-content -- curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar
-java -jar ./rawhttp.jar serve . -p 4200 -- newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json --reporters cli,json --reporter-json-export outputfile.json'
+           sh ' newman run Spring_PetClinic.postman_collection.json --environment PetClinic_Environment.postman_environment.json --reporters cli,json --reporter-json-export outputfile.json'
       }
       post {
         always {
