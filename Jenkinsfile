@@ -16,17 +16,26 @@ pipeline {
         
     stage('Test') {
       steps {
-        sh "mvn test"
+        sh 'mvn test'
       }
      post {
       always {
-         junit '**/TEST*.xml'
+        junit '**/TEST*.xml'
+          step(
+                         [
+                                  $class           : 'JacocoPublisher',
+                                  execPattern      : 'build/jacoco/jacoco.exec',
+                                  classPattern     : 'build/classes/main',
+                                  sourcePattern    : 'src/main/java',
+                                  exclusionPattern : '**/*Test.class'
+                         ]
+                     )
       }
-     }
+    }
   }
         stage('newman') {
         steps {
-           sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master - mvn spring-boot:run - newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json --reporters html'
+           sh 'newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json --reporters html'
       }
       post {
         always {
