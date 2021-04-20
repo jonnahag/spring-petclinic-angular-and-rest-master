@@ -4,10 +4,7 @@ pipeline {
 
         stage('Build Rest-API') {
             steps {
-                sh '''
-                cd spring-petclinic-rest-master/spring-petclinic-rest-master
-                mvn spring-boot:run
-                '''
+                sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run'
             }
         }
 
@@ -52,7 +49,7 @@ pipeline {
                         step(
                             [
                                 $class                  :   'RobotPublisher',
-                                outputPath              :   'spring-petclinic-angular/Robotframework/Tests/Results',
+                                outputPath              :   'Results',
                                 outputFileName          :   '**/output.xml',
                                 reportFileName          :   '**/report.html',
                                 logFileName             :   '**/log.html',
