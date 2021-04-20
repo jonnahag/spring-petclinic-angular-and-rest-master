@@ -10,13 +10,7 @@ pipeline {
                 '''
             }
         }
-        void BuildWithFlag(String flag) {
-            skipCondition = false
-            catchError(buildResult: 'SUCCESS', stageResult: 'NOT_BUILT') {
-                    error "Skipping..." // Force an error so we can set the stageResult
-                }
-                return
-        }
+
 
         stage('Build Angular-Front End') {
               steps {
@@ -50,12 +44,7 @@ pipeline {
         
                 stage('Robot') {
             steps {
-                sh '''
-                cd spring-petclinic-angular/static-content
-                curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar
-                java -jar ./rawhttp.jar serve . -p 4200
-                robot --variable BROWSER:headlesschrome -d spring-petclinic-angular/Robotframework/Tests/Results spring-petclinic-angular/Robotframework/Tests
-                '''
+                sh 'robot --variable BROWSER:headlesschrome -d spring-petclinic-angular/Robotframework/Tests/Results spring-petclinic-angular/Robotframework/Tests'
             }
             post {
                 always {
@@ -94,6 +83,8 @@ pipeline {
 
     }
 }
+
+
 
 
 
