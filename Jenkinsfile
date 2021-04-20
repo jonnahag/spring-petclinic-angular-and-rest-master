@@ -24,9 +24,9 @@ pipeline {
       }
      }
   }
-        stage('newman') {
+   stage('newman') {
         steps {
-           sh 'newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json --reporters html'
+           sh 'newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json --reporters cli,json --reporter-json-export outputfile.json'
       }
       post {
         always {
