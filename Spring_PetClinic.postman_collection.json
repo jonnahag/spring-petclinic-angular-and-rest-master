@@ -1,0 +1,980 @@
+{
+	"info": {
+		"_postman_id": "bda23e83-d0d7-417d-b697-943c041e88b9",
+		"name": "Spring PetClinic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticaton",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"secondAdmin\",\r\n    \"password\": \"password\",\r\n    \"enabled\": true,\r\n    \"roles\": [\r\n    \t{ \"name\" : \"OWNER_ADMIN\" }\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "PCOwners",
+			"item": [
+				{
+					"name": "Get Owners",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									" \r",
+									"const response = pm.response.json();\r",
+									"console.log(response);\r",
+									"console.log(response.length);\r",
+									"console.log(response['response.lenth']);\r",
+									"\r",
+									"pm.test(\"Verify Owners List is Displayed in Response \" , () => console.log(response));\r",
+									"\r",
+									"pm.test(\"Total No of Owners Displayed  : \" +response.length , function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(response.length);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/owners",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Owner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.environment.set(\"firstname\",\"Peter\");\r",
+									"pm.environment.set(\"lastname\",\"Pan\");\r",
+									"pm.environment.set(\"address\",\"28 Commerce St.\");\r",
+									"pm.environment.set(\"city\",\"McFarland\");\r",
+									"pm.environment.set(\"telephone\",\"7100558763\");\r",
+									"pm.environment.set(\"pets\",[]);\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.globals.set(\"ownerID\", pm.response.json().id);\r",
+									"\r",
+									"pm.test(\"Check firstname and lastname\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Peter\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"Pan\");\r",
+									"});\r",
+									"pm.test(\"Successfully Created Owner \", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"   pm.environment.set(\"results\", parseInt(environment.results) + 1);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"firstName\": \"Peter\",\r\n        \"lastName\": \"Pan\",\r\n        \"address\": \"28 Commerce St.\",\r\n        \"city\": \"McFarland\",\r\n        \"telephone\": \"7100558763\",\r\n        \"pets\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/owners",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Owner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Owner is updated\", () => {\r",
+									"  const expectedObject = {\r",
+									"    \"created\": true,\r",
+									"    \"errors\": []\r",
+									"  };\r",
+									"\r",
+									"});\r",
+									"var url = pm.environment.get(\"url\") + \"/owners/\" +  pm.globals.get(\"ownerID\");\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(getRequest, function (okay, res) {\r",
+									"    if (okay) { \r",
+									"        console.log(okay);\r",
+									"    }\r",
+									"     console.log(res);\r",
+									"pm.test('Owner is updated in database', function () {\r",
+									"        pm.expect(console.log(okay));\r",
+									"    })\r",
+									"   }); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"firstName\": \"Eve\",\r\n        \"lastName\": \"Adam\",\r\n        \"address\": \"53 Friendly St.\",\r\n        \"city\": \"Windsor\",\r\n        \"telephone\": \"8799553198\",\r\n        \"pets\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/owners/{{ownerID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"owners",
+								"{{ownerID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Owner by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"\r",
+									" \r",
+									"pm.globals.get(\"ownerID\", pm.response.json().id);\r",
+									"pm.test(\"Verify that the Owner Information is not empty\", function () {\r",
+									"    pm.expect(jsonData.owners).to.not.eql(\"\");\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Check the contents of Owner Data are not empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.include(null);\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Status code is 200\", () => pm.expect(responseCode.code).to.equal(200) );\r",
+									"\r",
+									"const response = pm.response.json();\r",
+									"console.log(response);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/owners/{{ownerID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"owners",
+								"{{ownerID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Owners List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									" \r",
+									"const response = pm.response.json();\r",
+									"console.log(response);\r",
+									"console.log(response.length);\r",
+									"//console.log(response['response.lenth']);\r",
+									"\r",
+									"pm.test(\"Lastname -Pan- which comes Max of  \"  + (response.length) +    \" times\", function () {\r",
+									"        pm.expect(pm.response.text()).to.include(\"Pan\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/owners/*/lastname/{{lastname}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"owners",
+								"*",
+								"lastname",
+								"{{lastname}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Owner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"var url = pm.environment.get(\"url\") + \"/owners/\" +  pm.globals.get(\"ownerID\");\r",
+									"\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"pm.sendRequest(getRequest, function (err, res) {\r",
+									"    if (err) { \r",
+									"        console.log(err);\r",
+									"    }\r",
+									"     console.log(res);\r",
+									"    \r",
+									"    pm.test('Response should be Not Found', function () {\r",
+									"        pm.expect(res.status).to.include(\"Not Found\");\r",
+									"    });\r",
+									"    \r",
+									"    pm.test(\"Response code 404\", function() {\r",
+									"        pm.expect(res.code).to.equal(404);\r",
+									"    })\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "name={{admin_name}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/owners/{{ownerID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"owners",
+								"{{ownerID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PCPetTypes",
+			"item": [
+				{
+					"name": "Get PetTypes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									" \r",
+									"const response = pm.response.json();\r",
+									"console.log(response);\r",
+									"console.log(response.length);\r",
+									"console.log(response['response.lenth']);\r",
+									"\r",
+									"pm.test(\"Verify Owners List is Displayed in Response \" , () => console.log(response));\r",
+									"\r",
+									"pm.test(\"Total No of Owners Displayed  : \" +response.length , function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(response.length);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/pettypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pettypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add PetType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.environment.set(\"name\",\"pig\");\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.globals.set(\"petTypeID\", pm.response.json().id);\r",
+									"\r",
+									"pm.test(\"Verify Created Pet is not Empty\", () => pm.expect(jsonData.pettypes).to.not.eql(\"\"));\r",
+									"\r",
+									"pm.test(\"Verify if Created Pettype is added in the pettypes Database \", function () {\r",
+									"     pm.expect(pm.response.text()).to.include(\"id\");\r",
+									"     });\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Check Pettype which is Added is Correct\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"pig\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \r\n        \"name\": \"pig\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/pettypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pettypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update PetType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"PetType is updated\", () => {\r",
+									"  const expectedObject = {\r",
+									"    \"created\": true,\r",
+									"    \"errors\": []\r",
+									"  };\r",
+									"\r",
+									"});\r",
+									"var url = pm.environment.get(\"url\") + \"/pettypes/\" +  pm.globals.get(\"petTypeID\");\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(getRequest, function (okay, res) {\r",
+									"    if (okay) { \r",
+									"        console.log(okay);\r",
+									"    }\r",
+									"     console.log(res);\r",
+									"pm.test('PetType is updated in the PetTyps database', function () {\r",
+									"        pm.expect(console.log(okay));\r",
+									"    })\r",
+									"   }); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"snake\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/pettypes/{{petTypeID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pettypes",
+								"{{petTypeID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get PetType by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									" \r",
+									"pm.globals.get(\"petTypeID\", pm.response.json().id);\r",
+									"pm.test(\"Verify that the Pettype Information is not empty\", function () {\r",
+									"    pm.expect(jsonData.owners).to.not.eql(\"\");\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Check the contents of Pettype Data are not empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.include(null);\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Status code is 200\", () => pm.expect(responseCode.code).to.equal(200) );\r",
+									"\r",
+									"const response = pm.response.json();\r",
+									"console.log(response);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/pettypes/{{petTypeID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pettypes",
+								"{{petTypeID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete PetType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"var url = pm.environment.get(\"url\") + \"/pettypes/\" +  pm.globals.get(\"petTypeID\");\r",
+									"\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"pm.sendRequest(getRequest, function (err, res) {\r",
+									"    if (err) { \r",
+									"        console.log(err);\r",
+									"    }\r",
+									"     console.log(res);\r",
+									"    \r",
+									"    pm.test('Response should be Not Found', function () {\r",
+									"        pm.expect(res.status).to.include(\"Not Found\");\r",
+									"    });\r",
+									"    \r",
+									"    pm.test(\"Response code 404\", function() {\r",
+									"        pm.expect(res.code).to.equal(404);\r",
+									"    })\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "name={{admin_name}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/pettypes/{{petTypeID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pettypes",
+								"{{petTypeID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PCOwnerPets",
+			"item": [
+				{
+					"name": "Get Pets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									" \r",
+									"const response = pm.response.json();\r",
+									"console.log(response);\r",
+									"console.log(response.length);\r",
+									"console.log(response['response.lenth']);\r",
+									"\r",
+									"pm.test(\"Verify Owners List is Displayed in Response \" , () => console.log(response));\r",
+									"\r",
+									"pm.test(\"Total No of Pets Displayed  : \" +response.length , function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(response.length);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/pets",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Pet to the Owner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Verify if Add Pet Response time Should be below 1s\",() => pm.expect(pm.response.responseTime).to.be.below(10000));\r",
+									"\r",
+									"pm.test(\"Verify if Created Pet is added in the pets Database \", function () {\r",
+									"     pm.expect(pm.response.text()).to.include(\"id\");\r",
+									"     });\r",
+									"const id =pm.response.json().id; \r",
+									" \r",
+									"var url = pm.environment.get(\"url\")  +  id;\r",
+									"console.log(url)\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"pm.sendRequest(getRequest, function (err, res) {\r",
+									"    if (err) { \r",
+									"        console.log(err);\r",
+									"    }\r",
+									"    pm.test(\"Verify Information of New Pet Added\", () => {\r",
+									"        const jsonData = pm.response.json(); \r",
+									"        pm.expect(jsonData.name).to.eql(\"Swishy\");\r",
+									"        pm.expect(jsonData.birthDate).to.eql(\"2021/04/19\");\r",
+									"        pm.expect(jsonData.type.name).to.eql(\"cat\");\r",
+									"        pm.expect(jsonData.owner.firstName).to.eql(\"Betty\");\r",
+									"        pm.expect(jsonData.owner.lastName).to.eql(\"Davis\");\r",
+									"    });\r",
+									" });\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.globals.set(\"petID\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 0,\r\n        \"name\": \"Swishy\",\r\n        \"birthDate\": \"2021/04/19\",\r\n        \"type\": {\r\n            \"id\": 1,\r\n            \"name\": \"cat\"\r\n        },\r\n        \"owner\": {\r\n            \"id\": 2,\r\n            \"firstName\": \"Betty\",\r\n            \"lastName\": \"Davis\",\r\n            \"address\": \"638 Cardinal Ave.\",\r\n            \"city\": \"Sun Prairie\",\r\n            \"telephone\": \"6085551749\"\r\n        },\r\n        \"visits\": []\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/pets",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pet is updated\", () => {\r",
+									"  const expectedObject = {\r",
+									"    \"created\": true,\r",
+									"    \"errors\": []\r",
+									"  };\r",
+									"\r",
+									"});\r",
+									"var url = pm.environment.get(\"url\") + \"/pets/\" +  pm.globals.get(\"petID\");\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(getRequest, function (okay, res) {\r",
+									"    if (okay) { \r",
+									"        console.log(okay);\r",
+									"    }\r",
+									"     console.log(res);\r",
+									"pm.test('Pet is updated in the Pets database', function () {\r",
+									"        pm.expect(console.log(okay));\r",
+									"    })\r",
+									"   });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 0,\r\n        \"name\": \"Switu\",\r\n        \"birthDate\": \"2021/04/19\",\r\n        \"type\": {\r\n            \"id\": 2,\r\n            \"name\": \"dog\"\r\n        },\r\n        \"owner\": {\r\n            \"id\": 2,\r\n            \"firstName\": \"Betty\",\r\n            \"lastName\": \"Davis\",\r\n            \"address\": \"638 Cardinal Ave.\",\r\n            \"city\": \"Sun Prairie\",\r\n            \"telephone\": \"6085551749\"\r\n        },\r\n        \"visits\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/pets/{{petID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pets",
+								"{{petID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pet by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Verify that the Owner Information is not empty\", function () {\r",
+									"    pm.expect(jsonData.pets).to.not.eql(\"\");\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Check the contents of Owner Data are not empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.include(null);\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Status code is 200\", () => pm.expect(responseCode.code).to.equal(200) );\r",
+									"\r",
+									"pm.test(\"Verify that the pet is Connected to the Rightful Owner \",\r",
+									"() => { \r",
+									"    pm.expect(jsonData.owner.id).to.equal(2);\r",
+									"    pm.expect(jsonData.owner.firstName).to.eql(\"Betty\");\r",
+									"    pm.expect(jsonData.owner.lastName).to.eql(\"Davis\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/pets/{{petID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pets",
+								"{{petID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"var url = pm.environment.get(\"url\") + \"/pets/\" +  pm.globals.get(\"petID\");\r",
+									"\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"pm.sendRequest(getRequest, function (err, res) {\r",
+									"    if (err) { \r",
+									"        console.log(err);\r",
+									"    }\r",
+									"     console.log(res);\r",
+									"    \r",
+									"    pm.test('Response should be Not Found', function () {\r",
+									"        pm.expect(res.status).to.include(\"Not Found\");\r",
+									"    });\r",
+									"    \r",
+									"    pm.test(\"Response code 404\", function() {\r",
+									"        pm.expect(res.code).to.equal(404);\r",
+									"    })\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/pets/{{petID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"pets",
+								"{{petID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
