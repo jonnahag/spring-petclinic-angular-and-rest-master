@@ -36,7 +36,7 @@ pipeline {
   }
       stage('newman') {
         steps {
-           sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run -- newman run Spring_PetClinic_Copy.postman_collection.json -e PetClinic_Environment.postman_environment.json -r junit, html--reporter-junit-export var/reports/newman/junit/newman.xml --reporter-html-export var/reports/newman/html/index.html'
+           sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master -- mvn spring-boot:run -- newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json -r junit, html--reporter-junit-export var/reports/newman/junit/newman.xml --reporter-html-export var/reports/newman/html/index.html'
           
            publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'var/reports/newman/html', reportFiles: 'index.html', reportName: 'Newman API Test', reportTitles: ''])
         } 
