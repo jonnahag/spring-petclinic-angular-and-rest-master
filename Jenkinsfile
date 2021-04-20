@@ -15,6 +15,12 @@ pipeline {
     }
         
     stage('Test') {
+               steps {
+                sh 'npm install'
+                sh 'npm run newman-tests'
+                junit 'newman.xml'
+            }
+        
       steps {
         sh 'mvn test'
       }
