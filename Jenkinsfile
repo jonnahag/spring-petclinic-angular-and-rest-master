@@ -14,19 +14,29 @@ pipeline {
       }
     }
         
-  stage('Test') {
+    stage('Test') {
       steps {
-        sh "mvn test"
+        sh 'mvn test'
       }
      post {
       always {
-         junit '**/TEST*.xml'
+        junit '**/TEST*.xml'
+          step(
+                         [
+                                  $class           : 'JacocoPublisher',
+                                  execPattern      : 'build/jacoco/jacoco.exec',
+                                  classPattern     : 'build/classes/main',
+                                  sourcePattern    : 'src/main/java',
+                                  exclusionPattern : '**/*Test.class'
+                         ]
+                     )
       }
-     }
+    }
   }
    stage('newman') {
         steps {
-           sh 'newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json --reporters cli,json --reporter-json-export outputfile.json'
+           sh 'cd spring-petclinic-angular/static-content --curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar
+java -jar ./rawhttp.jar serve . -p 4200 -- newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json --reporters cli,json --reporter-json-export outputfile.json'
       }
       post {
         always {
