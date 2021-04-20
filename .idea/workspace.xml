@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="">
+    <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Jenkinsfile">
       <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +44,13 @@
       <option name="presentableId" value="Default" />
       <updated>1618831182123</updated>
     </task>
+    <task id="LOCAL−00001" summary="Update Jenkinsfile">
+      <created>1618923294562</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1618923294562</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -60,6 +67,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit Robotframework folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit Robotframework folder" />
+    <MESSAGE value="Update Jenkinsfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Jenkinsfile" />
   </component>
 </project>
