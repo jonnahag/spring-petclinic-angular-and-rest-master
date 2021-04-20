@@ -12,7 +12,6 @@ pipeline {
         }
         void BuildWithFlag(String flag) {
             skipCondition = false
-            <setup-steps>
             catchError(buildResult: 'SUCCESS', stageResult: 'NOT_BUILT') {
                     error "Skipping..." // Force an error so we can set the stageResult
                 }
