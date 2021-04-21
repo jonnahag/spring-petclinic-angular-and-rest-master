@@ -123,7 +123,7 @@
 									"    pm.response.to.have.status(201);\r",
 									"});\r",
 									"pm.environment.set(\"firstname\",\"Eddi\");\r",
-									"pm.environment.set(\"lastname\",\"Rose\");\r",
+									"pm.environment.set(\"lastname\",\"Davis\");\r",
 									"pm.environment.set(\"address\",\"26 Commerce St.\");\r",
 									"pm.environment.set(\"city\",\"McFarland\");\r",
 									"pm.environment.set(\"telephone\",\"7155558763\");\r",
@@ -135,7 +135,7 @@
 									"\r",
 									"pm.test(\"Check firstname and lastname\", function () {\r",
 									"    pm.expect(pm.response.text()).to.include(\"Eddi\");\r",
-									"    pm.expect(pm.response.text()).to.include(\"Rose\");\r",
+									"    pm.expect(pm.response.text()).to.include(\"Davis\");\r",
 									"});\r",
 									"pm.test(\"Successfully Created Owner \", function () {\r",
 									"   pm.response.to.have.status(201);\r",
@@ -151,7 +151,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \r\n        \"firstName\": \"Eddi\",\r\n        \"lastName\": \"Rose\",\r\n        \"address\": \"26 Commerce St.\",\r\n        \"city\": \"McFarland\",\r\n        \"telephone\": \"7155558763\",\r\n        \"pets\": []\r\n}",
+							"raw": "{\r\n        \r\n        \"firstName\": \"Eddi\",\r\n        \"lastName\": \"Davis\",\r\n        \"address\": \"26 Commerce St.\",\r\n        \"city\": \"McFarland\",\r\n        \"telephone\": \"7155558763\",\r\n        \"pets\": []\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
