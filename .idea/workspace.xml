@@ -210,7 +210,13 @@
       <option name="presentableId" value="LOCAL−00028" />
       <updated>1618998073727</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL−00029" summary="Update Jenkinsfile">
+      <created>1618999648706</created>
+      <option name="number" value="LOCAL−00029" />
+      <option name="presentableId" value="LOCAL−00029" />
+      <updated>1618999648707</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
