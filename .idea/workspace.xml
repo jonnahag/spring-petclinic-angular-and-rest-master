@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Jenkinsfile">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="JonnasBranch" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1rNz9957D4w69HBgyWbfjeWVhMy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="" />
+      <created>1618831182123</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618831182123</updated>
+    </task>
+    <task id="LOCAL−00001" summary="Update Jenkinsfile">
+      <created>1618923294562</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1618923294562</updated>
+    </task>
+    <task id="LOCAL−00002" summary="Update Jenkinsfile">
+      <created>1618923359103</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1618923359103</updated>
+    </task>
+    <task id="LOCAL−00003" summary="Update Jenkinsfile">
+      <created>1618924254104</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1618924254104</updated>
+    </task>
+    <task id="LOCAL−00004" summary="Update Jenkinsfile">
+      <created>1618924314737</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1618924314737</updated>
+    </task>
+    <task id="LOCAL−00005" summary="Update Jenkinsfile">
+      <created>1618924473456</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1618924473456</updated>
+    </task>
+    <task id="LOCAL−00006" summary="Update Jenkinsfile">
+      <created>1618924724378</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1618924724378</updated>
+    </task>
+    <task id="LOCAL−00007" summary="Update Jenkinsfile">
+      <created>1618924809404</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1618924809405</updated>
+    </task>
+    <task id="LOCAL−00008" summary="Update Jenkinsfile">
+      <created>1618924928115</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1618924928115</updated>
+    </task>
+    <task id="LOCAL−00009" summary="Update Jenkinsfile">
+      <created>1618926042158</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1618926042158</updated>
+    </task>
+    <task id="LOCAL−00010" summary="Update Jenkinsfile">
+      <created>1618926106221</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1618926106221</updated>
+    </task>
+    <task id="LOCAL−00011" summary="Update Jenkinsfile">
+      <created>1618926151095</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1618926151095</updated>
+    </task>
+    <task id="LOCAL−00012" summary="Update Jenkinsfile">
+      <created>1618926452842</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1618926452842</updated>
+    </task>
+    <task id="LOCAL−00013" summary="Update Jenkinsfile">
+      <created>1618926506682</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1618926506682</updated>
+    </task>
+    <task id="LOCAL−00014" summary="Update Jenkinsfile">
+      <created>1618926614635</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1618926614635</updated>
+    </task>
+    <task id="LOCAL−00015" summary="Update Jenkinsfile">
+      <created>1618927100790</created>
+      <option name="number" value="LOCAL−00015" />
+      <option name="presentableId" value="LOCAL−00015" />
+      <updated>1618927100790</updated>
+    </task>
+    <task id="LOCAL−00016" summary="Update Jenkinsfile">
+      <created>1618927137629</created>
+      <option name="number" value="LOCAL−00016" />
+      <option name="presentableId" value="LOCAL−00016" />
+      <updated>1618927137629</updated>
+    </task>
+    <task id="LOCAL−00017" summary="Update Jenkinsfile">
+      <created>1618927218056</created>
+      <option name="number" value="LOCAL−00017" />
+      <option name="presentableId" value="LOCAL−00017" />
+      <updated>1618927218056</updated>
+    </task>
+    <task id="LOCAL−00018" summary="Update Jenkinsfile">
+      <created>1618927264687</created>
+      <option name="number" value="LOCAL−00018" />
+      <option name="presentableId" value="LOCAL−00018" />
+      <updated>1618927264687</updated>
+    </task>
+    <task id="LOCAL−00019" summary="Update Jenkinsfile">
+      <created>1618927302009</created>
+      <option name="number" value="LOCAL−00019" />
+      <option name="presentableId" value="LOCAL−00019" />
+      <updated>1618927302009</updated>
+    </task>
+    <task id="LOCAL−00020" summary="Update Jenkinsfile">
+      <created>1618992481142</created>
+      <option name="number" value="LOCAL−00020" />
+      <option name="presentableId" value="LOCAL−00020" />
+      <updated>1618992481142</updated>
+    </task>
+    <task id="LOCAL−00021" summary="Update Jenkinsfile">
+      <created>1618996279269</created>
+      <option name="number" value="LOCAL−00021" />
+      <option name="presentableId" value="LOCAL−00021" />
+      <updated>1618996279269</updated>
+    </task>
+    <task id="LOCAL−00022" summary="Update Jenkinsfile">
+      <created>1618996421539</created>
+      <option name="number" value="LOCAL−00022" />
+      <option name="presentableId" value="LOCAL−00022" />
+      <updated>1618996421540</updated>
+    </task>
+    <task id="LOCAL−00023" summary="Update Jenkinsfile">
+      <created>1618996518163</created>
+      <option name="number" value="LOCAL−00023" />
+      <option name="presentableId" value="LOCAL−00023" />
+      <updated>1618996518163</updated>
+    </task>
+    <task id="LOCAL−00024" summary="Update Jenkinsfile">
+      <created>1618996914040</created>
+      <option name="number" value="LOCAL−00024" />
+      <option name="presentableId" value="LOCAL−00024" />
+      <updated>1618996914040</updated>
+    </task>
+    <task id="LOCAL−00025" summary="Update Jenkinsfile">
+      <created>1618997085292</created>
+      <option name="number" value="LOCAL−00025" />
+      <option name="presentableId" value="LOCAL−00025" />
+      <updated>1618997085292</updated>
+    </task>
+    <task id="LOCAL−00026" summary="Update Jenkinsfile">
+      <created>1618997359877</created>
+      <option name="number" value="LOCAL−00026" />
+      <option name="presentableId" value="LOCAL−00026" />
+      <updated>1618997359877</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Commit Robotframework folder" />
+    <MESSAGE value="Update Jenkinsfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Jenkinsfile" />
+  </component>
+</project>
