@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Rest-API') {
                     steps {
-                        sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && nohup mvn spring-boot:run &'
+                        sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && nohup mvn spring-boot:run & disown -ah && exit'
                     }
                 }
 
@@ -64,7 +64,7 @@ pipeline {
 
         stage('Postman') {
             steps {
-              sh 'newman run Spring_PetClinic_Copy.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
+              sh 'newman run Spring_PetClinic_Copy.postman_collection.json -e PetClinic_Environment.postman_environment.json --reporters junit'
             }
             post {
                 always {
