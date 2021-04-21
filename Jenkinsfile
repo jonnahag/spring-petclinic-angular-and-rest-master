@@ -51,6 +51,13 @@ pipeline {
                  
         }
         
+        
+       stage('DelayPostmanTest') {
+           steps {
+               sh 'sleep 5'
+          }
+        }
+        
 
         stage('Postman') {
             steps {
