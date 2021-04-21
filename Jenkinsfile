@@ -54,7 +54,7 @@ pipeline {
 
         stage('Postman') {
             steps {
-              sh 'newman-sleep && wait-on http://localhost:9966 && newman run Spring_PetClinic_Copy.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
+              sh 'newman-sleep : sleep 10 && newman run Spring_PetClinic_Copy.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
             }
                 post {
                 always {
