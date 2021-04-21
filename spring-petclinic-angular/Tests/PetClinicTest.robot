@@ -3,7 +3,7 @@ Documentation                               Infotiv Petclinic Test Functionality
 Resource                                    ../Resources/PetclinicKeywords.robot
 Library                                     SeleniumLibrary
 Test Setup                                  Begin WebTest
-#Test Teardown                               End Web Test
+Test Teardown                               End Web Test
 
 *** Variables ***
 ${BROWSER}                                  chrome
@@ -12,26 +12,19 @@ ${URL}                                      http://localhost:4200/
 *** Test Cases ***
 Adding a new pet to petclinic website
   [Documentation]                          Testing adding a newpet and verifying
-  [Tags]                                   Test case-1
+  [Tags]                                   Testing adding a newpet and verifying
   Given Go To Web Page
-  Owners
-  Add New Pet
-  Input New Pet Detalis
-  Pet Details                             Tommy                 2021/04/19
-  Verify Pet Adedd To owner
+  When All Owners
+  And Select a owner and Add New Pet
+  And Input New Pet Detalis
+  And Pet Details                             Tommy                 2021/04/19
+  Then Verify Pet Adedd To owner
 *** Test Cases ***
 Editing A pet in petclinic website
   [Documentation]                          Testing Edit A Pet With New Name And Verifying
-  [Tags]                                   Test case-2
+  [Tags]                                   Testing Edit A Pet With New Name And Verifying
   Given Go To Web Page
-  Owners
-  Edit a Pet
-  Give a New Pet name                      Storm
-
-
-
-
-
-
-
-
+  And All Owners
+  When Edit a Pet
+  And Give a New Pet name                     Storm
+  Then Verify New Edited Pet
