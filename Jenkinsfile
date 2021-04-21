@@ -1,11 +1,16 @@
 pipeline {
     agent any
     stages {
+        stage('Build Rest-API') {
+                    steps {
+                        sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && nohup mvn spring-boot:run &'
+                    }
+                }
 
-               stage('Build Angular-Front End') {
-                steps {
-                   sh 'cd spring-petclinic-angular/static-content && curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar && nohup java -jar ./rawhttp.jar serve . -p 4200 &'
-                   }
+                stage('Build Angular-Front End') {
+                      steps {
+                        sh 'cd spring-petclinic-angular/static-content && curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar && nohup java -jar ./rawhttp.jar serve . -p 4200 &'
+                      }
                 }
         
         stage('Test') {
@@ -45,10 +50,10 @@ pipeline {
             }
                  
         }
+        
 
         stage('Postman') {
             steps {
-              sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && nohup mvn spring-boot:run &'
               sh 'newman run Spring_PetClinic_Copy.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
             }
                 post {
@@ -61,8 +66,5 @@ pipeline {
 
     }
 }
-
-
-
 
 
