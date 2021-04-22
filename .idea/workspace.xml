@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Jenkinsfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,19 +51,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618831182123</updated>
       <workItem from="1619030500602" duration="1836000" />
-      <workItem from="1619035303981" duration="2829000" />
-    </task>
-    <task id="LOCAL−00012" summary="Update Jenkinsfile">
-      <created>1618926452842</created>
-      <option name="number" value="LOCAL−00012" />
-      <option name="presentableId" value="LOCAL−00012" />
-      <updated>1618926452842</updated>
-    </task>
-    <task id="LOCAL−00013" summary="Update Jenkinsfile">
-      <created>1618926506682</created>
-      <option name="number" value="LOCAL−00013" />
-      <option name="presentableId" value="LOCAL−00013" />
-      <updated>1618926506682</updated>
+      <workItem from="1619035303981" duration="3702000" />
     </task>
     <task id="LOCAL−00014" summary="Update Jenkinsfile">
       <created>1618926614635</created>
@@ -348,7 +335,19 @@
       <option name="presentableId" value="LOCAL−00060" />
       <updated>1619076801110</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL−00061" summary="Update Jenkinsfile">
+      <created>1619116767937</created>
+      <option name="number" value="LOCAL−00061" />
+      <option name="presentableId" value="LOCAL−00061" />
+      <updated>1619116767937</updated>
+    </task>
+    <task id="LOCAL−00062" summary="Update Jenkinsfile">
+      <created>1619116923186</created>
+      <option name="number" value="LOCAL−00062" />
+      <option name="presentableId" value="LOCAL−00062" />
+      <updated>1619116923186</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
