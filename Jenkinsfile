@@ -4,10 +4,7 @@ pipeline {
         stage('Build Rest-API') {
                     steps {
                         sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && nohup mvn spring-boot:run &'
-                            waitUntil {
-                                sh 'curl http://localhost:9966/petclinic/ | grep ""result":"SUCCESS""',
-                                    returnStatus: true
-                            }
+
                     }
                 }
 
@@ -34,6 +31,10 @@ pipeline {
         stage('Robot') {
             steps {
                 sh 'robot --variable BROWSER:headlesschrome -d spring-petclinic-angular/Robotframework/Tests/Results spring-petclinic-angular/Robotframework/Tests'
+                    waitUntil {
+                        sh 'curl http://localhost:9966/petclinic/ | grep ""result":"SUCCESS""',
+                            returnStatus: true
+                        }
             }
             post {
                 always {
