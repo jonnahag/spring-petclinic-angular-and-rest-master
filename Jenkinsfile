@@ -15,19 +15,6 @@ pipeline {
 
             }
         }
-        
-        stage('Test') {
-            steps {
-                sh "mvn test"
-            }
-            post {
-                always {
-                    junit '**/TEST*.xml'
-                }
-            }
-
-        }
-
 
         stage('Robot') {
             steps {
