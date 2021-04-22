@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Jenkinsfile">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,13 +52,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618831182123</updated>
       <workItem from="1619030500602" duration="1836000" />
-      <workItem from="1619035303981" duration="2391000" />
-    </task>
-    <task id="LOCAL−00011" summary="Update Jenkinsfile">
-      <created>1618926151095</created>
-      <option name="number" value="LOCAL−00011" />
-      <option name="presentableId" value="LOCAL−00011" />
-      <updated>1618926151095</updated>
+      <workItem from="1619035303981" duration="2829000" />
     </task>
     <task id="LOCAL−00012" summary="Update Jenkinsfile">
       <created>1618926452842</created>
@@ -347,7 +342,13 @@
       <option name="presentableId" value="LOCAL−00059" />
       <updated>1619074513620</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL−00060" summary="Update Jenkinsfile">
+      <created>1619076801110</created>
+      <option name="number" value="LOCAL−00060" />
+      <option name="presentableId" value="LOCAL−00060" />
+      <updated>1619076801110</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

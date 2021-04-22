@@ -10,6 +10,12 @@ pipeline {
         stage('Build Angular-Front End') {
             steps {
                 sh 'cd spring-petclinic-angular/static-content && curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar && nohup java -jar ./rawhttp.jar serve . -p 4200 &'
+                    waitUntil(initialRecurrencePeriod: 2000) {
+                        script {
+                            def r = sh script: 'wget -q http://localhost:9966/petclinic/swagger-ui.html -O /dev/null', returnStdout: true
+                                                    return (r == 0);
+                        }
+                    }
             }
         }
         
@@ -24,6 +30,7 @@ pipeline {
             }
 
         }
+
 
         stage('Robot') {
             steps {
@@ -56,17 +63,7 @@ pipeline {
             }
          }
 
-        stage('Postman') {
-            steps {
-              sh 'newman run Spring_PetClinic_Copy.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
-            }
-                post {
-                always {
-                    junit '**/TEST*.xml'
-                }
-            }
 
-        }
 
     }
 }
