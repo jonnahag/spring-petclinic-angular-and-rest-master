@@ -7,11 +7,17 @@ pipeline {
                     }
                 }
 
-                stage('Build Angular-Front End') {
-                      steps {
-                        sh 'cd spring-petclinic-angular/static-content && curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar && nohup java -jar ./rawhttp.jar serve . -p 4200 &'
-                      }
-                }
+        stage('Wait for API start') {
+            steps {
+                sh 'sh timeout 120 wget --retry-connrefused --tries=120 --waitretry=1 -q http://localhost:9966/petclinic/ -O /dev/null'
+            }
+        }
+
+        stage('Build Angular-Front End') {
+            steps {
+                sh 'cd spring-petclinic-angular/static-content && curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar && nohup java -jar ./rawhttp.jar serve . -p 4200 &'
+            }
+        }
         
         stage('Test') {
             steps {
@@ -25,7 +31,7 @@ pipeline {
 
         }
 
-                stage('Robot') {
+        stage('Robot') {
             steps {
                 sh 'robot --variable BROWSER:headlesschrome -d spring-petclinic-angular/Robotframework/Tests/Results spring-petclinic-angular/Robotframework/Tests'
             }
@@ -48,15 +54,7 @@ pipeline {
                     }
                 }
             }
-                 
         }
-
-        stage('Wait for API start') {
-            steps {
-                sh 'sh timeout 120 wget --retry-connrefused --tries=120 --waitretry=1 -q http://localhost:9966/petclinic/ -O /dev/null'
-            }
-        }
-        
 
         stage('Postman') {
             steps {
