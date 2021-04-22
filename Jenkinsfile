@@ -32,7 +32,7 @@ pipeline {
             steps {
                 sh 'robot --variable BROWSER:headlesschrome -d spring-petclinic-angular/Robotframework/Tests/Results spring-petclinic-angular/Robotframework/Tests'
                     waitUntil {
-                        sh 'curl http://localhost:9966/petclinic/ | grep ""result":"SUCCESS""',
+                        script: 'curl http://localhost:9966/petclinic/ | grep ""result":"SUCCESS""',
                             returnStatus: true
                         }
             }
