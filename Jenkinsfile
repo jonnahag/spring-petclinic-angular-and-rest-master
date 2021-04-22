@@ -61,10 +61,19 @@ pipeline {
             steps {
                 sh 'sleep 5'
             }
-         }
+        }
 
+        stage('Postman') {
+            steps {
+                sh 'newman run Spring_PetClinic_Copy.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
+            }
+            post {
+                always {
+                    junit '**/TEST*.xml'
+                }
+            }
 
-
+        }
     }
 }
 
