@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Jenkinsfile">
-      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/Jenkinsfile" afterDir="false" />
-    </list>
+    <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Jenkinsfile" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,31 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618831182123</updated>
       <workItem from="1619030500602" duration="1836000" />
-      <workItem from="1619035303981" duration="4712000" />
-    </task>
-    <task id="LOCAL−00020" summary="Update Jenkinsfile">
-      <created>1618992481142</created>
-      <option name="number" value="LOCAL−00020" />
-      <option name="presentableId" value="LOCAL−00020" />
-      <updated>1618992481142</updated>
-    </task>
-    <task id="LOCAL−00021" summary="Update Jenkinsfile">
-      <created>1618996279269</created>
-      <option name="number" value="LOCAL−00021" />
-      <option name="presentableId" value="LOCAL−00021" />
-      <updated>1618996279269</updated>
-    </task>
-    <task id="LOCAL−00022" summary="Update Jenkinsfile">
-      <created>1618996421539</created>
-      <option name="number" value="LOCAL−00022" />
-      <option name="presentableId" value="LOCAL−00022" />
-      <updated>1618996421540</updated>
-    </task>
-    <task id="LOCAL−00023" summary="Update Jenkinsfile">
-      <created>1618996518163</created>
-      <option name="number" value="LOCAL−00023" />
-      <option name="presentableId" value="LOCAL−00023" />
-      <updated>1618996518163</updated>
+      <workItem from="1619035303981" duration="5033000" />
     </task>
     <task id="LOCAL−00024" summary="Update Jenkinsfile">
       <created>1618996914040</created>
@@ -347,7 +321,31 @@
       <option name="presentableId" value="LOCAL−00068" />
       <updated>1619120477418</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL−00069" summary="Update Jenkinsfile">
+      <created>1619120778395</created>
+      <option name="number" value="LOCAL−00069" />
+      <option name="presentableId" value="LOCAL−00069" />
+      <updated>1619120778395</updated>
+    </task>
+    <task id="LOCAL−00070" summary="Update Jenkinsfile">
+      <created>1619120836847</created>
+      <option name="number" value="LOCAL−00070" />
+      <option name="presentableId" value="LOCAL−00070" />
+      <updated>1619120836847</updated>
+    </task>
+    <task id="LOCAL−00071" summary="Update Jenkinsfile">
+      <created>1619120887805</created>
+      <option name="number" value="LOCAL−00071" />
+      <option name="presentableId" value="LOCAL−00071" />
+      <updated>1619120887806</updated>
+    </task>
+    <task id="LOCAL−00072" summary="Update Jenkinsfile">
+      <created>1619120938544</created>
+      <option name="number" value="LOCAL−00072" />
+      <option name="presentableId" value="LOCAL−00072" />
+      <updated>1619120938544</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
