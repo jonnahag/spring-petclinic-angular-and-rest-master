@@ -9,7 +9,7 @@ pipeline {
 
         stage('Wait for API start') {
             steps {
-                sh 'timeout 120 wget --retry-connrefused --tries=120 --waitretry=1 -q http://localhost:9966/petclinic/ -O /dev/null'
+                sh 'sleep 5'
             }
         }
 
