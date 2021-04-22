@@ -5,7 +5,7 @@ pipeline {
                     steps {
                         sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && nohup mvn spring-boot:run &'
                             waitUntil {
-                                sh 'curl http://localhost:9966/petclinic/api/ | grep ""result":"SUCCESS""',
+                                sh 'curl http://localhost:9966/petclinic/ | grep ""result":"SUCCESS""',
                                     returnStatus: true
                             }
                     }
