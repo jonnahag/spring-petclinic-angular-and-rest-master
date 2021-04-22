@@ -50,6 +50,12 @@ pipeline {
             }
                  
         }
+
+        stage('Wait for API start') {
+            steps {
+                sh 'sleep 10'
+            }
+        }
         
 
         stage('Postman') {
