@@ -4,6 +4,7 @@ pipeline {
         stage('Build Rest-API') {
                     steps {
                         sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && nohup mvn spring-boot:run &'
+                        
                     }
                 }
 
@@ -27,7 +28,7 @@ pipeline {
 
                 stage('Robot') {
             steps {
-                sh 'robot --variable BROWSER:headlesschrome -d spring-petclinic-angular/Robotframework/Tests/Results spring-petclinic-angular/Robotframework/Tests'
+                sh 'robot --variable BROWSER:headlesschrome -d spring-petclinic-angular/Tests/Results spring-petclinic-angular/Tests'
             }
             post {
                 always {
@@ -35,7 +36,7 @@ pipeline {
                         step(
                             [
                                 $class                  :   'RobotPublisher',
-                                outputPath              :   'spring-petclinic-angular/Robotframework/Tests/Results',
+                                outputPath              :   'spring-petclinic-angular/Tests/Results',
                                 outputFileName          :   '**/output.xml',
                                 reportFileName          :   '**/report.html',
                                 logFileName             :   '**/log.html',
@@ -61,19 +62,5 @@ pipeline {
 
         stage('Postman') {
             steps {
-              sh 'newman run Spring_PetClinic_Copy.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
+              sh 'newman run PetClinic_Project.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
             }
-                post {
-                always {
-                    junit '**/TEST*.xml'
-                }
-            }
-
-        }
-
-    }
-}
-
-
-
-
