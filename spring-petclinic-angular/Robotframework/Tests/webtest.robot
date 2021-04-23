@@ -21,7 +21,7 @@ Access website
     Wait until page contains    SpringPetclinicAngular
     Click Element               xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]
     Click Element               xpath://*[@id="pettypes"]/tbody/tr[1]/td[2]/button[1]
-    Input Text                  id=name   Horse
+    Input Text                  id=name   Donkey
     Click Element               xpath://*[@id="pettype"]/div[2]/div/button[1]
     Click Element               xpath:/html/body/app-root/div[1]/nav/div/ul/li[1]/a
     Wait Until Page Contains    SpringPetclinicAngular
