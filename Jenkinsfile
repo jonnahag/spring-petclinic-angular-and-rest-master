@@ -26,40 +26,6 @@ pipeline {
 
         }
 
-      /*          stage('Robot') {
-            steps {
-                sh 'robot --variable BROWSER:headlesschrome -d spring-petclinic-angular/Robotframework/Tests/Results spring-petclinic-angular/Robotframework/Tests'
-            }
-            post {
-                always {
-                    script {
-                        step(
-                            [
-                                $class                  :   'RobotPublisher',
-                                outputPath              :   'spring-petclinic-angular/Robotframework/Tests/Results',
-                                outputFileName          :   '**/output.xml',
-                                reportFileName          :   '**/report.html',
-                                logFileName             :   '**/log.html',
-                                disableArchiveOutput    :   false,
-                                passThreshold           :   50,
-                                unstableThreshold       :   40,
-                                otherFiles              :   "**/*.png,**/*.jpg",
-                            ]
-                        )
-                    }
-                }
-            }
-                 
-        }
-      */  
-        
-       stage('DelayPostmanTest') {
-           steps {
-               sh 'sleep 5'
-          }
-        }
-        
-
         stage('Postman') {
             steps {
               sh 'newman run Spring_PetClinic_Copy.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
