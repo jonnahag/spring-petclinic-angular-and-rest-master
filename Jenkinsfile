@@ -67,7 +67,8 @@ pipeline {
                 always {
                     junit '**/TEST*.xml'
                 }
-            }
+            
+                }
 
         }
 
