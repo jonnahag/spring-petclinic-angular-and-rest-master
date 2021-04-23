@@ -26,7 +26,7 @@ pipeline {
 
         }
 
-                stage('Robot') {
+      /*          stage('Robot') {
             steps {
                 sh 'robot --variable BROWSER:headlesschrome -d spring-petclinic-angular/Robotframework/Tests/Results spring-petclinic-angular/Robotframework/Tests'
             }
@@ -51,7 +51,7 @@ pipeline {
             }
                  
         }
-        
+      */  
         
        stage('DelayPostmanTest') {
            steps {
