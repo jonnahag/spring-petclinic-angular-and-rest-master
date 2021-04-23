@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.2 on win32)" generated="20210419 16:15:32.806" rpa="false">
+<robot generator="Robot 3.2.2 (Python 3.9.2 on win32)" generated="20210424 00:12:22.919" rpa="false">
 <suite id="s1" name="Pet" source="C:\Projects\PetClinic\spring-petclinic-angular\src\test\automation\Tests\pet.robot">
-<test id="s1-t1" name="Validate if pet is connect to correct owner">
+<test id="s1-t1" name="Validate if pet is connected to the rightful owner or not">
 <kw name="Begin Web Test" library="PetKeywords" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
@@ -9,29 +9,29 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20210419 16:15:33.084" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210419 16:15:33.084" endtime="20210419 16:15:34.528"></status>
+<msg timestamp="20210424 00:12:23.422" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210424 00:12:23.421" endtime="20210424 00:12:25.864"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>.5</arg>
 </arguments>
-<status status="PASS" starttime="20210419 16:15:34.528" endtime="20210419 16:15:34.529"></status>
+<status status="PASS" starttime="20210424 00:12:25.864" endtime="20210424 00:12:25.865"></status>
 </kw>
-<status status="PASS" starttime="20210419 16:15:33.083" endtime="20210419 16:15:34.529"></status>
+<status status="PASS" starttime="20210424 00:12:23.420" endtime="20210424 00:12:25.865"></status>
 </kw>
-<kw name="Go to Web Page" library="PetKeywords">
+<kw name="Given Go to Web Page" library="PetKeywords">
 <kw name="Load Page" library="PetKeywords">
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20210419 16:15:34.530" level="INFO">Opening url 'http://localhost:4200/'</msg>
-<status status="PASS" starttime="20210419 16:15:34.530" endtime="20210419 16:15:36.261"></status>
+<msg timestamp="20210424 00:12:25.884" level="INFO">Opening url 'http://localhost:4200/'</msg>
+<status status="PASS" starttime="20210424 00:12:25.883" endtime="20210424 00:12:27.463"></status>
 </kw>
-<status status="PASS" starttime="20210419 16:15:34.530" endtime="20210419 16:15:36.261"></status>
+<status status="PASS" starttime="20210424 00:12:25.882" endtime="20210424 00:12:27.463"></status>
 </kw>
 <kw name="Verify Page Loaded" library="PetKeywords">
 <kw name="Get Text" library="SeleniumLibrary">
@@ -42,8 +42,8 @@
 <assign>
 <var>${actualTerm}</var>
 </assign>
-<msg timestamp="20210419 16:15:37.296" level="INFO">${actualTerm} = Welcome to Petclinic</msg>
-<status status="PASS" starttime="20210419 16:15:36.262" endtime="20210419 16:15:37.296"></status>
+<msg timestamp="20210424 00:12:28.543" level="INFO">${actualTerm} = Welcome to Petclinic</msg>
+<status status="PASS" starttime="20210424 00:12:27.464" endtime="20210424 00:12:28.543"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -51,33 +51,32 @@
 <arg>Welcome to Petclinic</arg>
 <arg>${actualTerm}</arg>
 </arguments>
-<status status="PASS" starttime="20210419 16:15:37.296" endtime="20210419 16:15:37.297"></status>
+<status status="PASS" starttime="20210424 00:12:28.543" endtime="20210424 00:12:28.544"></status>
 </kw>
-<status status="PASS" starttime="20210419 16:15:36.261" endtime="20210419 16:15:37.297"></status>
+<status status="PASS" starttime="20210424 00:12:27.463" endtime="20210424 00:12:28.544"></status>
 </kw>
-<status status="PASS" starttime="20210419 16:15:34.529" endtime="20210419 16:15:37.297"></status>
+<status status="PASS" starttime="20210424 00:12:25.880" endtime="20210424 00:12:28.544"></status>
 </kw>
-<kw name="Rightfull Pet to the rightfull owner" library="PetKeywords">
-<kw name="Going to list of all owners page" library="PetKeywords">
+<kw name="When Select all owners option and go to list of all owners" library="PetKeywords">
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/a</arg>
 </arguments>
-<msg timestamp="20210419 16:15:37.298" level="INFO">Clicking element 'xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/a'.</msg>
-<status status="PASS" starttime="20210419 16:15:37.298" endtime="20210419 16:15:38.359"></status>
+<msg timestamp="20210424 00:12:28.547" level="INFO">Clicking element 'xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20210424 00:12:28.546" endtime="20210424 00:12:29.650"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a</arg>
 </arguments>
-<msg timestamp="20210419 16:15:38.360" level="INFO">Clicking element 'xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a'.</msg>
-<status status="PASS" starttime="20210419 16:15:38.359" endtime="20210419 16:15:39.459"></status>
+<msg timestamp="20210424 00:12:29.650" level="INFO">Clicking element 'xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20210424 00:12:29.650" endtime="20210424 00:12:30.756"></status>
 </kw>
-<status status="PASS" starttime="20210419 16:15:37.298" endtime="20210419 16:15:39.459"></status>
+<status status="PASS" starttime="20210424 00:12:28.546" endtime="20210424 00:12:30.756"></status>
 </kw>
-<kw name="Select owner from the list of all owners" library="PetKeywords">
+<kw name="And Select any owner from the list of all owners" library="PetKeywords">
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
 <arguments>
@@ -86,8 +85,8 @@
 <assign>
 <var>${expecting_ownwer}</var>
 </assign>
-<msg timestamp="20210419 16:15:40.499" level="INFO">${expecting_ownwer} = Maria Escobito</msg>
-<status status="PASS" starttime="20210419 16:15:39.460" endtime="20210419 16:15:40.499"></status>
+<msg timestamp="20210424 00:12:31.814" level="INFO">${expecting_ownwer} = Maria Escobito</msg>
+<status status="PASS" starttime="20210424 00:12:30.757" endtime="20210424 00:12:31.814"></status>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
@@ -97,20 +96,20 @@
 <assign>
 <var>${expecting_pet}</var>
 </assign>
-<msg timestamp="20210419 16:15:41.548" level="INFO">${expecting_pet} = Mulligan</msg>
-<status status="PASS" starttime="20210419 16:15:40.499" endtime="20210419 16:15:41.548"></status>
+<msg timestamp="20210424 00:12:32.861" level="INFO">${expecting_pet} = Mulligan</msg>
+<status status="PASS" starttime="20210424 00:12:31.814" endtime="20210424 00:12:32.861"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[8]/td[1]/a</arg>
 </arguments>
-<msg timestamp="20210419 16:15:41.549" level="INFO">Clicking element 'xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[8]/td[1]/a'.</msg>
-<status status="PASS" starttime="20210419 16:15:41.549" endtime="20210419 16:15:42.680"></status>
+<msg timestamp="20210424 00:12:32.861" level="INFO">Clicking element 'xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[8]/td[1]/a'.</msg>
+<status status="PASS" starttime="20210424 00:12:32.861" endtime="20210424 00:12:33.983"></status>
 </kw>
-<status status="PASS" starttime="20210419 16:15:39.459" endtime="20210419 16:15:42.681"></status>
+<status status="PASS" starttime="20210424 00:12:30.757" endtime="20210424 00:12:33.983"></status>
 </kw>
-<kw name="Verify Owner with rightful pet" library="PetKeywords">
+<kw name="Then Verify whether selected Owner is with rightful pet" library="PetKeywords">
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
 <arguments>
@@ -119,8 +118,8 @@
 <assign>
 <var>${actual_pet}</var>
 </assign>
-<msg timestamp="20210419 16:15:43.771" level="INFO">${actual_pet} = Mulligan</msg>
-<status status="PASS" starttime="20210419 16:15:42.682" endtime="20210419 16:15:43.771"></status>
+<msg timestamp="20210424 00:12:35.061" level="INFO">${actual_pet} = Mulligan</msg>
+<status status="PASS" starttime="20210424 00:12:33.992" endtime="20210424 00:12:35.061"></status>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
@@ -130,8 +129,8 @@
 <assign>
 <var>${actual_owner}</var>
 </assign>
-<msg timestamp="20210419 16:15:44.844" level="INFO">${actual_owner} = Maria Escobito</msg>
-<status status="PASS" starttime="20210419 16:15:43.772" endtime="20210419 16:15:44.844"></status>
+<msg timestamp="20210424 00:12:36.121" level="INFO">${actual_owner} = Maria Escobito</msg>
+<status status="PASS" starttime="20210424 00:12:35.061" endtime="20210424 00:12:36.121"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -139,35 +138,33 @@
 <arg>${expecting_ownwer}${expecting_pet}</arg>
 <arg>${actual_owner}${actual_pet}</arg>
 </arguments>
-<status status="PASS" starttime="20210419 16:15:44.845" endtime="20210419 16:15:44.846"></status>
+<status status="PASS" starttime="20210424 00:12:36.121" endtime="20210424 00:12:36.123"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>.25</arg>
 </arguments>
-<msg timestamp="20210419 16:15:45.109" level="INFO">Slept 250 milliseconds</msg>
-<status status="PASS" starttime="20210419 16:15:44.846" endtime="20210419 16:15:45.110"></status>
+<msg timestamp="20210424 00:12:36.382" level="INFO">Slept 250 milliseconds</msg>
+<status status="PASS" starttime="20210424 00:12:36.123" endtime="20210424 00:12:36.382"></status>
 </kw>
-<status status="PASS" starttime="20210419 16:15:42.681" endtime="20210419 16:15:45.110"></status>
-</kw>
-<status status="PASS" starttime="20210419 16:15:37.297" endtime="20210419 16:15:45.111"></status>
+<status status="PASS" starttime="20210424 00:12:33.991" endtime="20210424 00:12:36.382"></status>
 </kw>
 <kw name="End Web Test" library="PetKeywords" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210419 16:15:45.113" endtime="20210419 16:15:47.736"></status>
+<status status="PASS" starttime="20210424 00:12:36.384" endtime="20210424 00:12:39.203"></status>
 </kw>
-<status status="PASS" starttime="20210419 16:15:45.112" endtime="20210419 16:15:47.737"></status>
+<status status="PASS" starttime="20210424 00:12:36.383" endtime="20210424 00:12:39.203"></status>
 </kw>
-<doc>To test if pet is connected to correct owner</doc>
+<doc>To test if pet is connected to rightful owner</doc>
 <tags>
-<tag>Test 1 To Validate pet is connected to correct owner</tag>
+<tag>Test 1 To Validate pet is connected to rightful owner</tag>
 </tags>
-<status status="PASS" starttime="20210419 16:15:33.082" endtime="20210419 16:15:47.738" critical="yes"></status>
+<status status="PASS" starttime="20210424 00:12:23.419" endtime="20210424 00:12:39.204" critical="yes"></status>
 </test>
 <doc>This is some basic info about the whole test suite</doc>
-<status status="PASS" starttime="20210419 16:15:32.809" endtime="20210419 16:15:47.743"></status>
+<status status="PASS" starttime="20210424 00:12:22.922" endtime="20210424 00:12:39.207"></status>
 </suite>
 <statistics>
 <total>
@@ -175,7 +172,7 @@
 <stat pass="1" fail="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0">Test 1 To Validate pet is connected to correct owner</stat>
+<stat pass="1" fail="0">Test 1 To Validate pet is connected to rightful owner</stat>
 </tag>
 <suite>
 <stat pass="1" fail="0" id="s1" name="Pet">Pet</stat>

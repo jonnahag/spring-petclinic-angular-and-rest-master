@@ -14,8 +14,10 @@ ${expecting_ownwer}                                Maria Escobito
 
 
 *** Test Cases ***
-Validate if pet is connect to correct owner
-   [Documentation]                                   To test if pet is connected to correct owner
-   [Tags]                                            Test 1 To Validate pet is connected to correct owner
-   Go to Web Page
-   Rightfull Pet to the rightfull owner
+Validate if pet is connected to the rightful owner or not
+   [Documentation]                                   To test if pet is connected to rightful owner
+   [Tags]                                            Test 1 To Validate pet is connected to rightful owner
+    Given Go to Web Page
+    When Select all owners option and go to list of all owners
+    And Select any owner from the list of all owners
+    Then Verify whether selected Owner is with rightful pet
