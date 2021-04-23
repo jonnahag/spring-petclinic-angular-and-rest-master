@@ -64,4 +64,14 @@ pipeline {
             steps {
               sh 'newman run PetClinic_Project.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
             }
+                post {
+                always {
+                    junit '**/TEST*.xml'
+                }
+            
+                }
+        }
+
+    }
+}
         }
