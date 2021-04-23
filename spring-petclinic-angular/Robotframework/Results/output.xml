@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.2.dev1 (Python 3.9.4 on win32)" generated="20210423 10:39:03.615" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\Users\isaco\PycharmProjects\PetClinic\spring-petclinic-angular-and-rest-master-Isac-Barnch\spring-petclinic-angular\Robotframework\Tests">
+<suite id="s1-s1" name="Webtest" source="C:\Users\isaco\PycharmProjects\PetClinic\spring-petclinic-angular-and-rest-master-Isac-Barnch\spring-petclinic-angular\Robotframework\Tests\webtest.robot">
+<test id="s1-s1-t1" name="Access website">
+<kw name="Begin Web Test" library="keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210423 10:39:03.920" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210423 10:39:03.919" endtime="20210423 10:39:05.582"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210423 10:39:05.583" endtime="20210423 10:39:05.729"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210423 10:39:05.730" level="INFO">Opening url 'http://localhost:4200'</msg>
+<status status="PASS" starttime="20210423 10:39:05.729" endtime="20210423 10:39:06.536"/>
+</kw>
+<status status="PASS" starttime="20210423 10:39:03.919" endtime="20210423 10:39:06.536"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20210423 10:39:06.545" endtime="20210423 10:39:06.546"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>SpringPetclinicAngular</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210423 10:39:06.557" endtime="20210423 10:39:06.603"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210423 10:39:06.605" level="INFO">Clicking element 'xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]'.</msg>
+<status status="PASS" starttime="20210423 10:39:06.604" endtime="20210423 10:39:06.778"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="pettypes"]/tbody/tr[1]/td[2]/button[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210423 10:39:06.799" level="INFO">Clicking element 'xpath://*[@id="pettypes"]/tbody/tr[1]/td[2]/button[1]'.</msg>
+<status status="PASS" starttime="20210423 10:39:06.798" endtime="20210423 10:39:06.976"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=name</arg>
+<arg>Horse</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210423 10:39:06.978" level="INFO">Typing text 'Horse' into text field 'id=name'.</msg>
+<status status="PASS" starttime="20210423 10:39:06.977" endtime="20210423 10:39:07.157"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://*[@id="pettype"]/div[2]/div/button[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210423 10:39:07.158" level="INFO">Clicking element 'xpath://*[@id="pettype"]/div[2]/div/button[1]'.</msg>
+<status status="PASS" starttime="20210423 10:39:07.158" endtime="20210423 10:39:07.266"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath:/html/body/app-root/div[1]/nav/div/ul/li[1]/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210423 10:39:07.268" level="INFO">Clicking element 'xpath:/html/body/app-root/div[1]/nav/div/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20210423 10:39:07.267" endtime="20210423 10:39:07.400"/>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>SpringPetclinicAngular</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210423 10:39:07.402" endtime="20210423 10:39:07.416"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210423 10:39:07.417" endtime="20210423 10:39:10.753"/>
+</kw>
+<kw name="End Web Test" library="keywords" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210423 10:39:10.755" endtime="20210423 10:39:10.755"/>
+</kw>
+<status status="PASS" starttime="20210423 10:39:10.754" endtime="20210423 10:39:10.756"/>
+</kw>
+<doc>Test for accessing website Petclinic</doc>
+<tag>Access_test</tag>
+<status status="PASS" starttime="20210423 10:39:03.918" endtime="20210423 10:39:10.756"/>
+</test>
+<doc>Testar Selenium och RobotFramework</doc>
+<status status="PASS" starttime="20210423 10:39:03.654" endtime="20210423 10:39:10.759"/>
+</suite>
+<status status="PASS" starttime="20210423 10:39:03.618" endtime="20210423 10:39:10.762"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Access_test</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Webtest">Tests.Webtest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
