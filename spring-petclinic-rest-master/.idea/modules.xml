@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-petclinic-rest-master/spring-petclinic-rest.iml" filepath="$PROJECT_DIR$/spring-petclinic-rest-master/spring-petclinic-rest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-petclinic-rest-master.iml" filepath="$PROJECT_DIR$/.idea/spring-petclinic-rest-master.iml" />
     </modules>
   </component>
