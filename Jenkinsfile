@@ -3,20 +3,20 @@ pipeline {
     stages {
         stage('Build Rest-API') {
                     steps {
-                        sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && mvn spring-boot:run &'
+                        bat 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && nohup mvn spring-boot:run &'
                         
                     }
                 }
 
                 stage('Build Angular-Front End') {
                       steps {
-                        sh 'cd spring-petclinic-angular/static-content && curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar && nohup java -jar ./rawhttp.jar serve . -p 4200 &'
+                        bat 'cd spring-petclinic-angular/static-content && curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar && nohup java -jar ./rawhttp.jar serve . -p 4200 &'
                       }
                 }
         
         stage('Test') {
             steps {
-                sh "mvn test"
+                bat "mvn test"
             }
             post {
                 always {
@@ -28,7 +28,7 @@ pipeline {
 
                 stage('Robot') {
             steps {
-                sh 'robot --variable BROWSER:headlesschrome -d spring-petclinic-angular/Results spring-petclinic-angular/Tests'
+                bat 'robot --variable BROWSER:headlesschrome -d spring-petclinic-angular/Results spring-petclinic-angular/Tests'
             }
             post {
                 always {
@@ -55,14 +55,14 @@ pipeline {
         
        stage('DelayPostmanTest') {
            steps {
-               sh 'sleep 5'
+               bat 'sleep 5'
           }
         }
         
 
         stage('Postman') {
             steps {
-              sh 'newman run PetClinic_Project.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
+              bat 'newman run PetClinic_Project.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
             }
                 post {
                 always {
