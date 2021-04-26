@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build Rest-API') {
                     steps {
-                        bat 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && nohup mvn spring-boot:run &'
+                        bat 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && mvn spring-boot:run &'
                         
                     }
                 }
