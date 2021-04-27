@@ -1,0 +1,1162 @@
+{
+	"info": {
+		"_postman_id": "9d9b8f3d-14dd-4210-93ab-122b2ffb09ac",
+		"name": "Spring PetClinic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticaton",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"secondAdmin\",\r\n    \"password\": \"password\",\r\n    \"enabled\": true,\r\n    \"roles\": [\r\n    \t{ \"name\" : \"OWNER_ADMIN\" }\r\n\t]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/users",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "PCOwners",
+			"item": [
+				{
+					"name": "Get Owners",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									" \r",
+									"const response = pm.response.json();\r",
+									"console.log(response);\r",
+									"console.log(response.length);\r",
+									"console.log(response['response.lenth']);\r",
+									"\r",
+									"pm.test(\"Verify Owners List is Displayed in Response \" , () => console.log(response));\r",
+									"\r",
+									"pm.test(\"Total No of Owners Displayed  : \" +response.length , function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(response.length);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/api/owners",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Owner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"\r",
+									"pm.environment.set(\"ownerID\", pm.response.json().id);\r",
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,202]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Successfully Created Owner \", function () {\r",
+									"   pm.response.to.have.status(201);\r",
+									"   pm.environment.set(\"results\", parseInt(environment.results) + 1);\r",
+									"});  \r",
+									"pm.test(\"Test data type of the response\", () => {\r",
+									"  pm.expect(jsonData).to.be.an(\"object\");\r",
+									"  pm.expect(jsonData.firstName).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.lastName).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.address).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.city).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.telephone).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.pets).to.be.an(\"array\");\r",
+									" });\r",
+									"var OwnerSchema = {\r",
+									"  \"$schema\": \"http://json-schema.org/draft-04/schema#\",  \r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"data\": { \"type\": \"object\",\r",
+									"          \"properties\": {\r",
+									"          \"id\" : { \"type\" : \"integer\" },\r",
+									"          \"firstName\" :{ \"type\" : \"string\" },\r",
+									"          \"lastName\" :{ \"type\" : \"string\" },\r",
+									"          \"address\" :{ \"type\" : \"string\" },\r",
+									"          \"city\" :{ \"type\" : \"string\" },\r",
+									"          \"telephone\" : { \"type\" : \"string\" },\r",
+									"          \"pets\" : { \"type\" : \"object\" }\r",
+									"                     },\r",
+									"        \"required\" : [ \"id\",\"firstName\",\"lastName\",\"address\",\"city\",\"telephone\",\"pets\"]\r",
+									"          }\r",
+									"  },\r",
+									"  \"required\": [\"data\"]\r",
+									"};\r",
+									"\r",
+									"pm.test('Verify that Owner Schema is valid', function() {\r",
+									"  pm.expect(tv4.validate(jsonData, OwnerSchema));\r",
+									"});\r",
+									"console.log(\"Validation failed : \", tv4.error);\r",
+									"\r",
+									"\r",
+									" pm.test(\"Verify Information of New Owner Added\", function () {\r",
+									"    pm.expect(jsonData.firstName).to.eql(pm.environment.get(\"FirstNameP\"));\r",
+									"    pm.expect(jsonData.lastName).to.eql(pm.environment.get(\"LastNameP\"));\r",
+									"    pm.expect(jsonData.address).to.eql(pm.environment.get(\"AddressP\"));\r",
+									"    pm.expect(jsonData.city).to.eql(pm.environment.get(\"CityP\"));\r",
+									"    pm.expect(jsonData.telephone).to.eql(pm.environment.get(\"TelephoneP\"));\r",
+									"    pm.expect(jsonData.pets).to.not.eql(null);\r",
+									"});\r",
+									"pm.test(\"Verify Information of New Owner with wrong details  \", function ()  { \r",
+									"    pm.expect(jsonData.firstName).to.not.eql(pm.environment.get(\"XFNameP\"));\r",
+									"    pm.expect(jsonData.lastName).to.not.eql(pm.environment.get(\"XLNameP\"));\r",
+									"    pm.expect(jsonData.address).to.not.eql(pm.environment.get(\"XAddressP\"));\r",
+									"    pm.expect(jsonData.city).to.not.eql(pm.environment.get(\"XCityP\"));\r",
+									"    pm.expect(jsonData.telephone).to.not.eql(pm.environment.get(\"XTelephoneP\"));\r",
+									"    pm.expect(jsonData.pets).to.not.eql(null);\r",
+									"});\r",
+									"    \r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"XFNameP\",\"Neil\");\r",
+									"pm.environment.set(\"XLNameP\",\"Armstrong\");\r",
+									"pm.environment.set(\"XAddressP\",\"60 Friendly St.\");\r",
+									"pm.environment.set(\"XCityP\",\"Kuwait\");\r",
+									"pm.environment.set(\"XTelephoneP\",\"asdfghhj\");\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"firstName\": \"{{FirstNameP}}\",\r\n        \"lastName\": \"{{LastNameP}}\",\r\n        \"address\": \"{{AddressP}}\",\r\n        \"city\": \"{{CityP}}\",\r\n        \"telephone\": \"{{TelephoneP}}\",\r\n        \"pets\": [\r\n              {\r\n                \"id\": \"{{PetidP}}\",\r\n                \"name\": \"{{PNameP}}\",\r\n                \"birthDate\": \"{{BDateP}}\",\r\n                \"type\": {\r\n                    \"id\": {{PTypeIDP}},\r\n                    \"name\": \"{{PtypeNameP}}\"\r\n                },\r\n                \"owner\": {{OwnerIDP}},\r\n                \"visits\": []\r\n            }\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/owners",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"owners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Owner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Owner is updated\", () => {\r",
+									"  const expectedObject = {\r",
+									"    \"created\": true,\r",
+									"    \"errors\": []\r",
+									"  };\r",
+									"\r",
+									"});\r",
+									"var url = pm.environment.get(\"url\") + \"/owners/\" +  pm.globals.get(\"ownerID\");\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(getRequest, function (okay, res) {\r",
+									"    if (okay) { \r",
+									"        console.log(okay);\r",
+									"    }\r",
+									"     console.log(res);\r",
+									"pm.test('Owner is updated in database', function () {\r",
+									"        pm.expect(console.log(okay));\r",
+									"    })\r",
+									"   }); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \r\n        \"firstName\": \"{{FirstNameU}}\",\r\n        \"lastName\": \"{{LastNameU}}\",\r\n        \"address\": \"{{AddressU}}\",\r\n        \"city\": \"{{CityU}}\",\r\n        \"telephone\": \"{{TelephoneU}}\",\r\n        \"pets\": [\r\n            {\r\n                \"id\": {{PetidU}},\r\n                \"name\": \"{{PNameU}}\",\r\n                \"birthDate\": \"{{BDateU}}\",\r\n                \"type\": {\r\n                    \"id\": {{PTypeU}},\r\n                    \"name\": \"{{PTNameU}}\"\r\n                },\r\n                \"owner\": {{OwnerIDU}},\r\n                \"visits\": []\r\n            }\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/owners/{{ownerID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"owners",
+								"{{ownerID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Updated Owner's Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"\r",
+									" \r",
+									"pm.globals.get(\"ownerID\", pm.response.json().id);\r",
+									"pm.test(\"Verify that the Owner Information is not empty\", function () {\r",
+									"    pm.expect(jsonData.owners).to.not.eql(\"\");\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Check the contents of Owner Data are not empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.include(null);\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Status code is 200\", () => pm.expect(responseCode.code).to.equal(200) );\r",
+									"\r",
+									"pm.test(\"Test data type of the response\", function () {\r",
+									"  var jsonData = JSON.parse(responseBody);\r",
+									"  pm.expect(jsonData).to.be.an(\"object\");\r",
+									"  pm.expect(jsonData.firstName).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.lastName).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.address).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.city).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.telephone).to.be.a(\"string\");\r",
+									"  pm.expect(jsonData.pets).to.be.an(\"array\");\r",
+									" });\r",
+									"\r",
+									"pm.test(\"Verify Information of Updated Owner \", function () {\r",
+									"    pm.expect(jsonData.firstName).to.eql(pm.environment.get(\"FirstNameU\"));\r",
+									"    pm.expect(jsonData.lastName).to.eql(pm.environment.get(\"LastNameU\"));\r",
+									"    pm.expect(jsonData.address).to.eql(pm.environment.get(\"AddressU\"));\r",
+									"    pm.expect(jsonData.city).to.eql(pm.environment.get(\"CityU\"));\r",
+									"    pm.expect(jsonData.telephone).to.eql(pm.environment.get(\"TelephoneU\"));\r",
+									"    pm.expect(jsonData.pets).to.not.eql(null);\r",
+									"});\r",
+									"pm.test(\"Verify Information of Updated Owner with wrong details  \", function ()  { \r",
+									"    pm.expect(jsonData.firstName).to.not.eql(pm.environment.get(\"XFNameU\"));\r",
+									"    pm.expect(jsonData.lastName).to.not.eql(pm.environment.get(\"XLNameU\"));\r",
+									"    pm.expect(jsonData.address).to.not.eql(pm.environment.get(\"XAddressU\"));\r",
+									"    pm.expect(jsonData.city).to.not.eql(pm.environment.get(\"XCityU\"));\r",
+									"    pm.expect(jsonData.telephone).to.not.eql(pm.environment.get(\"XTelephoneU\"));\r",
+									"    pm.expect(jsonData.pets).to.not.eql(null);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"XFNameU\",\"Neil\");\r",
+									"pm.environment.set(\"XLNameU\",\"Armstrong\");\r",
+									"pm.environment.set(\"XAddressU\",\"60 Friendly St.\");\r",
+									"pm.environment.set(\"XCityU\",\"Kuwait\");\r",
+									"pm.environment.set(\"XTelephoneU\",\"asdfghhj\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/owners/{{ownerID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"owners",
+								"{{ownerID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Owner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"var url = pm.environment.get(\"url\") + \"/owners/\" +  pm.globals.get(\"ownerID\");\r",
+									"\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"pm.sendRequest(getRequest, function (err, res) {\r",
+									"    if (err) { \r",
+									"        console.log(err);\r",
+									"    }\r",
+									"     console.log(res);\r",
+									"    \r",
+									"    pm.test('Response should be Not Found', function () {\r",
+									"        pm.expect(res.status).to.include(\"Not Found\");\r",
+									"    });\r",
+									"    \r",
+									"    pm.test(\"Response code 404\", function() {\r",
+									"        pm.expect(res.code).to.equal(404);\r",
+									"    })\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "name={{admin_name}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/owners/{{ownerID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"owners",
+								"{{ownerID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PCPets",
+			"item": [
+				{
+					"name": "Get Pets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									" \r",
+									"const response = pm.response.json();\r",
+									"console.log(response);\r",
+									"console.log(response.length);\r",
+									"console.log(response['response.lenth']);\r",
+									"\r",
+									"pm.test(\"Verify Owners List is Displayed in Response \" , () => console.log(response));\r",
+									"\r",
+									"pm.test(\"Total No of Pets Displayed  : \" +response.length , function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(response.length);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/pets",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Pet to the Owner",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"pm.test(\"Verify if Add Pet Response time Should be below 1s\",() => pm.expect(pm.response.responseTime).to.be.below(10000));\r",
+									"\r",
+									"pm.test(\"Verify if Created Pet is added in the pets Database \", function () {\r",
+									"     pm.expect(pm.response.text()).to.include(\"id\");\r",
+									"     });\r",
+									"const id =pm.response.json().id; \r",
+									" \r",
+									"var url = pm.environment.get(\"url\")  +  id;\r",
+									"console.log(url)\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"pm.sendRequest(getRequest, function (err, res) {\r",
+									"    if (err) { \r",
+									"        console.log(err);\r",
+									"    }\r",
+									"\r",
+									"    pm.test(\"Verify Information of New Pet Added\", () => {\r",
+									"        const jsonData = pm.response.json(); \r",
+									"        pm.expect(jsonData.name).to.eql(pm.environment.get(\"PPetNameP\"));\r",
+									"        pm.expect(jsonData.birthDate).to.eql(pm.environment.get(\"PBDateP\"));\r",
+									"        pm.expect(jsonData.type.name).to.eql(pm.environment.get(\"PPTypeNameP\"));\r",
+									"        pm.expect(jsonData.owner.firstName).to.eql(pm.environment.get(\"POFirstNameP\"));\r",
+									"        pm.expect(jsonData.owner.lastName).to.eql(pm.environment.get(\"POLastNameP\"));\r",
+									"    });\r",
+									" });\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"    pm.test(\"Verify New Petdetails with wrong Pet Details\", () => {\r",
+									"        const jsonData = pm.response.json(); \r",
+									"        pm.expect(jsonData.name).to.not.eql(pm.environment.get(\"XPPNameP\"));\r",
+									"        pm.expect(jsonData.birthDate).to.not.eql(pm.environment.get(\"XPPBDateP\"));\r",
+									"        pm.expect(jsonData.type.name).to.not.eql(pm.environment.get(\"XPPetTypeNameP\"));\r",
+									"        pm.expect(jsonData.owner.firstName).to.not.eql(pm.environment.get(\"XPOFNameP\"));\r",
+									"        pm.expect(jsonData.owner.lastName).to.not.eql(pm.environment.get(\"XPOLNameP\"));\r",
+									"    });\r",
+									" \r",
+									"    pm.test(\"Verify New Petdetails with Correct Pet details BUT wrong Owner's Details\", () => {\r",
+									"        const jsonData = pm.response.json(); \r",
+									"        pm.expect(jsonData.name).to.eql(pm.environment.get(\"PPetNameP\"));\r",
+									"        pm.expect(jsonData.birthDate).to.eql(pm.environment.get(\"PBDateP\"));\r",
+									"        pm.expect(jsonData.type.name).to.eql(pm.environment.get(\"PPTypeNameP\"));\r",
+									"        pm.expect(jsonData.owner.firstName).to.not.eql(pm.environment.get(\"XPOFNameP\"));\r",
+									"        pm.expect(jsonData.owner.lastName).to.not.eql(pm.environment.get(\"XPOLNameP\"));\r",
+									"    });\r",
+									"\r",
+									"pm.globals.set(\"petID\", pm.response.json().id);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"XPPNameP\",\"Peppa\");\r",
+									"pm.environment.set(\"XPPBDateP\",\"2120/05/25\");\r",
+									"pm.environment.set(\"XPPetTypeNameP\",\"snake\");\r",
+									"pm.environment.set(\"XPOFNameP\",\"OldHat\");\r",
+									"pm.environment.set(\"XPOLNameP\",\"NewHat\");\r",
+									"\r",
+									"\r",
+									" "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 0,\r\n        \"name\": \"{{PPetNameP}}\",\r\n        \"birthDate\": \"{{PBDateP}}\",\r\n        \"type\": {\r\n            \"id\": {{PPTypeidP}},\r\n            \"name\": \"{{PPTypeNameP}}\"\r\n        },\r\n        \"owner\": {\r\n            \"id\": {{POOwneridP}},\r\n            \"firstName\": \"{{POFirstNameP}}\",\r\n            \"lastName\": \"{{POLastNameP}}\",\r\n            \"address\": \"{{POAddressP}}\",\r\n            \"city\": \"{{POCity}}\",\r\n            \"telephone\": \"{{POTelephoneP}}\"\r\n        },\r\n        \"visits\": []\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/pets",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"    pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Pet is updated\", () => {\r",
+									"  const expectedObject = {\r",
+									"    \"created\": true,\r",
+									"    \"errors\": []\r",
+									"  };\r",
+									"\r",
+									"});\r",
+									"var url = pm.environment.get(\"url\") + \"/pets/\" +  pm.globals.get(\"petID\");\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(getRequest, function (err, res) {\r",
+									"    if (err) { \r",
+									"        console.log(err);\r",
+									"    }\r",
+									"     console.log(res);\r",
+									"pm.test('Pet is updated in the Pets database', function () {\r",
+									"        pm.expect(console.log(err));\r",
+									"    })\r",
+									"   });"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 0,\r\n        \"name\": \"{{PPetNameU}}\",\r\n        \"birthDate\": \"{{PBDateU}}\",\r\n        \"type\": {\r\n            \"id\": {{PPTypeidU}},\r\n            \"name\": \"{{PPTypeNameU}}\"\r\n        },\r\n        \"owner\": {\r\n            \"id\": {{POOwneridU}},\r\n            \"firstName\": \"{{POFirstNameU}}\",\r\n            \"lastName\": \"{{POLastNameU}}\",\r\n            \"address\": \"{{POAddressU}}\",\r\n            \"city\": \"{{POCityU}}\",\r\n            \"telephone\": \"{{POTelephoneU}}\"\r\n        },\r\n        \"visits\": []\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/pets/{{petID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"{{petID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Details of Updated pet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Verify that the Owner Information is not empty\", function () {\r",
+									"    pm.expect(jsonData.pets).to.not.eql(\"\");\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Check the contents of Owner Data are not empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.include(null);\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Status code is 200\", () => pm.expect(responseCode.code).to.equal(200) );\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"    pm.test(\"Verify Information of New Pet Added\", () => {\r",
+									"        const jsonData = pm.response.json(); \r",
+									"        pm.expect(jsonData.name).to.eql(pm.environment.get(\"PPetNameU\"));\r",
+									"        pm.expect(jsonData.birthDate).to.eql(pm.environment.get(\"PBDateU\"));\r",
+									"        pm.expect(jsonData.type.name).to.eql(pm.environment.get(\"PPTypeNameU\"));\r",
+									"        pm.expect(jsonData.owner.firstName).to.eql(pm.environment.get(\"POFirstNameU\"));\r",
+									"        pm.expect(jsonData.owner.lastName).to.eql(pm.environment.get(\"POLastNameU\"));\r",
+									"    });\r",
+									" \r",
+									"    pm.test(\"Verify New Petdetails with wrong Pet and Owner Details\", () => {\r",
+									"        const jsonData = pm.response.json(); \r",
+									"        pm.expect(jsonData.name).to.not.eql(pm.environment.get(\"XPPNameU\"));\r",
+									"        pm.expect(jsonData.birthDate).to.not.eql(pm.environment.get(\"XPPBDateU\"));\r",
+									"        pm.expect(jsonData.type.name).to.not.eql(pm.environment.get(\"XPPetTypeNameU\"));\r",
+									"        pm.expect(jsonData.owner.firstName).to.not.eql(pm.environment.get(\"XPOFNameU\"));\r",
+									"        pm.expect(jsonData.owner.lastName).to.not.eql(pm.environment.get(\"XPOLNameU\"));\r",
+									"    });\r",
+									" \r",
+									"    pm.test(\"Verify New Petdetails with Correct Pet details BUT wrong Owner's Details\", () => {\r",
+									"        const jsonData = pm.response.json(); \r",
+									"        pm.expect(jsonData.name).to.eql(pm.environment.get(\"PPetNameU\"));\r",
+									"        pm.expect(jsonData.birthDate).to.eql(pm.environment.get(\"PBDateU\"));\r",
+									"        pm.expect(jsonData.type.name).to.eql(pm.environment.get(\"PPTypeNameU\"));\r",
+									"        pm.expect(jsonData.owner.firstName).to.not.eql(pm.environment.get(\"XPOFNameU\"));\r",
+									"        pm.expect(jsonData.owner.lastName).to.not.eql(pm.environment.get(\"XPOLNameU\"));\r",
+									"    });\r",
+									"\r",
+									"\r",
+									"pm.test(\"Verify that the pet is Connected to the Rightful Owner \",\r",
+									"() => { \r",
+									"   // pm.expect(jsonData.owner.id).to.eql(pm.environment.get(\"POOwneridU\"));\r",
+									"\r",
+									"    pm.expect(jsonData.owner.firstName).to.eql(pm.environment.get(\"POFirstNameU\"));\r",
+									"    pm.expect(jsonData.owner.lastName).to.eql(pm.environment.get(\"POLastNameU\"));\r",
+									"});\r",
+									"   \r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"XPPNameU\",\"Micky\");\r",
+									"pm.environment.set(\"XPPBDateU\",\"2010/05/25\");\r",
+									"pm.environment.set(\"XPPetTypeNameU\",\"ladybug\");\r",
+									"pm.environment.set(\"XPOFNameU\",\"OldHat\");\r",
+									"pm.environment.set(\"XPOLNameU\",\"NewHat\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/pets/{{petID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"{{petID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pet",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"var url = pm.environment.get(\"url\") + \"/pets/\" +  pm.globals.get(\"petID\");\r",
+									"\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"pm.sendRequest(getRequest, function (err, res) {\r",
+									"    if (err) { \r",
+									"        console.log(err);\r",
+									"    }\r",
+									"     console.log(res);\r",
+									"    \r",
+									"    pm.test('Response should be Not Found', function () {\r",
+									"        pm.expect(res.status).to.include(\"Not Found\");\r",
+									"    });\r",
+									"    \r",
+									"    pm.test(\"Response code 404\", function() {\r",
+									"        pm.expect(res.code).to.equal(404);\r",
+									"    })\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/pets/{{petID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"{{petID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pets Pettyps",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", () => pm.expect(responseCode.code).to.equal(200) );\r",
+									"const response = pm.response.json();\r",
+									"pm.test(\"Total No of Pettypes Displayed  : \" +response.length , function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(response.length);\r",
+									"});\r",
+									"pm.test(\"Verify Pettypes List is Displayed in Response \" , () => console.log(response));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/pets/pettypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pets",
+								"pettypes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PCPetTypes",
+			"item": [
+				{
+					"name": "Get PetTypes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									" \r",
+									"const response = pm.response.json();\r",
+									"console.log(response);\r",
+									"console.log(response.length);\r",
+									"console.log(response['response.lenth']);\r",
+									"\r",
+									"pm.test(\"Verify Owners List is Displayed in Response \" , () => console.log(response));\r",
+									"\r",
+									"pm.test(\"Total No of Owners Displayed  : \" +response.length , function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.length).to.eql(response.length);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/pettypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pettypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add PetType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.environment.set(\"name\",\"pig\");\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.globals.set(\"petTypeID\", pm.response.json().id);\r",
+									"\r",
+									"pm.test(\"Verify Created Pet is not Empty\", () => pm.expect(jsonData.pettypes).to.not.eql(\"\"));\r",
+									"\r",
+									"pm.test(\"Verify if Created Pettype is added in the pettypes Database \", function () {\r",
+									"     pm.expect(pm.response.text()).to.include(\"id\");\r",
+									"     });\r",
+									"\r",
+									"\r",
+									"\r",
+									"pm.test(\"Check Pettype which is Added is Correct\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"pig\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \r\n        \"name\": \"pig\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/pettypes",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pettypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update PetType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"PetType is updated\", () => {\r",
+									"  const expectedObject = {\r",
+									"    \"created\": true,\r",
+									"    \"errors\": []\r",
+									"  };\r",
+									"\r",
+									"});\r",
+									"var url = pm.environment.get(\"url\") + \"/pettypes/\" +  pm.globals.get(\"petTypeID\");\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"\r",
+									"pm.sendRequest(getRequest, function (okay, res) {\r",
+									"    if (okay) { \r",
+									"        console.log(okay);\r",
+									"    }\r",
+									"     console.log(res);\r",
+									"pm.test('PetType is updated in database', function () {\r",
+									"        pm.expect(console.log(okay));\r",
+									"    })\r",
+									"   }); "
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"snake\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/pettypes/{{petTypeID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pettypes",
+								"{{petTypeID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Updated PetType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									" \r",
+									"pm.globals.get(\"petTypeID\", pm.response.json().id);\r",
+									"pm.test(\"Verify that the Pettype Information is not empty\", function () {\r",
+									"    pm.expect(jsonData.owners).to.not.eql(\"\");\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Check the contents of Pettype Data are not empty\", function () {\r",
+									"    pm.expect(pm.response.text()).to.not.include(null);\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Status code is 200\", () => pm.expect(responseCode.code).to.equal(200) );\r",
+									"\r",
+									"const response = pm.response.json();\r",
+									"console.log(response);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/pettypes/{{petTypeID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pettypes",
+								"{{petTypeID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete PetType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});\r",
+									"\r",
+									"var url = pm.environment.get(\"url\") + \"/pettypes/\" +  pm.globals.get(\"petTypeID\");\r",
+									"\r",
+									"const getRequest = {\r",
+									"        url: url,\r",
+									"        method: 'GET'\r",
+									"};\r",
+									"pm.sendRequest(getRequest, function (err, res) {\r",
+									"    if (err) { \r",
+									"        console.log(err);\r",
+									"    }\r",
+									"     console.log(res);\r",
+									"    \r",
+									"    pm.test('Response should be Not Found', function () {\r",
+									"        pm.expect(res.status).to.include(\"Not Found\");\r",
+									"    });\r",
+									"    \r",
+									"    pm.test(\"Response code 404\", function() {\r",
+									"        pm.expect(res.code).to.equal(404);\r",
+									"    })\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Cookie",
+								"value": "name={{admin_name}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/pettypes/{{petTypeID}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"pettypes",
+								"{{petTypeID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
