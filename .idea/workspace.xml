@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Jenkinsfile" />
+    <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Jenkinsfile">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources/keywords.robot" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources/keywords.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/Results/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/Results/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/Results/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/Results/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/Results/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/Results/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/webtest.robot" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/webtest.robot" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +17,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="SamisBranch" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,6 +40,13 @@
       <option name="presentableId" value="Default" />
       <updated>1618831182123</updated>
     </task>
+    <task id="LOCAL−00001" summary="Update Jenkinsfile">
+      <created>1618838774605</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1618838774605</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -49,6 +63,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit Robotframework folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit Robotframework folder" />
+    <MESSAGE value="Update Jenkinsfile" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Jenkinsfile" />
   </component>
 </project>
