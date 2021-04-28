@@ -35,7 +35,7 @@ pipeline {
                     script {
                         step(
                             [
-                                $class                  :   'RobotPublisher',
+                               $class                  :   'RobotPublisher',
                                 outputPath              :   'spring-petclinic-angular/Tests/Results',
                                 outputFileName          :   '**/output.xml',
                                 reportFileName          :   '**/report.html',
