@@ -39,7 +39,7 @@ Editing a Owner Details With Invalid Values
   Then Verify Erorr Message Displayed Or Not
 
 *** Test Cases ***
-Editing a Owner Details With Invalid Values
+Editing a Owner Details With Empty Details/Values
   [Documentation]                          Leaving any Of The Details Empty and verifying
   [Tags]                                   Empty Detail Box and Erorr Message Should Come
   Given Go To Web Page
