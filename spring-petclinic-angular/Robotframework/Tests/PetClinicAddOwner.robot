@@ -6,8 +6,8 @@ Test Setup                             Begin WebTest
 Test Teardown                          End Web Test
 
 *** Variables ***
-${BROWSER}                             headless chrome
-${URL}                                 http://localhost:4200
+${BROWSER}                             chrome
+${URL}                                 http://localhost:4200/
 ${Welcome_Message}                     Welcome to Petclinic
 ${Firstname}                           Anna
 ${Lastname}                            Ramsey
