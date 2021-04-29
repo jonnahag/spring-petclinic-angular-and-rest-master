@@ -9,24 +9,26 @@ Test Teardown                              End Web Test
 
 ${BROWSER}                                 chrome
 ${URL}                                     http://localhost:4200/
-${expecting_pet}                           Mulligan
-${expecting_owner}                         Maria Escobito
-${expecting_owner1}                        Harold Davis
-${expecting_pet1}                          George
-#${Valid_pet}                               Mulligan
-#${Valid_owner}                             Maria Escobito
-#${Invalid_owner}                           Harold Davis
-#${Invalid_pet}                             George
-#${Empty_owner}                             Empty
-#${Empty_pet}                               Empty
+${Expecting_Pet1}                          Mulligan
+${Expecting_Owner1}                        Maria Escobito
+${Expecting_Owner2}                        Harold Davis
+${Expecting_Pet2}                          George
+${Expecting_PetA}                          Jewel
+${Expecting_PetB}                          Rosy
+${Expecting_Owner3}                        Eduardo Rodriquez
+${Error_Message}                           Maria EscobitoMulligan != Jeff BlackLucky
+
+
+
 *** Test Cases ***
-Validate if pet is connected to the rightful owner or not
+
+Testcase 1 Validate if pet is connected to the rightful owner or not
    [Documentation]                         To test if pet is connected to rightful owner
    [Tags]                                  Test 1 To Validate pet is connected to rightful owner
     Given Go to Web Page
     When Go to list of all owners
     And Select an owner
-    Then Verify selected Owner is with rightful pet
+    Then Verify selected Owner is with rightful pet 1
 
 Testcase 2 Invalid Owner
     [Documentation]                         To test if pet is not connected to rightful owner
@@ -34,8 +36,8 @@ Testcase 2 Invalid Owner
      Given Go to Web Page
      When Go to list of all owners
      And Inspect same owner and pet but click on different owner
-     And click on different owner
-     Then Verify selected Owner is not with rightful pet or test case fails
+     And Click on different owner
+     Then Verify selected Owner is not with rightful pet 1 or test case fails
 
 Testcase 3 Invalid Pet
     [Documentation]                         To test if pet is not connected to rightful owner
@@ -43,13 +45,17 @@ Testcase 3 Invalid Pet
      Given Go to Web Page
      When Go to list of all owners
      And Inspect on one owner and other's pet but click on same owner
-     Then Verify selected Owner is not with rightful pet 1 or test case fails
+     Then Verify selected Owner is not with rightful pet 2 or test case fails
 
 
-#*** Test Cases ***               Owner name        Pet                   click owner
-#Invalid pet                      same             not same                same
-#Invalid click owner              same             same                    not
-#Invalid Owner name And Pet       not              not                     same
-#Empty Owner name                 not              same                    same
-#Empty  Owner name And Pet        empty            empty                   same
+Testcase 4 Validate if pet(2 pets) are connected to the rightful owner
+     [Documentation]                         To test if pets are connected to rightful owner
+     [Tags]                                  Test 4 To Validate pets are connected to rightful owner
+     Given Go to Web Page
+     When Go to list of all owners
+     And Select an owner with 2 pets
+     Then Verify whether selected Owner is with rightful pet(2 pets)
+
+
+
 
