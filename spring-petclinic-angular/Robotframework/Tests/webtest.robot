@@ -6,26 +6,31 @@ Test Setup                   Begin Web Test
 Test Teardown                End Web Test
 
 *** Variables ***
-${BROWSER}      chrome
-${URL}          http://localhost:4200
-
+${BROWSER}          chrome
+${URL}              http://localhost:4200
+${EXPECTED_PET}     cat
+${CONFIGURED_PET}   Donkey
 
 *** Test Cases ***
 
 
-Access website
+Testcase 1: Test so that user can accses Petsclinic website.
     [Documentation]             Test for accessing website Petclinic
     [Tags]                      Access_test
-    Set Selenium Speed          0
-    #Test website connection
-    Wait until page contains    SpringPetclinicAngular
-    Click Element               xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]
-    Click Element               xpath://*[@id="pettypes"]/tbody/tr[1]/td[2]/button[1]
-    Input Text                  id=name   Donkey
-    Click Element               xpath://*[@id="pettype"]/div[2]/div/button[1]
-    Click Element               xpath:/html/body/app-root/div[1]/nav/div/ul/li[1]/a
-    Wait Until Page Contains    SpringPetclinicAngular
-    Close Browser
+    Given Go to Web Page
 
+Testcase 2: Test so that if the user clicks on Pet Types all Pet Types show.
+    [Documentation]             Test to se all Pet Types
+    [Tags]                      PetTypes_test
+    Given Go to Web Page
+    When Go to list of all Pet Types
+
+Testcase 3: Test so that user can configure the different Pet Types
+    [Documentation]             Test to configure Pet Types
+    [Tags]                      ConfigurePetTypes_test
+    Given Go to Web Page
+    When Go to list of all Pet Types
+    And Configure Pet Type
+    Then End Web Test
 
 # _______________________________________________________________________
