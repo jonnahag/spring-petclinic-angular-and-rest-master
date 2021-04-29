@@ -9,7 +9,7 @@ Suite Teardown              End Web Test
 *** Variables ***
 ${BROWSER}      headless chrome
 ${URL}          http://localhost:4200
-${Firstname}        Jurgen
+${Firstname}        Anna
 ${Lastname}         Ramsey
 ${Firstname2}       343434
 ${Lastname2}        934982
@@ -39,9 +39,9 @@ Test to insert variables as name and lasname
   [Documentation]         Variables as input for name/lastname
   [Tags]                  Test 2 Variables for input text
 
-  Given that the user is on the landing pagee
-  When a user Creates a new ownerr
-  Then a new owner should be createdd
+  Given that the user has acces to the web page
+  When a user creates a new owner with variables instead of letters
+  Then a new owner should be added to the list
 #___________________________________________________________________
 
 Test to add a owner that already exist
@@ -50,8 +50,8 @@ Test to add a owner that already exist
   [Tags]                  Test 3 Add same owner
 
 
-  Given that user is on landing paage
-  When When a user Creates a new owneer
+  Given user is on the landing page
+  When the user Creates a new owner
   And put already existing personal data
   Then a duplicate of the owner should be added
 
@@ -64,7 +64,7 @@ Test to add owner with special signs
     [Documentation]     input with special signs
     [Tags]              Test 4 special signs
 
-    Given that the user is on the landing pageee
-    When a user Creates a new ownner
+    Given user is located on landing page
+    When the user creates new owner
     And use special signs for input in name field
-    Then a new owner should be creatted
+    Then the new owner should be created

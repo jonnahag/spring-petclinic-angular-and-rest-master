@@ -44,11 +44,11 @@ Then a new owner should be created
 
 #test 2
 
-Given that the user is on the landing pagee
+Given that the user has acces to the web page
 
     Begin Web Test
 
-When a user Creates a new ownerr
+When a user creates a new owner with variables instead of letters
 
     Click Element               xpath://a[contains(text(),'Owners')]
     wait until page contains    Owners
@@ -61,7 +61,8 @@ When a user Creates a new ownerr
     Input Text                  id=telephone            ${Mobile2}
     Click Element               xpath://div/button[contains(string(), "Add Owner")]
 
-Then a new owner should be createdd
+Then a new owner should be added to the list
+
 
     Click Element                   xpath://a[contains(text(),'Owners')]
     wait until page contains        Owners
@@ -72,10 +73,10 @@ Then a new owner should be createdd
 #____________________________________________________________________________
 #test 3
 
-Given that user is on landing paage
+Given user is on the landing page
     Begin Web Test
 
-When When a user Creates a new owneer
+When the user Creates a new owner
     Click Element                  xpath://a[contains(text(),'Owners')]
     wait until page contains       Owners
     Click Element                  xpath://a[contains(text(),'Owners')]/../ul/li[2]/a
@@ -98,10 +99,11 @@ Then a duplicate of the owner should be added
 #____________________________________________________________________________
 #test4
 
-Given that the user is on the landing pageee
+Given user is located on landing page
     Begin Web Test
 
-When a user Creates a new ownner
+When the user creates new owner
+
     Click Element                  xpath://a[contains(text(),'Owners')]
     wait until page contains       Owners
     Click Element                  xpath://a[contains(text(),'Owners')]/../ul/li[2]/a
@@ -119,7 +121,8 @@ And use special signs for input in name field
     Input Text                  id=telephone            ${Mobile2}
     Click Element               xpath://div/button[contains(string(), "Add Owner")]
 
-Then a new owner should be creatted
+Then the new owner should be created
+
     Click Element                   xpath://a[contains(text(),'Owners')]
     wait until page contains        Owners
     Click Element                   xpath://a/span[contains(text(),'All')]
