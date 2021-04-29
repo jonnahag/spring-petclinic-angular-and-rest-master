@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Jenkinsfile">
+    <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Robot">
+      <change afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframeworktest2/Resources/keywords.robot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframeworktest2/Tests/webtest2.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources/keywords.robot" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources/keywords.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/Results/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/Results/log.html" afterDir="false" />
@@ -46,7 +48,25 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1618838774605</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Update Robot">
+      <created>1619598771180</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1619598771180</updated>
+    </task>
+    <task id="LOCAL−00003" summary="Update Robot">
+      <created>1619598814909</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1619598814909</updated>
+    </task>
+    <task id="LOCAL−00004" summary="Update Robot">
+      <created>1619598824943</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1619598824943</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -64,6 +84,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit Robotframework folder" />
     <MESSAGE value="Update Jenkinsfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Jenkinsfile" />
+    <MESSAGE value="Update Robot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Robot" />
   </component>
 </project>

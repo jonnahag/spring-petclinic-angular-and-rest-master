@@ -9,9 +9,18 @@ Suite Teardown              End Web Test
 *** Variables ***
 ${BROWSER}      headless chrome
 ${URL}          http://localhost:4200
-${Firstname}        Hallof
+${Firstname}        Jurgen
 ${Lastname}         Ramsey
-
+${Firstname2}       343434
+${Lastname2}        934982
+${Firstname3}       >Matt#<
+${Lastname3}        Uber!
+${Adress1}         Zooet
+${City1}          Göteborg
+${Mobile1}         070234234
+${Adress2}         Glasvägen 33
+${City2}          Göteborg
+${Mobile2}         0702342343
 
 *** Test Cases ***
 
