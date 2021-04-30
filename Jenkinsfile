@@ -58,25 +58,14 @@ pipeline {
         }
         
         
-       stage('DelayPostmanTest') {
-           steps {
-               sh 'sleep 5'
-          }
+       stage('Postman') {
+            steps {
+                sh 'newman run PostmanFiles/Spring_PetClinic.postman_collection.json -e PostmanFiles/PetClinic_Environment.postman_environment.json -- reporters junit'
+                 }
         }
         
 
-        stage('Postman') {
-            steps {
-              sh 'newman run Spring_PetClinic.postman_collection -e PetClinic_Environment.postman_environment  -- reporters junit'
-            }
-                post {
-                always {
-                    junit '**/TEST*.xml'
-                }
-            
-                }
-        }
-
+        
     }
 }
         
