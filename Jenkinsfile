@@ -60,7 +60,7 @@ pipeline {
         
        stage('Postman') {
             steps {
-                sh 'newman run PostmanFiles/Spring_PetClinic.postman_collection.json -e PostmanFiles/PetClinic_Environment.postman_environment.json -- reporters junit'
+                sh 'newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
                  }
         }
         
