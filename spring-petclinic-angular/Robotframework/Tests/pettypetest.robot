@@ -8,8 +8,6 @@ Test Teardown                End Web Test
 *** Variables ***
 ${BROWSER}          chrome
 ${URL}              http://localhost:4200
-${EXPECTED_PET}     cat
-${CONFIGURED_PET}   Donkey
 
 *** Test Cases ***
 
