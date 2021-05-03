@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation                Testar Selenium och RobotFramework
-Resource                     ../Resources/keywords.robot
+Resource                     ../Resources/pettypekeywords.robot
 Library                      SeleniumLibrary
 Test Setup                   Begin Web Test
 Test Teardown                End Web Test
