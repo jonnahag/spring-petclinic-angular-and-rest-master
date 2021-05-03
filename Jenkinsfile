@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    stages {
+     stages {
+         stage('parallel') {
+             parallel {
         stage('Build Rest-API') {
                     steps {
                         sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && nohup mvn spring-boot:run &'
@@ -62,5 +64,8 @@ pipeline {
                 }
         }
 
+             }
+         }
     }
+             
 }
