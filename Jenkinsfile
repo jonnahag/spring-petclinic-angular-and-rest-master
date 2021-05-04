@@ -1,39 +1,29 @@
 pipeline {
     agent any
-     stages {
-         stage('parallel') {
-             parallel {
+    stages {
         stage('Build Rest-API') {
                     steps {
                         sh 'cd spring-petclinic-rest-master/spring-petclinic-rest-master && nohup mvn spring-boot:run &'
-                         
                     }
                 }
 
-                stage('Build Angular-Front End') {
-                      steps {
-                        sh 'cd spring-petclinic-angular/static-content && curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar && nohup java -jar ./rawhttp.jar serve . -p 4200 &'
-                        sleep(3)
-                      }
-                }
-        
-     
+        stage('Build Angular-Front End') {
+            steps {
+                sh 'cd spring-petclinic-angular/static-content && curl https://jcenter.bintray.com/com/athaydes/rawhttp/rawhttp-cli/1.0/rawhttp-cli-1.0-all.jar -o rawhttp.jar && nohup java -jar ./rawhttp.jar serve . -p 4200 &'
+                sh 'sleep 11'
 
+            }
+        }
+         
         stage('Postman') {
             steps {
-               sleep(30)
-              sh 'newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
+                sh 'newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
             }
-                post {
-                always {
-                    junit '**/TEST*.xml'
-                }
-            
-                }
+
         }
-         stage('Robot') {
+
+        stage('Robot') {
             steps {
-                sleep (60)
                 sh 'robot --variable BROWSER:headlesschrome -d spring-petclinic-angular/Robotframework/Tests/Results spring-petclinic-angular/Robotframework/Tests'
             }
             post {
@@ -57,8 +47,6 @@ pipeline {
             }
         }
 
-             }
-         }
+       
     }
-             
 }
