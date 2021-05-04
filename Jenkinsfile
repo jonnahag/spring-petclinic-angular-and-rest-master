@@ -25,6 +25,20 @@ pipeline {
             }
 
         }
+        
+        stage('newman') {
+            steps {
+              sh 'newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
+            }
+                post {
+                always {
+                    junit '**/TEST*.xml'
+                }
+            
+                }
+        }
+        
+        
         stage('DelayRobotTest') {
            steps {
                sh 'sleep 20'
@@ -58,17 +72,7 @@ pipeline {
         }
         
         
-       stage('newman') {
-            steps {
-              sh 'newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
-            }
-                post {
-                always {
-                    junit '**/TEST*.xml'
-                }
-            
-                }
-        }
+       
         
 
         
