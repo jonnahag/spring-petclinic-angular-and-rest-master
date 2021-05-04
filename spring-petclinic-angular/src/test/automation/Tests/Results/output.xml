@@ -1,57 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.2 on win32)" generated="20210429 15:10:41.681" rpa="false">
-<suite id="s1" name="Pet" source="C:\Projects\PetClinic\spring-petclinic-angular\src\test\automation\Tests\pet.robot">
-<test id="s1-t1" name="Testcase 1 Validate if pet is connected to the rightful owner or not">
-<kw name="Begin Web Test" library="PetKeywords" type="setup">
+<robot generator="Robot 3.2.2 (Python 3.9.2 on win32)" generated="20210504 23:17:48.417" rpa="false">
+<suite id="s1" name="AddPetVisit" source="C:\Projects\PetClinic\spring-petclinic-angular\src\test\automation\Tests\AddPetVisit.robot">
+<test id="s1-t1" name="Adding a pet visit">
+<kw name="Begin WebTest" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
 <arg>about:blank</arg>
-<arg>${BROWSER}</arg>
+<arg>chrome</arg>
 </arguments>
-<msg timestamp="20210429 15:10:42.007" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210429 15:10:42.007" endtime="20210429 15:10:43.562"></status>
+<msg timestamp="20210504 23:17:48.743" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210504 23:17:48.743" endtime="20210504 23:17:50.217"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210429 15:10:43.562" endtime="20210429 15:10:43.689"></status>
+<status status="PASS" starttime="20210504 23:17:50.217" endtime="20210504 23:17:50.397"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>.5</arg>
 </arguments>
-<status status="PASS" starttime="20210429 15:10:43.689" endtime="20210429 15:10:43.690"></status>
+<status status="PASS" starttime="20210504 23:17:50.398" endtime="20210504 23:17:50.400"></status>
 </kw>
-<status status="PASS" starttime="20210429 15:10:42.006" endtime="20210429 15:10:43.690"></status>
+<status status="PASS" starttime="20210504 23:17:48.742" endtime="20210504 23:17:50.400"></status>
 </kw>
-<kw name="Given Go to Web Page" library="PetKeywords">
-<kw name="Load Page" library="PetKeywords">
+<kw name="Given Go To Web Page">
+<kw name="Load Page">
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20210429 15:10:43.692" level="INFO">Opening url 'http://localhost:4200/'</msg>
-<status status="PASS" starttime="20210429 15:10:43.692" endtime="20210429 15:10:44.784"></status>
+<msg timestamp="20210504 23:17:50.405" level="INFO">Opening url 'http://localhost:4200/'</msg>
+<status status="PASS" starttime="20210504 23:17:50.405" endtime="20210504 23:17:51.731"></status>
 </kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Welcome to Petclinic</arg>
-</arguments>
-<status status="PASS" starttime="20210429 15:10:44.784" endtime="20210429 15:10:45.306"></status>
+<status status="PASS" starttime="20210504 23:17:50.404" endtime="20210504 23:17:51.731"></status>
 </kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<arguments>
-<arg>.5</arg>
-</arguments>
-<status status="PASS" starttime="20210429 15:10:45.306" endtime="20210429 15:10:45.307"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:10:43.691" endtime="20210429 15:10:45.307"></status>
-</kw>
-<kw name="Verify Page Loaded" library="PetKeywords">
+<kw name="Verify Page Loaded">
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
 <arguments>
@@ -60,178 +46,226 @@
 <assign>
 <var>${actualTerm}</var>
 </assign>
-<msg timestamp="20210429 15:10:46.351" level="INFO">${actualTerm} = Welcome to Petclinic</msg>
-<status status="PASS" starttime="20210429 15:10:45.307" endtime="20210429 15:10:46.351"></status>
+<msg timestamp="20210504 23:17:52.772" level="INFO">${actualTerm} = Welcome to Petclinic</msg>
+<status status="PASS" starttime="20210504 23:17:51.732" endtime="20210504 23:17:52.772"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>Welcome to Petclinic</arg>
+<arg>${Welcome_Message}</arg>
 <arg>${actualTerm}</arg>
 </arguments>
-<status status="PASS" starttime="20210429 15:10:46.352" endtime="20210429 15:10:46.352"></status>
+<status status="PASS" starttime="20210504 23:17:52.772" endtime="20210504 23:17:52.772"></status>
 </kw>
-<status status="PASS" starttime="20210429 15:10:45.307" endtime="20210429 15:10:46.353"></status>
+<status status="PASS" starttime="20210504 23:17:51.731" endtime="20210504 23:17:52.773"></status>
 </kw>
-<status status="PASS" starttime="20210429 15:10:43.691" endtime="20210429 15:10:46.353"></status>
+<status status="PASS" starttime="20210504 23:17:50.403" endtime="20210504 23:17:52.773"></status>
 </kw>
-<kw name="When Go to list of all owners" library="PetKeywords">
+<kw name="When All Owners">
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/a</arg>
+<arg>xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/a</arg>
 </arguments>
-<msg timestamp="20210429 15:10:46.355" level="INFO">Clicking element 'xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/a'.</msg>
-<status status="PASS" starttime="20210429 15:10:46.355" endtime="20210429 15:10:47.441"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a</arg>
-</arguments>
-<msg timestamp="20210429 15:10:47.442" level="INFO">Clicking element 'xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a'.</msg>
-<status status="PASS" starttime="20210429 15:10:47.441" endtime="20210429 15:10:48.546"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:10:46.354" endtime="20210429 15:10:48.547"></status>
-</kw>
-<kw name="And Select an owner" library="PetKeywords">
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[8]/td[1]/a</arg>
-</arguments>
-<assign>
-<var>${Expecting_Owner1}</var>
-</assign>
-<msg timestamp="20210429 15:10:49.620" level="INFO">${Expecting_Owner1} = Maria Escobito</msg>
-<status status="PASS" starttime="20210429 15:10:48.549" endtime="20210429 15:10:49.620"></status>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[8]/td[5]/tr</arg>
-</arguments>
-<assign>
-<var>${Expecting_Pet1}</var>
-</assign>
-<msg timestamp="20210429 15:10:50.679" level="INFO">${Expecting_Pet1} = Mulligan</msg>
-<status status="PASS" starttime="20210429 15:10:49.620" endtime="20210429 15:10:50.679"></status>
+<msg timestamp="20210504 23:17:52.774" level="INFO">Clicking element 'xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20210504 23:17:52.774" endtime="20210504 23:17:53.873"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[8]/td[1]/a</arg>
+<arg>xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a</arg>
 </arguments>
-<msg timestamp="20210429 15:10:50.680" level="INFO">Clicking element 'xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[8]/td[1]/a'.</msg>
-<status status="PASS" starttime="20210429 15:10:50.679" endtime="20210429 15:10:51.784"></status>
+<msg timestamp="20210504 23:17:53.873" level="INFO">Clicking element 'xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20210504 23:17:53.873" endtime="20210504 23:17:54.996"></status>
 </kw>
-<status status="PASS" starttime="20210429 15:10:48.548" endtime="20210429 15:10:51.784"></status>
+<status status="PASS" starttime="20210504 23:17:52.774" endtime="20210504 23:17:54.996"></status>
 </kw>
-<kw name="Then Verify selected Owner is with rightful pet 1" library="PetKeywords">
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
+<kw name="And Select A Owner From The List">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/dd[1]</arg>
+<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[2]/td[1]/a</arg>
 </arguments>
-<assign>
-<var>${Actual_Pet1}</var>
-</assign>
-<msg timestamp="20210429 15:10:52.847" level="INFO">${Actual_Pet1} = Mulligan</msg>
-<status status="PASS" starttime="20210429 15:10:51.785" endtime="20210429 15:10:52.847"></status>
+<msg timestamp="20210504 23:17:54.997" level="INFO">Clicking element 'xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[2]/td[1]/a'.</msg>
+<status status="PASS" starttime="20210504 23:17:54.997" endtime="20210504 23:17:56.097"></status>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[1]/tr[1]/td/b</arg>
-</arguments>
-<assign>
-<var>${Actual_Owner1}</var>
-</assign>
-<msg timestamp="20210429 15:10:53.908" level="INFO">${Actual_Owner1} = Maria Escobito</msg>
-<status status="PASS" starttime="20210429 15:10:52.848" endtime="20210429 15:10:53.908"></status>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
-<arguments>
-<arg>${Expecting_Owner1}${Expecting_Pet1}</arg>
-<arg>${Actual_Owner1}${Actual_Pet1}</arg>
-</arguments>
-<status status="PASS" starttime="20210429 15:10:53.908" endtime="20210429 15:10:53.909"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>.25</arg>
 </arguments>
-<msg timestamp="20210429 15:10:54.161" level="INFO">Slept 250 milliseconds</msg>
-<status status="PASS" starttime="20210429 15:10:53.909" endtime="20210429 15:10:54.161"></status>
+<status status="PASS" starttime="20210504 23:17:56.097" endtime="20210504 23:17:56.097"></status>
 </kw>
-<status status="PASS" starttime="20210429 15:10:51.784" endtime="20210429 15:10:54.162"></status>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Betty Davis</arg>
+</arguments>
+<status status="PASS" starttime="20210504 23:17:56.098" endtime="20210504 23:17:56.365"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:17:54.997" endtime="20210504 23:17:56.365"></status>
+</kw>
+<kw name="And AddVisit Button or Add Pet visit in the owners info page">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/button[3]</arg>
+</arguments>
+<msg timestamp="20210504 23:17:56.366" level="INFO">Clicking button 'xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/button[3]'.</msg>
+<status status="PASS" starttime="20210504 23:17:56.366" endtime="20210504 23:17:57.827"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>New Visit</arg>
+</arguments>
+<status status="PASS" starttime="20210504 23:17:57.827" endtime="20210504 23:17:58.095"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:17:56.366" endtime="20210504 23:17:58.095"></status>
+</kw>
+<kw name="And Pet Visit Details">
+<arguments>
+<arg>${Pet_Visit_Date_1}</arg>
+<arg>${Pet_Visit_Description_1}</arg>
+</arguments>
+<kw name="Visit Date">
+<arguments>
+<arg>${Pet_VisitDate}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="visit"]/div[1]/div[1]/div/input</arg>
+<arg>${Pet_VisitDate}</arg>
+</arguments>
+<msg timestamp="20210504 23:17:58.098" level="INFO">Typing text '2021/05/05' into text field 'xpath://*[@id="visit"]/div[1]/div[1]/div/input'.</msg>
+<status status="PASS" starttime="20210504 23:17:58.097" endtime="20210504 23:17:59.041"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:17:58.097" endtime="20210504 23:17:59.041"></status>
+</kw>
+<kw name="Description">
+<arguments>
+<arg>${PetVisit_Description}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="description"]</arg>
+<arg>${PetVisit_Description}</arg>
+</arguments>
+<msg timestamp="20210504 23:17:59.042" level="INFO">Typing text 'check' into text field 'xpath://*[@id="description"]'.</msg>
+<status status="PASS" starttime="20210504 23:17:59.042" endtime="20210504 23:17:59.924"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="visit"]/div[2]/div/button[2]</arg>
+</arguments>
+<msg timestamp="20210504 23:17:59.924" level="INFO">Clicking button 'xpath://*[@id="visit"]/div[2]/div/button[2]'.</msg>
+<status status="PASS" starttime="20210504 23:17:59.924" endtime="20210504 23:18:01.279"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:17:59.041" endtime="20210504 23:18:01.279"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>.5</arg>
+</arguments>
+<status status="PASS" starttime="20210504 23:18:01.280" endtime="20210504 23:18:01.280"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:17:58.096" endtime="20210504 23:18:01.280"></status>
+</kw>
+<kw name="Then Verify Visit Added To A Pet">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[2]/app-visit-list/table/tr[3]/td[1]</arg>
+</arguments>
+<assign>
+<var>${Pet_Visit_Date_Added}</var>
+</assign>
+<msg timestamp="20210504 23:18:02.328" level="INFO">${Pet_Visit_Date_Added} = 2021/05/19</msg>
+<status status="PASS" starttime="20210504 23:18:01.281" endtime="20210504 23:18:02.328"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[2]/app-visit-list/table/tr[4]/td[2]</arg>
+</arguments>
+<assign>
+<var>${Pet_Visit_Description_Added}</var>
+</assign>
+<msg timestamp="20210504 23:18:03.375" level="INFO">${Pet_Visit_Description_Added} = Skeletal Checkup</msg>
+<status status="PASS" starttime="20210504 23:18:02.328" endtime="20210504 23:18:03.375"></status>
+</kw>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<doc>Verifies table contains text ``expected``.</doc>
+<arguments>
+<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[2]/app-visit-list/table</arg>
+<arg>${Pet_Visit_Date_Added}</arg>
+<arg>${Pet_Visit_Description_Added}</arg>
+</arguments>
+<status status="PASS" starttime="20210504 23:18:03.375" endtime="20210504 23:18:10.693"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>.5</arg>
+</arguments>
+<status status="PASS" starttime="20210504 23:18:10.693" endtime="20210504 23:18:10.693"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:18:01.281" endtime="20210504 23:18:10.694"></status>
 </kw>
 <kw name="End Web Test" library="PetKeywords" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210429 15:10:54.163" endtime="20210429 15:10:56.870"></status>
+<status status="PASS" starttime="20210504 23:18:10.695" endtime="20210504 23:18:13.463"></status>
 </kw>
-<status status="PASS" starttime="20210429 15:10:54.162" endtime="20210429 15:10:56.871"></status>
+<status status="PASS" starttime="20210504 23:18:10.695" endtime="20210504 23:18:13.463"></status>
 </kw>
-<doc>To test if pet is connected to rightful owner</doc>
+<doc>Testing adding a petvisit and verifying</doc>
 <tags>
-<tag>Test 1 To Validate pet is connected to rightful owner</tag>
+<tag>Testing adding a petvisit and verifying</tag>
 </tags>
-<status status="PASS" starttime="20210429 15:10:42.004" endtime="20210429 15:10:56.872" critical="yes"></status>
+<status status="PASS" starttime="20210504 23:17:48.741" endtime="20210504 23:18:13.464" critical="yes"></status>
 </test>
-<test id="s1-t2" name="Testcase 2 Invalid Owner">
-<kw name="Begin Web Test" library="PetKeywords" type="setup">
+<test id="s1-t2" name="Add multiple petvisits to one pet">
+<kw name="Begin WebTest" type="setup">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
 <arg>about:blank</arg>
-<arg>${BROWSER}</arg>
+<arg>chrome</arg>
 </arguments>
-<msg timestamp="20210429 15:10:56.878" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210429 15:10:56.877" endtime="20210429 15:10:58.720"></status>
+<msg timestamp="20210504 23:18:13.467" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210504 23:18:13.467" endtime="20210504 23:18:15.525"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210429 15:10:58.720" endtime="20210429 15:10:59.350"></status>
+<status status="PASS" starttime="20210504 23:18:15.525" endtime="20210504 23:18:16.158"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>.5</arg>
 </arguments>
-<status status="PASS" starttime="20210429 15:10:59.350" endtime="20210429 15:10:59.351"></status>
+<status status="PASS" starttime="20210504 23:18:16.158" endtime="20210504 23:18:16.159"></status>
 </kw>
-<status status="PASS" starttime="20210429 15:10:56.877" endtime="20210429 15:10:59.351"></status>
+<status status="PASS" starttime="20210504 23:18:13.467" endtime="20210504 23:18:16.159"></status>
 </kw>
-<kw name="Given Go to Web Page" library="PetKeywords">
-<kw name="Load Page" library="PetKeywords">
+<kw name="Given Go To Web Page">
+<kw name="Load Page">
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20210429 15:10:59.352" level="INFO">Opening url 'http://localhost:4200/'</msg>
-<status status="PASS" starttime="20210429 15:10:59.352" endtime="20210429 15:11:00.332"></status>
+<msg timestamp="20210504 23:18:16.161" level="INFO">Opening url 'http://localhost:4200/'</msg>
+<status status="PASS" starttime="20210504 23:18:16.160" endtime="20210504 23:18:17.228"></status>
 </kw>
-<kw name="Wait Until Page Contains" library="SeleniumLibrary">
-<doc>Waits until ``text`` appears on the current page.</doc>
-<arguments>
-<arg>Welcome to Petclinic</arg>
-</arguments>
-<status status="PASS" starttime="20210429 15:11:00.333" endtime="20210429 15:11:00.861"></status>
+<status status="PASS" starttime="20210504 23:18:16.160" endtime="20210504 23:18:17.229"></status>
 </kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<arguments>
-<arg>.5</arg>
-</arguments>
-<status status="PASS" starttime="20210429 15:11:00.861" endtime="20210429 15:11:00.862"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:10:59.352" endtime="20210429 15:11:00.862"></status>
-</kw>
-<kw name="Verify Page Loaded" library="PetKeywords">
+<kw name="Verify Page Loaded">
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
 <arguments>
@@ -240,528 +274,273 @@
 <assign>
 <var>${actualTerm}</var>
 </assign>
-<msg timestamp="20210429 15:11:01.909" level="INFO">${actualTerm} = Welcome to Petclinic</msg>
-<status status="PASS" starttime="20210429 15:11:00.863" endtime="20210429 15:11:01.909"></status>
+<msg timestamp="20210504 23:18:18.297" level="INFO">${actualTerm} = Welcome to Petclinic</msg>
+<status status="PASS" starttime="20210504 23:18:17.230" endtime="20210504 23:18:18.297"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
-<arg>Welcome to Petclinic</arg>
+<arg>${Welcome_Message}</arg>
 <arg>${actualTerm}</arg>
 </arguments>
-<status status="PASS" starttime="20210429 15:11:01.910" endtime="20210429 15:11:01.910"></status>
+<status status="PASS" starttime="20210504 23:18:18.297" endtime="20210504 23:18:18.298"></status>
 </kw>
-<status status="PASS" starttime="20210429 15:11:00.862" endtime="20210429 15:11:01.910"></status>
+<status status="PASS" starttime="20210504 23:18:17.229" endtime="20210504 23:18:18.298"></status>
 </kw>
-<status status="PASS" starttime="20210429 15:10:59.351" endtime="20210429 15:11:01.911"></status>
+<status status="PASS" starttime="20210504 23:18:16.159" endtime="20210504 23:18:18.298"></status>
 </kw>
-<kw name="When Go to list of all owners" library="PetKeywords">
+<kw name="When All Owners">
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/a</arg>
+<arg>xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/a</arg>
 </arguments>
-<msg timestamp="20210429 15:11:01.912" level="INFO">Clicking element 'xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/a'.</msg>
-<status status="PASS" starttime="20210429 15:11:01.912" endtime="20210429 15:11:02.997"></status>
+<msg timestamp="20210504 23:18:18.299" level="INFO">Clicking element 'xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20210504 23:18:18.299" endtime="20210504 23:18:19.366"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a</arg>
+<arg>xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a</arg>
 </arguments>
-<msg timestamp="20210429 15:11:02.998" level="INFO">Clicking element 'xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a'.</msg>
-<status status="PASS" starttime="20210429 15:11:02.997" endtime="20210429 15:11:04.106"></status>
+<msg timestamp="20210504 23:18:19.366" level="INFO">Clicking element 'xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a'.</msg>
+<status status="PASS" starttime="20210504 23:18:19.366" endtime="20210504 23:18:20.466"></status>
 </kw>
-<status status="PASS" starttime="20210429 15:11:01.912" endtime="20210429 15:11:04.107"></status>
+<status status="PASS" starttime="20210504 23:18:18.299" endtime="20210504 23:18:20.466"></status>
 </kw>
-<kw name="And Inspect same owner and pet but click on different owner" library="PetKeywords">
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[8]/td[1]/a</arg>
-</arguments>
-<assign>
-<var>${Expecting_Owner1}</var>
-</assign>
-<msg timestamp="20210429 15:11:05.183" level="INFO">${Expecting_Owner1} = Maria Escobito</msg>
-<status status="PASS" starttime="20210429 15:11:04.111" endtime="20210429 15:11:05.183"></status>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[8]/td[5]/tr</arg>
-</arguments>
-<assign>
-<var>${Expecting_Pet1}</var>
-</assign>
-<msg timestamp="20210429 15:11:06.222" level="INFO">${Expecting_Pet1} = Mulligan</msg>
-<status status="PASS" starttime="20210429 15:11:05.184" endtime="20210429 15:11:06.222"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:04.109" endtime="20210429 15:11:06.222"></status>
-</kw>
-<kw name="And Click on different owner" library="PetKeywords">
+<kw name="And Select A Owner From The List">
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[7]/td[1]/a</arg>
+<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[2]/td[1]/a</arg>
 </arguments>
-<msg timestamp="20210429 15:11:06.223" level="INFO">Clicking element 'xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[7]/td[1]/a'.</msg>
-<status status="PASS" starttime="20210429 15:11:06.222" endtime="20210429 15:11:07.325"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:06.222" endtime="20210429 15:11:07.325"></status>
-</kw>
-<kw name="Then Verify selected Owner is not with rightful pet 1 or test case fails" library="PetKeywords">
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/dd[1]</arg>
-</arguments>
-<assign>
-<var>${Actual_Pet1}</var>
-</assign>
-<msg timestamp="20210429 15:11:08.370" level="INFO">${Actual_Pet1} = Lucky</msg>
-<status status="PASS" starttime="20210429 15:11:07.326" endtime="20210429 15:11:08.370"></status>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[1]/tr[1]/td/b</arg>
-</arguments>
-<assign>
-<var>${Actual_Owner1}</var>
-</assign>
-<msg timestamp="20210429 15:11:09.412" level="INFO">${Actual_Owner1} = Jeff Black</msg>
-<status status="PASS" starttime="20210429 15:11:08.370" endtime="20210429 15:11:09.412"></status>
-</kw>
-<kw name="Should Not Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are equal.</doc>
-<arguments>
-<arg>${Expecting_Owner1}${Expecting_Pet1}</arg>
-<arg>${Actual_Owner1}${Actual_Pet1}</arg>
-</arguments>
-<status status="PASS" starttime="20210429 15:11:09.412" endtime="20210429 15:11:09.413"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>.25</arg>
-</arguments>
-<msg timestamp="20210429 15:11:09.665" level="INFO">Slept 250 milliseconds</msg>
-<status status="PASS" starttime="20210429 15:11:09.413" endtime="20210429 15:11:09.665"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:07.326" endtime="20210429 15:11:09.666"></status>
-</kw>
-<kw name="End Web Test" library="PetKeywords" type="teardown">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210429 15:11:09.670" endtime="20210429 15:11:12.346"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:09.669" endtime="20210429 15:11:12.347"></status>
-</kw>
-<doc>To test if pet is not connected to rightful owner</doc>
-<tags>
-<tag>Test 2 To Validate pet is not connected to rightful owner</tag>
-</tags>
-<status status="PASS" starttime="20210429 15:10:56.875" endtime="20210429 15:11:12.348" critical="yes"></status>
-</test>
-<test id="s1-t3" name="Testcase 3 Invalid Pet">
-<kw name="Begin Web Test" library="PetKeywords" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20210429 15:11:12.355" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210429 15:11:12.354" endtime="20210429 15:11:14.319"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210429 15:11:14.319" endtime="20210429 15:11:14.961"></status>
+<msg timestamp="20210504 23:18:20.468" level="INFO">Clicking element 'xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[2]/td[1]/a'.</msg>
+<status status="PASS" starttime="20210504 23:18:20.468" endtime="20210504 23:18:21.568"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>.5</arg>
+<arg>.25</arg>
 </arguments>
-<status status="PASS" starttime="20210429 15:11:14.961" endtime="20210429 15:11:14.962"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:12.353" endtime="20210429 15:11:14.962"></status>
-</kw>
-<kw name="Given Go to Web Page" library="PetKeywords">
-<kw name="Load Page" library="PetKeywords">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20210429 15:11:14.963" level="INFO">Opening url 'http://localhost:4200/'</msg>
-<status status="PASS" starttime="20210429 15:11:14.963" endtime="20210429 15:11:15.901"></status>
+<status status="PASS" starttime="20210504 23:18:21.568" endtime="20210504 23:18:21.569"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
-<arg>Welcome to Petclinic</arg>
+<arg>Betty Davis</arg>
 </arguments>
-<status status="PASS" starttime="20210429 15:11:15.901" endtime="20210429 15:11:16.425"></status>
+<status status="PASS" starttime="20210504 23:18:21.569" endtime="20210504 23:18:21.847"></status>
 </kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20210504 23:18:20.467" endtime="20210504 23:18:21.847"></status>
+</kw>
+<kw name="And AddVisit Button or Add Pet visit in the owners info page">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
 <arguments>
-<arg>.5</arg>
+<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/button[3]</arg>
 </arguments>
-<status status="PASS" starttime="20210429 15:11:16.425" endtime="20210429 15:11:16.425"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:14.963" endtime="20210429 15:11:16.426"></status>
-</kw>
-<kw name="Verify Page Loaded" library="PetKeywords">
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-welcome/h1</arg>
-</arguments>
-<assign>
-<var>${actualTerm}</var>
-</assign>
-<msg timestamp="20210429 15:11:17.464" level="INFO">${actualTerm} = Welcome to Petclinic</msg>
-<status status="PASS" starttime="20210429 15:11:16.426" endtime="20210429 15:11:17.464"></status>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
-<arguments>
-<arg>Welcome to Petclinic</arg>
-<arg>${actualTerm}</arg>
-</arguments>
-<status status="PASS" starttime="20210429 15:11:17.464" endtime="20210429 15:11:17.465"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:16.426" endtime="20210429 15:11:17.465"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:14.962" endtime="20210429 15:11:17.465"></status>
-</kw>
-<kw name="When Go to list of all owners" library="PetKeywords">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/a</arg>
-</arguments>
-<msg timestamp="20210429 15:11:17.466" level="INFO">Clicking element 'xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/a'.</msg>
-<status status="PASS" starttime="20210429 15:11:17.466" endtime="20210429 15:11:18.536"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a</arg>
-</arguments>
-<msg timestamp="20210429 15:11:18.536" level="INFO">Clicking element 'xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a'.</msg>
-<status status="PASS" starttime="20210429 15:11:18.536" endtime="20210429 15:11:19.652"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:17.465" endtime="20210429 15:11:19.652"></status>
-</kw>
-<kw name="And Inspect on one owner and other's pet but click on same owner" library="PetKeywords">
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[9]/td[1]/a</arg>
-</arguments>
-<assign>
-<var>${Expecting_Owner2}</var>
-</assign>
-<msg timestamp="20210429 15:11:20.693" level="INFO">${Expecting_Owner2} = David Schroeder</msg>
-<status status="PASS" starttime="20210429 15:11:19.653" endtime="20210429 15:11:20.693"></status>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[5]/td[5]/tr</arg>
-</arguments>
-<assign>
-<var>${Expecting_Pet2}</var>
-</assign>
-<msg timestamp="20210429 15:11:21.728" level="INFO">${Expecting_Pet2} = George</msg>
-<status status="PASS" starttime="20210429 15:11:20.693" endtime="20210429 15:11:21.728"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[4]/td[1]/a</arg>
-</arguments>
-<msg timestamp="20210429 15:11:21.729" level="INFO">Clicking element 'xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[4]/td[1]/a'.</msg>
-<status status="PASS" starttime="20210429 15:11:21.729" endtime="20210429 15:11:22.820"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:19.653" endtime="20210429 15:11:22.821"></status>
-</kw>
-<kw name="Then Verify selected Owner is not with rightful pet 2 or test case fails" library="PetKeywords">
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/dd[1]</arg>
-</arguments>
-<assign>
-<var>${Actual_Pet2}</var>
-</assign>
-<msg timestamp="20210429 15:11:23.896" level="INFO">${Actual_Pet2} = Iggy</msg>
-<status status="PASS" starttime="20210429 15:11:22.822" endtime="20210429 15:11:23.896"></status>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[1]/tr[1]/td/b</arg>
-</arguments>
-<assign>
-<var>${Actual_Owner2}</var>
-</assign>
-<msg timestamp="20210429 15:11:24.953" level="INFO">${Actual_Owner2} = Harold Davis</msg>
-<status status="PASS" starttime="20210429 15:11:23.897" endtime="20210429 15:11:24.953"></status>
-</kw>
-<kw name="Should Not Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are equal.</doc>
-<arguments>
-<arg>${Expecting_Owner2}${Expecting_Pet2}</arg>
-<arg>${Actual_Owner2} ${Actual_Pet2}</arg>
-</arguments>
-<status status="PASS" starttime="20210429 15:11:24.953" endtime="20210429 15:11:24.954"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>.25</arg>
-</arguments>
-<msg timestamp="20210429 15:11:25.215" level="INFO">Slept 250 milliseconds</msg>
-<status status="PASS" starttime="20210429 15:11:24.954" endtime="20210429 15:11:25.215"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:22.822" endtime="20210429 15:11:25.215"></status>
-</kw>
-<kw name="End Web Test" library="PetKeywords" type="teardown">
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210429 15:11:25.216" endtime="20210429 15:11:27.850"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:25.216" endtime="20210429 15:11:27.850"></status>
-</kw>
-<doc>To test if pet is not connected to rightful owner</doc>
-<tags>
-<tag>Test 3 To Validate pet is not connected to rightful owner</tag>
-</tags>
-<status status="PASS" starttime="20210429 15:11:12.352" endtime="20210429 15:11:27.851" critical="yes"></status>
-</test>
-<test id="s1-t4" name="Testcase 4 Validate if pet(2 pets) are connected to the rightful owner">
-<kw name="Begin Web Test" library="PetKeywords" type="setup">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<arguments>
-<arg>about:blank</arg>
-<arg>${BROWSER}</arg>
-</arguments>
-<msg timestamp="20210429 15:11:27.860" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210429 15:11:27.859" endtime="20210429 15:11:29.746"></status>
-</kw>
-<kw name="Maximize Browser Window" library="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210429 15:11:29.746" endtime="20210429 15:11:30.376"></status>
-</kw>
-<kw name="Set Selenium Speed" library="SeleniumLibrary">
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<arguments>
-<arg>.5</arg>
-</arguments>
-<status status="PASS" starttime="20210429 15:11:30.376" endtime="20210429 15:11:30.376"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:27.858" endtime="20210429 15:11:30.377"></status>
-</kw>
-<kw name="Given Go to Web Page" library="PetKeywords">
-<kw name="Load Page" library="PetKeywords">
-<kw name="Go To" library="SeleniumLibrary">
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<arguments>
-<arg>${URL}</arg>
-</arguments>
-<msg timestamp="20210429 15:11:30.379" level="INFO">Opening url 'http://localhost:4200/'</msg>
-<status status="PASS" starttime="20210429 15:11:30.378" endtime="20210429 15:11:31.412"></status>
+<msg timestamp="20210504 23:18:21.848" level="INFO">Clicking button 'xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/button[3]'.</msg>
+<status status="PASS" starttime="20210504 23:18:21.848" endtime="20210504 23:18:23.283"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
-<arg>Welcome to Petclinic</arg>
+<arg>New Visit</arg>
 </arguments>
-<status status="PASS" starttime="20210429 15:11:31.412" endtime="20210429 15:11:31.934"></status>
+<status status="PASS" starttime="20210504 23:18:23.283" endtime="20210504 23:18:23.558"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:18:21.848" endtime="20210504 23:18:23.558"></status>
+</kw>
+<kw name="And Pet Visit Details">
+<arguments>
+<arg>${Pet_Visit_Date_1}</arg>
+<arg>${Pet_Visit_Description_1}</arg>
+</arguments>
+<kw name="Visit Date">
+<arguments>
+<arg>${Pet_VisitDate}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="visit"]/div[1]/div[1]/div/input</arg>
+<arg>${Pet_VisitDate}</arg>
+</arguments>
+<msg timestamp="20210504 23:18:23.560" level="INFO">Typing text '2021/05/05' into text field 'xpath://*[@id="visit"]/div[1]/div[1]/div/input'.</msg>
+<status status="PASS" starttime="20210504 23:18:23.560" endtime="20210504 23:18:24.489"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:18:23.560" endtime="20210504 23:18:24.489"></status>
+</kw>
+<kw name="Description">
+<arguments>
+<arg>${PetVisit_Description}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="description"]</arg>
+<arg>${PetVisit_Description}</arg>
+</arguments>
+<msg timestamp="20210504 23:18:24.490" level="INFO">Typing text 'check' into text field 'xpath://*[@id="description"]'.</msg>
+<status status="PASS" starttime="20210504 23:18:24.490" endtime="20210504 23:18:25.388"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="visit"]/div[2]/div/button[2]</arg>
+</arguments>
+<msg timestamp="20210504 23:18:25.389" level="INFO">Clicking button 'xpath://*[@id="visit"]/div[2]/div/button[2]'.</msg>
+<status status="PASS" starttime="20210504 23:18:25.388" endtime="20210504 23:18:26.776"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:18:24.489" endtime="20210504 23:18:26.776"></status>
 </kw>
 <kw name="Set Selenium Speed" library="SeleniumLibrary">
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
 <arg>.5</arg>
 </arguments>
-<status status="PASS" starttime="20210429 15:11:31.934" endtime="20210429 15:11:31.934"></status>
+<status status="PASS" starttime="20210504 23:18:26.776" endtime="20210504 23:18:26.777"></status>
 </kw>
-<status status="PASS" starttime="20210429 15:11:30.378" endtime="20210429 15:11:31.935"></status>
+<status status="PASS" starttime="20210504 23:18:23.559" endtime="20210504 23:18:26.777"></status>
 </kw>
-<kw name="Verify Page Loaded" library="PetKeywords">
+<kw name="And AddVisit Button or Add Pet visit in the owners info page">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/button[3]</arg>
+</arguments>
+<msg timestamp="20210504 23:18:26.779" level="INFO">Clicking button 'xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/button[3]'.</msg>
+<status status="PASS" starttime="20210504 23:18:26.778" endtime="20210504 23:18:29.448"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>New Visit</arg>
+</arguments>
+<status status="PASS" starttime="20210504 23:18:29.448" endtime="20210504 23:18:29.959"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:18:26.778" endtime="20210504 23:18:29.959"></status>
+</kw>
+<kw name="And Pet Visit Details">
+<arguments>
+<arg>${Pet_Visit_Date_2}</arg>
+<arg>${Pet_Visit_Description_2}</arg>
+</arguments>
+<kw name="Visit Date">
+<arguments>
+<arg>${Pet_VisitDate}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="visit"]/div[1]/div[1]/div/input</arg>
+<arg>${Pet_VisitDate}</arg>
+</arguments>
+<msg timestamp="20210504 23:18:29.962" level="INFO">Typing text '2021/05/19' into text field 'xpath://*[@id="visit"]/div[1]/div[1]/div/input'.</msg>
+<status status="PASS" starttime="20210504 23:18:29.962" endtime="20210504 23:18:31.674"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:18:29.961" endtime="20210504 23:18:31.675"></status>
+</kw>
+<kw name="Description">
+<arguments>
+<arg>${PetVisit_Description}</arg>
+</arguments>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="description"]</arg>
+<arg>${PetVisit_Description}</arg>
+</arguments>
+<msg timestamp="20210504 23:18:31.677" level="INFO">Typing text 'Skeletal Checkup' into text field 'xpath://*[@id="description"]'.</msg>
+<status status="PASS" starttime="20210504 23:18:31.677" endtime="20210504 23:18:33.410"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="visit"]/div[2]/div/button[2]</arg>
+</arguments>
+<msg timestamp="20210504 23:18:33.412" level="INFO">Clicking button 'xpath://*[@id="visit"]/div[2]/div/button[2]'.</msg>
+<status status="PASS" starttime="20210504 23:18:33.411" endtime="20210504 23:18:36.046"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:18:31.676" endtime="20210504 23:18:36.046"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>.5</arg>
+</arguments>
+<status status="PASS" starttime="20210504 23:18:36.047" endtime="20210504 23:18:36.047"></status>
+</kw>
+<status status="PASS" starttime="20210504 23:18:29.960" endtime="20210504 23:18:36.048"></status>
+</kw>
+<kw name="Then Verify able to add multiple pet visits">
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath:/html/body/app-root/app-welcome/h1</arg>
+<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[2]/app-visit-list/table/tr[1]/td[1]</arg>
 </arguments>
 <assign>
-<var>${actualTerm}</var>
+<var>${Pet_SecondVisit_Date_Added}</var>
 </assign>
-<msg timestamp="20210429 15:11:32.977" level="INFO">${actualTerm} = Welcome to Petclinic</msg>
-<status status="PASS" starttime="20210429 15:11:31.935" endtime="20210429 15:11:32.977"></status>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
-<arguments>
-<arg>Welcome to Petclinic</arg>
-<arg>${actualTerm}</arg>
-</arguments>
-<status status="PASS" starttime="20210429 15:11:32.977" endtime="20210429 15:11:32.978"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:31.935" endtime="20210429 15:11:32.978"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:30.377" endtime="20210429 15:11:32.978"></status>
-</kw>
-<kw name="When Go to list of all owners" library="PetKeywords">
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/a</arg>
-</arguments>
-<msg timestamp="20210429 15:11:32.979" level="INFO">Clicking element 'xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/a'.</msg>
-<status status="PASS" starttime="20210429 15:11:32.979" endtime="20210429 15:11:34.047"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a</arg>
-</arguments>
-<msg timestamp="20210429 15:11:34.048" level="INFO">Clicking element 'xpath://html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a'.</msg>
-<status status="PASS" starttime="20210429 15:11:34.047" endtime="20210429 15:11:35.153"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:32.979" endtime="20210429 15:11:35.153"></status>
-</kw>
-<kw name="And Select an owner with 2 pets" library="PetKeywords">
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[3]/td[1]/a</arg>
-</arguments>
-<assign>
-<var>${Expecting_Owner3}</var>
-</assign>
-<msg timestamp="20210429 15:11:36.212" level="INFO">${Expecting_Owner3} = Eduardo Rodriquez</msg>
-<status status="PASS" starttime="20210429 15:11:35.154" endtime="20210429 15:11:36.212"></status>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[3]/td[5]/tr[1]</arg>
-</arguments>
-<assign>
-<var>${Expecting_PetA}</var>
-</assign>
-<msg timestamp="20210429 15:11:37.270" level="INFO">${Expecting_PetA} = Jewel</msg>
-<status status="PASS" starttime="20210429 15:11:36.212" endtime="20210429 15:11:37.270"></status>
-</kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[3]/td[5]/tr[2]</arg>
-</arguments>
-<assign>
-<var>${Expecting_PetB}</var>
-</assign>
-<msg timestamp="20210429 15:11:38.327" level="INFO">${Expecting_PetB} = Rosy</msg>
-<status status="PASS" starttime="20210429 15:11:37.270" endtime="20210429 15:11:38.327"></status>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[3]/td[1]/a</arg>
-</arguments>
-<msg timestamp="20210429 15:11:38.328" level="INFO">Clicking element 'xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[3]/td[1]/a'.</msg>
-<status status="PASS" starttime="20210429 15:11:38.328" endtime="20210429 15:11:39.423"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:35.154" endtime="20210429 15:11:39.424"></status>
-</kw>
-<kw name="Then Verify whether selected Owner is with rightful pet(2 pets)" library="PetKeywords">
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<arguments>
-<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list[1]/table/tr/td[1]/dl/dd[1]</arg>
-</arguments>
-<assign>
-<var>${Actual_PetA}</var>
-</assign>
-<msg timestamp="20210429 15:11:40.495" level="INFO">${Actual_PetA} = Jewel</msg>
-<status status="PASS" starttime="20210429 15:11:39.427" endtime="20210429 15:11:40.495"></status>
+<msg timestamp="20210504 23:18:37.097" level="INFO">${Pet_SecondVisit_Date_Added} = 2021/05/19</msg>
+<status status="PASS" starttime="20210504 23:18:36.049" endtime="20210504 23:18:37.097"></status>
 </kw>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
 <arguments>
-<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list[2]/table/tr/td[1]/dl/dd[1]</arg>
+<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[2]/app-visit-list/table/tr[1]/td[2]</arg>
 </arguments>
 <assign>
-<var>${Actual_PetB}</var>
+<var>${Pet_SecondVisit_Description_Added}</var>
 </assign>
-<msg timestamp="20210429 15:11:41.552" level="INFO">${Actual_PetB} = Rosy</msg>
-<status status="PASS" starttime="20210429 15:11:40.496" endtime="20210429 15:11:41.552"></status>
+<msg timestamp="20210504 23:18:38.148" level="INFO">${Pet_SecondVisit_Description_Added} = Skeletal Checkup</msg>
+<status status="PASS" starttime="20210504 23:18:37.097" endtime="20210504 23:18:38.148"></status>
 </kw>
-<kw name="Get Text" library="SeleniumLibrary">
-<doc>Returns the text value of the element identified by ``locator``.</doc>
+<kw name="Table Should Contain" library="SeleniumLibrary">
+<doc>Verifies table contains text ``expected``.</doc>
 <arguments>
-<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[1]/tr[1]/td/b</arg>
+<arg>xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[2]/app-visit-list/table</arg>
+<arg>${Pet_SecondVisit_Date_Added}</arg>
+<arg>${Pet_SecondVisit_Description_Added}</arg>
 </arguments>
-<assign>
-<var>${Actual_Owner3}</var>
-</assign>
-<msg timestamp="20210429 15:11:42.623" level="INFO">${Actual_Owner3} = Eduardo Rodriquez</msg>
-<status status="PASS" starttime="20210429 15:11:41.552" endtime="20210429 15:11:42.624"></status>
+<status status="PASS" starttime="20210504 23:18:38.148" endtime="20210504 23:18:45.480"></status>
 </kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<doc>Fails if the given objects are unequal.</doc>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
 <arguments>
-<arg>${Expecting_Owner3}${Expecting_PetA}${Expecting_PetB}</arg>
-<arg>${Actual_Owner3}${Actual_PetA}${Actual_PetB}</arg>
+<arg>.5</arg>
 </arguments>
-<status status="PASS" starttime="20210429 15:11:42.624" endtime="20210429 15:11:42.625"></status>
+<status status="PASS" starttime="20210504 23:18:45.480" endtime="20210504 23:18:45.480"></status>
 </kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>.25</arg>
-</arguments>
-<msg timestamp="20210429 15:11:42.888" level="INFO">Slept 250 milliseconds</msg>
-<status status="PASS" starttime="20210429 15:11:42.625" endtime="20210429 15:11:42.888"></status>
-</kw>
-<status status="PASS" starttime="20210429 15:11:39.425" endtime="20210429 15:11:42.888"></status>
+<status status="PASS" starttime="20210504 23:18:36.048" endtime="20210504 23:18:45.481"></status>
 </kw>
 <kw name="End Web Test" library="PetKeywords" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210429 15:11:42.890" endtime="20210429 15:11:45.541"></status>
+<status status="PASS" starttime="20210504 23:18:45.482" endtime="20210504 23:18:48.267"></status>
 </kw>
-<status status="PASS" starttime="20210429 15:11:42.889" endtime="20210429 15:11:45.541"></status>
+<status status="PASS" starttime="20210504 23:18:45.482" endtime="20210504 23:18:48.267"></status>
 </kw>
-<doc>To test if pets are connected to rightful owner</doc>
+<doc>Adding a petvisit and verifying It Can Add Multile visits</doc>
 <tags>
-<tag>Test 4 To Validate pets are connected to rightful owner</tag>
+<tag>Testing adding Multiple Petvisits and verifying</tag>
 </tags>
-<status status="PASS" starttime="20210429 15:11:27.856" endtime="20210429 15:11:45.542" critical="yes"></status>
+<status status="PASS" starttime="20210504 23:18:13.466" endtime="20210504 23:18:48.268" critical="yes"></status>
 </test>
 <doc>This is some basic info about the whole test suite</doc>
-<status status="PASS" starttime="20210429 15:10:41.683" endtime="20210429 15:11:45.546"></status>
+<status status="PASS" starttime="20210504 23:17:48.419" endtime="20210504 23:18:48.270"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0">Critical Tests</stat>
-<stat pass="4" fail="0">All Tests</stat>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0">Test 1 To Validate pet is connected to rightful owner</stat>
-<stat pass="1" fail="0">Test 2 To Validate pet is not connected to rightful owner</stat>
-<stat pass="1" fail="0">Test 3 To Validate pet is not connected to rightful owner</stat>
-<stat pass="1" fail="0">Test 4 To Validate pets are connected to rightful owner</stat>
+<stat pass="1" fail="0">Testing adding a petvisit and verifying</stat>
+<stat pass="1" fail="0">Testing adding Multiple Petvisits and verifying</stat>
 </tag>
 <suite>
-<stat pass="4" fail="0" id="s1" name="Pet">Pet</stat>
+<stat pass="2" fail="0" id="s1" name="AddPetVisit">AddPetVisit</stat>
 </suite>
 </statistics>
 <errors>
