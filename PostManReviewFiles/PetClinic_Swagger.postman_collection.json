@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "c2bd6887-611b-4ee1-a455-8c81987f4c51",
+		"name": "PetClinic_Swagger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PCPetVisits",
+			"item": [
+				{
+					"name": "Delete visits",
+					"item": [
+						{
+							"name": "Add Visits",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var jsonData=pm.response.json();\r",
+											"pm.globals.set(\"visitId\",jsonData.id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": " {\r\n        \"id\": 0,\r\n        \"date\": \"2021/08/05\",\r\n        \"description\": \"Vaccination\",\r\n        \"pet\": {\r\n            \"id\": 2,\r\n            \"name\": \"Basil\",\r\n            \"birthDate\": \"2012/08/06\",\r\n            \"type\": {\r\n                \"id\": 6,\r\n                \"name\": \"hamster\"\r\n            },\r\n            \"owner\": {\r\n                \"id\": 2,\r\n                \"firstName\": \"Betty\",\r\n                \"lastName\": \"Davis\",\r\n                \"address\": \"638 Cardinal Ave.\",\r\n                \"city\": \"Sun Prairie\",\r\n                \"telephone\": \"6085551749\"\r\n            }\r\n        }\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/visits",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"visits"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete visits",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Delete pet visit Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});\r",
+											"\r",
+											"var url = pm.environment.get(\"url\") + \"/visits/\" +  pm.globals.get(\"visitId\");\r",
+											"\r",
+											"const getRequest = {\r",
+											"        url: url,\r",
+											"        method: 'GET'\r",
+											"};\r",
+											"pm.sendRequest(getRequest, function (err, res) {\r",
+											"    if (err) { \r",
+											"        console.log(err);\r",
+											"    }\r",
+											"     console.log(res);\r",
+											"    \r",
+											"    pm.test('Response should be Not Found', function () {\r",
+											"        pm.expect(res.status).to.include(\"Not Found\");\r",
+											"    });\r",
+											"    \r",
+											"    pm.test(\"Response code 404\", function() {\r",
+											"        pm.expect(res.code).to.equal(404);\r",
+											"    })\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/visits/{{visitId}}",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"visits",
+										"{{visitId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

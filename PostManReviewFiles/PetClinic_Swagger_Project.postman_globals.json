@@ -1,0 +1,14 @@
+{
+	"id": "d99290df-83a7-4e2b-8820-abbe568c601f",
+	"values": [
+		{
+			"key": "visitId",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"name": "PetClinic_Swagger_Project Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2021-05-04T20:31:40.262Z",
+	"_postman_exported_using": "Postman/8.3.0"
+}
