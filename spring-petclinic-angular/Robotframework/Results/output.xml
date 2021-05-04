@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.1 on darwin)" generated="20210504 11:08:29.991" rpa="false">
+<suite id="s1" name="Tests" source="/Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Tests">
+<suite id="s1-s1" name="PetClinicAddOwner" source="/Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Tests/PetClinicAddOwner.robot">
+<test id="s1-s1-t1" name="Test add a new owner">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.249" level="INFO">Opening browser 'firefox' to base url 'headlesschrome'.</msg>
+<msg timestamp="20210504 11:08:30.251" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-1.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.260" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.260" endtime="20210504 11:08:30.261"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.266" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.249" endtime="20210504 11:08:30.266"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.248" endtime="20210504 11:08:30.267"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.268" endtime="20210504 11:08:30.269"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.268" endtime="20210504 11:08:30.269"></status>
+</kw>
+<doc>Adding a new owner</doc>
+<tags>
+<tag>Add</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.247" endtime="20210504 11:08:30.269" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<test id="s1-s1-t2" name="Test to insert variables as name and lasname">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.273" level="INFO">Opening browser 'firefox' to base url 'headlesschrome'.</msg>
+<msg timestamp="20210504 11:08:30.274" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-2.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.282" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.281" endtime="20210504 11:08:30.282"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.283" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.273" endtime="20210504 11:08:30.283"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.272" endtime="20210504 11:08:30.284"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.285" endtime="20210504 11:08:30.286"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.285" endtime="20210504 11:08:30.287"></status>
+</kw>
+<doc>Variables as input for name/lastname</doc>
+<tags>
+<tag>Test 2 Variables for input text</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.271" endtime="20210504 11:08:30.287" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<test id="s1-s1-t3" name="Test to add a owner that already exist">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.290" level="INFO">Opening browser 'firefox' to base url 'headlesschrome'.</msg>
+<msg timestamp="20210504 11:08:30.290" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-3.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.296" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.295" endtime="20210504 11:08:30.297"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.298" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.290" endtime="20210504 11:08:30.298"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.289" endtime="20210504 11:08:30.298"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.300" endtime="20210504 11:08:30.300"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.299" endtime="20210504 11:08:30.300"></status>
+</kw>
+<doc>Adding already existing owner</doc>
+<tags>
+<tag>Test 3 Add same owner</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.288" endtime="20210504 11:08:30.301" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<test id="s1-s1-t4" name="Test to add owner with special signs">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.309" level="INFO">Opening browser 'firefox' to base url 'headlesschrome'.</msg>
+<msg timestamp="20210504 11:08:30.310" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-4.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.318" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.315" endtime="20210504 11:08:30.318"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.319" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.309" endtime="20210504 11:08:30.320"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.308" endtime="20210504 11:08:30.320"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.324" endtime="20210504 11:08:30.324"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.322" endtime="20210504 11:08:30.325"></status>
+</kw>
+<doc>input with special signs</doc>
+<tags>
+<tag>Test 4 special signs</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.305" endtime="20210504 11:08:30.325" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<doc>Testar Selenium och RobotFramework</doc>
+<status status="FAIL" starttime="20210504 11:08:30.022" endtime="20210504 11:08:30.328"></status>
+</suite>
+<suite id="s1-s2" name="PetClinicAddPet" source="/Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Tests/PetClinicAddPet.robot">
+<test id="s1-s2-t1" name="Adding a new pet to A Owner">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.347" level="INFO">Opening browser 'firefox' to base url 'chrome'.</msg>
+<msg timestamp="20210504 11:08:30.348" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-5.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.360" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.359" endtime="20210504 11:08:30.360"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.361" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.346" endtime="20210504 11:08:30.361"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.346" endtime="20210504 11:08:30.361"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.365" endtime="20210504 11:08:30.365"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.362" endtime="20210504 11:08:30.366"></status>
+</kw>
+<doc>Testing adding a newpet and verifying</doc>
+<tags>
+<tag>Testing adding a newpet and verifying</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.344" endtime="20210504 11:08:30.366" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<test id="s1-s2-t2" name="Adding A New Pet To The Owner And verifying With Diffrent Owner">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.374" level="INFO">Opening browser 'firefox' to base url 'chrome'.</msg>
+<msg timestamp="20210504 11:08:30.375" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-6.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.389" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.388" endtime="20210504 11:08:30.389"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.390" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.373" endtime="20210504 11:08:30.391"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.373" endtime="20210504 11:08:30.392"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.394" endtime="20210504 11:08:30.394"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.393" endtime="20210504 11:08:30.394"></status>
+</kw>
+<doc>Adding a newpet and verifying with InValid Owner</doc>
+<tags>
+<tag>Testing adding a newpet and verifying With Diffrent Owner</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.368" endtime="20210504 11:08:30.395" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<test id="s1-s2-t3" name="Adding A New Pet To The Owner And verifying Pet Can Add Multiple Types">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.404" level="INFO">Opening browser 'firefox' to base url 'chrome'.</msg>
+<msg timestamp="20210504 11:08:30.409" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-7.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.416" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.415" endtime="20210504 11:08:30.416"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.417" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.401" endtime="20210504 11:08:30.417"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.398" endtime="20210504 11:08:30.417"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.422" endtime="20210504 11:08:30.423"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.419" endtime="20210504 11:08:30.423"></status>
+</kw>
+<doc>Adding a newpet and verifying It Can Add Multile Times</doc>
+<tags>
+<tag>Testing adding Multiple Pets and verifying</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.396" endtime="20210504 11:08:30.423" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<test id="s1-s2-t4" name="Deleting A Newly Added Pet">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.426" level="INFO">Opening browser 'firefox' to base url 'chrome'.</msg>
+<msg timestamp="20210504 11:08:30.427" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-8.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.434" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.432" endtime="20210504 11:08:30.434"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.436" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.426" endtime="20210504 11:08:30.437"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.425" endtime="20210504 11:08:30.438"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.444" endtime="20210504 11:08:30.445"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.440" endtime="20210504 11:08:30.445"></status>
+</kw>
+<doc>Adding And Deleting same Pet And Verifying</doc>
+<tags>
+<tag>Testing Deletiing Pet and verifying</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.424" endtime="20210504 11:08:30.445" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<doc>Infotiv Petclinic Test Functionality</doc>
+<status status="FAIL" starttime="20210504 11:08:30.333" endtime="20210504 11:08:30.446"></status>
+</suite>
+<suite id="s1-s3" name="PetClinicEditAnOwner" source="/Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Tests/PetClinicEditAnOwner.robot">
+<test id="s1-s3-t1" name="Editing a Owner Details in petclinic website">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.475" level="INFO">Opening browser 'firefox' to base url 'chrome'.</msg>
+<msg timestamp="20210504 11:08:30.476" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-9.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.483" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.482" endtime="20210504 11:08:30.483"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.484" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.474" endtime="20210504 11:08:30.485"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.473" endtime="20210504 11:08:30.489"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.492" endtime="20210504 11:08:30.492"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.491" endtime="20210504 11:08:30.492"></status>
+</kw>
+<doc>Testing Editing Owner Details and verifying</doc>
+<tags>
+<tag>Editing A Owner and verifying</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.469" endtime="20210504 11:08:30.492" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<test id="s1-s3-t2" name="Editing a Owner Details With Invalid Values">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.494" level="INFO">Opening browser 'firefox' to base url 'chrome'.</msg>
+<msg timestamp="20210504 11:08:30.497" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-10.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.504" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.503" endtime="20210504 11:08:30.505"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.507" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.494" endtime="20210504 11:08:30.509"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.493" endtime="20210504 11:08:30.512"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.513" endtime="20210504 11:08:30.513"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.512" endtime="20210504 11:08:30.513"></status>
+</kw>
+<doc>Editing Owner Telephone Number with Alphabets and verifying</doc>
+<tags>
+<tag>Editing With Alphabets and Erorr Message Should Come</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.493" endtime="20210504 11:08:30.514" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<test id="s1-s3-t3" name="Editing a Owner Details With Empty Details/Values">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.516" level="INFO">Opening browser 'firefox' to base url 'chrome'.</msg>
+<msg timestamp="20210504 11:08:30.516" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-11.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.528" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.527" endtime="20210504 11:08:30.528"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.529" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.515" endtime="20210504 11:08:30.529"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.515" endtime="20210504 11:08:30.529"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.530" endtime="20210504 11:08:30.531"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.530" endtime="20210504 11:08:30.531"></status>
+</kw>
+<doc>Leaving any Of The Details Empty and verifying</doc>
+<tags>
+<tag>Empty Detail Box and Erorr Message Should Come</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.514" endtime="20210504 11:08:30.531" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<doc>Infotiv Petclinic Test Functionality</doc>
+<status status="FAIL" starttime="20210504 11:08:30.448" endtime="20210504 11:08:30.535"></status>
+</suite>
+<suite id="s1-s4" name="PetClinicRightfulPetAndOwner" source="/Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Tests/PetClinicRightfulPetAndOwner.robot">
+<test id="s1-s4-t1" name="Testcase 1 Validate if pet is connected to the rightful owner or not">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.559" level="INFO">Opening browser 'firefox' to base url 'chrome'.</msg>
+<msg timestamp="20210504 11:08:30.559" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-12.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.567" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.565" endtime="20210504 11:08:30.567"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.568" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.558" endtime="20210504 11:08:30.569"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.558" endtime="20210504 11:08:30.570"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.574" endtime="20210504 11:08:30.574"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.573" endtime="20210504 11:08:30.575"></status>
+</kw>
+<doc>To test if pet is connected to rightful owner</doc>
+<tags>
+<tag>Test 1 To Validate pet is connected to rightful owner</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.557" endtime="20210504 11:08:30.576" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<test id="s1-s4-t2" name="Testcase 2 Invalid Owner">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.581" level="INFO">Opening browser 'firefox' to base url 'chrome'.</msg>
+<msg timestamp="20210504 11:08:30.584" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-13.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.593" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.592" endtime="20210504 11:08:30.594"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.598" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.580" endtime="20210504 11:08:30.599"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.579" endtime="20210504 11:08:30.599"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.600" endtime="20210504 11:08:30.600"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.599" endtime="20210504 11:08:30.600"></status>
+</kw>
+<doc>To test if pet is not connected to rightful owner</doc>
+<tags>
+<tag>Test 2 To Validate pet is not connected to rightful owner</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.577" endtime="20210504 11:08:30.600" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<test id="s1-s4-t3" name="Testcase 3 Invalid Pet">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.605" level="INFO">Opening browser 'firefox' to base url 'chrome'.</msg>
+<msg timestamp="20210504 11:08:30.607" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-14.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.617" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.616" endtime="20210504 11:08:30.617"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.618" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.605" endtime="20210504 11:08:30.619"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.603" endtime="20210504 11:08:30.623"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.624" endtime="20210504 11:08:30.625"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.624" endtime="20210504 11:08:30.625"></status>
+</kw>
+<doc>To test if pet is not connected to rightful owner</doc>
+<tags>
+<tag>Test 3 To Validate pet is not connected to rightful owner</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.601" endtime="20210504 11:08:30.625" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<test id="s1-s4-t4" name="Testcase 4 Validate if pet(2 pets) are connected to the rightful owner">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210504 11:08:30.627" level="INFO">Opening browser 'firefox' to base url 'chrome'.</msg>
+<msg timestamp="20210504 11:08:30.628" level="INFO">Firefox driver log is always forced to to: /Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Results/geckodriver-15.log</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210504 11:08:30.634" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" starttime="20210504 11:08:30.633" endtime="20210504 11:08:30.634"></status>
+</kw>
+<msg timestamp="20210504 11:08:30.635" level="FAIL">WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</msg>
+<status status="FAIL" starttime="20210504 11:08:30.626" endtime="20210504 11:08:30.635"></status>
+</kw>
+<status status="FAIL" starttime="20210504 11:08:30.626" endtime="20210504 11:08:30.635"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210504 11:08:30.642" endtime="20210504 11:08:30.643"></status>
+</kw>
+<status status="PASS" starttime="20210504 11:08:30.639" endtime="20210504 11:08:30.643"></status>
+</kw>
+<doc>To test if pets are connected to rightful owner</doc>
+<tags>
+<tag>Test 4 To Validate pets are connected to rightful owner</tag>
+</tags>
+<status status="FAIL" starttime="20210504 11:08:30.625" endtime="20210504 11:08:30.643" critical="yes">Setup failed:
+WebDriverException: Message: 'geckodriver' executable needs to be in PATH. 
+</status>
+</test>
+<doc>This is some basic info about the whole test suite</doc>
+<status status="FAIL" starttime="20210504 11:08:30.539" endtime="20210504 11:08:30.644"></status>
+</suite>
+<status status="FAIL" starttime="20210504 11:08:29.993" endtime="20210504 11:08:30.647"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="15">Critical Tests</stat>
+<stat pass="0" fail="15">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1">Add</stat>
+<stat pass="0" fail="1">Editing A Owner and verifying</stat>
+<stat pass="0" fail="1">Editing With Alphabets and Erorr Message Should Come</stat>
+<stat pass="0" fail="1">Empty Detail Box and Erorr Message Should Come</stat>
+<stat pass="0" fail="1">Test 1 To Validate pet is connected to rightful owner</stat>
+<stat pass="0" fail="1">Test 2 To Validate pet is not connected to rightful owner</stat>
+<stat pass="0" fail="1">Test 2 Variables for input text</stat>
+<stat pass="0" fail="1">Test 3 Add same owner</stat>
+<stat pass="0" fail="1">Test 3 To Validate pet is not connected to rightful owner</stat>
+<stat pass="0" fail="1">Test 4 special signs</stat>
+<stat pass="0" fail="1">Test 4 To Validate pets are connected to rightful owner</stat>
+<stat pass="0" fail="1">Testing adding a newpet and verifying</stat>
+<stat pass="0" fail="1">Testing adding a newpet and verifying With Diffrent Owner</stat>
+<stat pass="0" fail="1">Testing adding Multiple Pets and verifying</stat>
+<stat pass="0" fail="1">Testing Deletiing Pet and verifying</stat>
+</tag>
+<suite>
+<stat pass="0" fail="15" id="s1" name="Tests">Tests</stat>
+<stat pass="0" fail="4" id="s1-s1" name="PetClinicAddOwner">Tests.PetClinicAddOwner</stat>
+<stat pass="0" fail="4" id="s1-s2" name="PetClinicAddPet">Tests.PetClinicAddPet</stat>
+<stat pass="0" fail="3" id="s1-s3" name="PetClinicEditAnOwner">Tests.PetClinicEditAnOwner</stat>
+<stat pass="0" fail="4" id="s1-s4" name="PetClinicRightfulPetAndOwner">Tests.PetClinicRightfulPetAndOwner</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
