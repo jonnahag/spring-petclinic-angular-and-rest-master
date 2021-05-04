@@ -1,7 +1,7 @@
 *** Keywords ***
 Test Navigates to chrome Home Page
 Begin WebTest
-    OPEN BROWSER                                       ${BROWSER}
+    OPEN BROWSER                                       about:blank                    ${BROWSER}
     #Maximize Browser Window
     Set Selenium Speed                                .5
 Go To Web Page
