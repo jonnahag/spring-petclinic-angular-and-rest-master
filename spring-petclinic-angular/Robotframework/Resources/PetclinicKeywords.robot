@@ -1,7 +1,7 @@
 *** Keywords ***
 Test Navigates to chrome Home Page
 Begin WebTest
-    OPEN BROWSER                                      ${BROWSER}                         headlesschrome
+    OPEN BROWSER                                      ${BROWSER}                         chrome
     #Maximize Browser Window
     Set Selenium Speed                                .5
 Go To Web Page
