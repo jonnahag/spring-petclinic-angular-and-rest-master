@@ -9,11 +9,19 @@ Test Teardown                          End Web Test
 ${BROWSER}                             chrome
 ${URL}                                 http://localhost:4200/
 ${Welcome_Message}                     Welcome to Petclinic
+${EXPECTED_PETTYPES_PAGE}              Pet Types
+${NEW_PETTYPE_NAME}                    bunny
 
 *** Test Cases ***
 
 Test add a new Pet Type
-    [Documentation]                    Adding a new owner
-    [Tags]                             Add
+    [Documentation]                    Adding a new Pet Type
+    [Tags]                             Add  Pet Type
+
+    Given user is on the landing page
+    Go to Pet Types
+    Add a new Pet Type
+    #Verify added Pet Type
+    Teardown Add New Pet Type
 
 

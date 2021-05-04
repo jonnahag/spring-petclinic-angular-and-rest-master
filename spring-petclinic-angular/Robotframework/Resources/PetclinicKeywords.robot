@@ -3,7 +3,6 @@ Test Navigates to chrome Home Page
 Begin WebTest
     OPEN BROWSER                                       about:blank                         ${BROWSER}
     #Maximize Browser Window
-    Set Selenium Speed                                .5
 Go To Web Page
      Load Page
      Verify Page Loaded
@@ -28,7 +27,6 @@ Pet Details
     Click Element                                    id=type
     Click Element                                    xpath://*[@id="type"]/option[2]
     Click Element                                    xpath:/html/body/app-root/app-pet-add/div/div/form/div[6]/div/button[2]
-    Set Selenium Speed                                .5
 Name
     [Arguments]                                       ${Pet_Name}
     Input Text                                        id=name                             ${Pet_Name}
@@ -218,26 +216,46 @@ Verify selected Owner is with rightful pet 1
      ${Actual_Pet1}                                Get Text     xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/dd[1]
      ${Actual_Owner1}                              Get Text     xpath:/html/body/app-root/app-owner-detail/div/div/table[1]/tr[1]/td/b
      Should Be Equal                               ${Expecting_Owner1}${Expecting_Pet1}    ${Actual_Owner1}${Actual_Pet1}
-     Sleep                                         .5
 Verify selected Owner is not with rightful pet 1 or test case fails
      ${Actual_Pet1}                                 Get Text      xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/dd[1]
      ${Actual_Owner1}                               Get Text       xpath:/html/body/app-root/app-owner-detail/div/div/table[1]/tr[1]/td/b
      #Should Be Equal                                ${Expecting_Owner1}${Expecting_Pet1}    ${Actual_Owner1}${Actual_Pet1}
      Should Not Be Equal                            ${Expecting_Owner1}${Expecting_Pet1}    ${Actual_Owner1}${Actual_Pet1}
-     Sleep                                          .5
 Verify selected Owner is not with rightful pet 2 or testcase fails
      ${Actual_Pet2}                                 Get Text       xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[1]/dl/dd[1]
      ${Actual_Owner2}                               Get Text       xpath:/html/body/app-root/app-owner-detail/div/div/table[1]/tr[1]/td/b
     #Should Be Equal(testcase fails)                ${Expecting_Owner2}${Expecting_Pet2}    ${Actual_Owner2} ${Actual_Pet2}
      Should Not Be Equal                            ${Expecting_Owner2}${Expecting_Pet2}    ${Actual_Owner2} ${Actual_Pet2}
-     Sleep                                          .5
 Verify whether selected Owner is with rightful pet(2 pets)
      ${Actual_PetA}                              Get Text     xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list[1]/table/tr/td[1]/dl/dd[1]
      ${Actual_PetB}                              Get Text     xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list[2]/table/tr/td[1]/dl/dd[1]
      ${Actual_Owner3}                            Get Text     xpath:/html/body/app-root/app-owner-detail/div/div/table[1]/tr[1]/td/b
      Should Be Equal                             ${Expecting_Owner3}${Expecting_PetA}${Expecting_PetB}     ${Actual_Owner3}${Actual_PetA}${Actual_PetB}
-     Sleep                                       .5
 
+#------------------------------------
+#Add Pet Type - Jonna
+
+Go to Pet Types
+    Click element                                  xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]/a/span[2]
+    Verify on the right page
+
+Verify on the right page
+    ${actual_pettypes_page}                       Get Text  xpath:/html/body/app-root/app-pettype-list/div/div/h2
+    Should be equal                               ${actual_pettypes_page}   ${EXPECTED_PETTYPES_PAGE}
+
+Add a new Pet Type
+    Click button                                  xpath:/html/body/app-root/app-pettype-list/div/div/div/button[2]
+    Wait until page contains                      New Pet Type
+    Click element                                 id:name
+    Input Text                                    id:name           ${NEW_PETTYPE_NAME}
+    Click element                                 xpath://*[@id="pettype"]/div[2]/div/button
+
+Verify added Pet Type
+    ${actual_pettype_name}                        Get text  xpath://*[@id="6"]
+    Should be equal                               ${actual_pettype_name}    ${NEW_PETTYPE_NAME}
+
+Teardown Add New Pet Type
+    Click button                                  xpath://*[@id="pettypes"]/tbody/tr[7]/td[2]/button[2]
 
 
 End Web Test

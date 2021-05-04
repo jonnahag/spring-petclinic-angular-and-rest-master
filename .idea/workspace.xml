@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Jenkinsfile">
-      <change afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources/PetclinicKeywords_copy.robot" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources/PetclinicKeywords.robot" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources/PetclinicKeywords.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources/PetclinicKeywords_copy.robot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Results/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Results/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Results/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Results/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Results/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Results/report.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/PetClinicAddPetType.robot" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/PetClinicAddPetType.robot" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +59,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -73,24 +79,6 @@
       <workItem from="1620117336558" duration="175000" />
       <workItem from="1620117564535" duration="1181000" />
       <workItem from="1620119103547" duration="318000" />
-    </task>
-    <task id="LOCAL−00043" summary="Update Jenkinsfile">
-      <created>1619030620070</created>
-      <option name="number" value="LOCAL−00043" />
-      <option name="presentableId" value="LOCAL−00043" />
-      <updated>1619030620070</updated>
-    </task>
-    <task id="LOCAL−00044" summary="Update Jenkinsfile">
-      <created>1619030835847</created>
-      <option name="number" value="LOCAL−00044" />
-      <option name="presentableId" value="LOCAL−00044" />
-      <updated>1619030835848</updated>
-    </task>
-    <task id="LOCAL−00045" summary="Update Jenkinsfile">
-      <created>1619030976009</created>
-      <option name="number" value="LOCAL−00045" />
-      <option name="presentableId" value="LOCAL−00045" />
-      <updated>1619030976009</updated>
     </task>
     <task id="LOCAL−00046" summary="Update Jenkinsfile">
       <created>1619035356052</created>
@@ -368,7 +356,25 @@
       <option name="presentableId" value="LOCAL−00091" />
       <updated>1620128032293</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL−00092" summary="Updated keywords to make it run faster">
+      <created>1620128488547</created>
+      <option name="number" value="LOCAL−00092" />
+      <option name="presentableId" value="LOCAL−00092" />
+      <updated>1620128488547</updated>
+    </task>
+    <task id="LOCAL−00093" summary="Updated keywords to make it run faster">
+      <created>1620131855826</created>
+      <option name="number" value="LOCAL−00093" />
+      <option name="presentableId" value="LOCAL−00093" />
+      <updated>1620131855828</updated>
+    </task>
+    <task id="LOCAL−00094" summary="Updated Jenkins with longer sleep for Postman">
+      <created>1620131954648</created>
+      <option name="number" value="LOCAL−00094" />
+      <option name="presentableId" value="LOCAL−00094" />
+      <updated>1620131954648</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,6 +396,8 @@
     <MESSAGE value="Commit Robotframework folder" />
     <MESSAGE value="Update Jenkinsfile" />
     <MESSAGE value="Updated JonnasBranch with start of PetClinicAddPetType.robot" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated JonnasBranch with start of PetClinicAddPetType.robot" />
+    <MESSAGE value="Updated keywords to make it run faster" />
+    <MESSAGE value="Updated Jenkins with longer sleep for Postman" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated Jenkins with longer sleep for Postman" />
   </component>
 </project>
