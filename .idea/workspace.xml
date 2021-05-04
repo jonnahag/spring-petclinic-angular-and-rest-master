@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Jenkinsfile">
-      <change afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Tests/PetClinicAddPetType.robot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources/PetclinicKeywords_copy.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,11 +45,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -71,12 +73,6 @@
       <workItem from="1620117336558" duration="175000" />
       <workItem from="1620117564535" duration="1181000" />
       <workItem from="1620119103547" duration="318000" />
-    </task>
-    <task id="LOCAL−00042" summary="Update Jenkinsfile">
-      <created>1619011466075</created>
-      <option name="number" value="LOCAL−00042" />
-      <option name="presentableId" value="LOCAL−00042" />
-      <updated>1619011466075</updated>
     </task>
     <task id="LOCAL−00043" summary="Update Jenkinsfile">
       <created>1619030620070</created>
@@ -366,7 +362,13 @@
       <option name="presentableId" value="LOCAL−00090" />
       <updated>1619434852474</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL−00091" summary="Updated JonnasBranch with start of PetClinicAddPetType.robot">
+      <created>1620128032292</created>
+      <option name="number" value="LOCAL−00091" />
+      <option name="presentableId" value="LOCAL−00091" />
+      <updated>1620128032293</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,6 +389,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit Robotframework folder" />
     <MESSAGE value="Update Jenkinsfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Jenkinsfile" />
+    <MESSAGE value="Updated JonnasBranch with start of PetClinicAddPetType.robot" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated JonnasBranch with start of PetClinicAddPetType.robot" />
   </component>
 </project>

@@ -12,7 +12,7 @@ ${Welcome_Message}                     Welcome to Petclinic
 
 *** Test Cases ***
 
-Test add a new owner
+Test add a new Pet Type
     [Documentation]                    Adding a new owner
     [Tags]                             Add
 
