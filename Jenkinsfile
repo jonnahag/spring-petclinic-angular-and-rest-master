@@ -57,6 +57,18 @@ pipeline {
                  
         }
         
+        stage('DelayPostManTest') {
+           steps {
+               sh 'sleep 20'
+          }
+        }
+        stage('Postman') {
+            steps {
+                sh 'newman run PostManReviewFiles/PetClinic_Swagger.postman_collection.json -e PostManReviewFiles/PetClinic_Swagger.postman_environment.json -- reporters junit'
+            }
+
+        }
+        
         
        
         
