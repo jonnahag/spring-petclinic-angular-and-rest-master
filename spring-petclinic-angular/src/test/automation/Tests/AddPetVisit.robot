@@ -12,9 +12,10 @@ ${URL}                                     http://localhost:4200/
 ${Welcome_Message}                         Welcome to Petclinic
 ${Pet_Visit_Date_1}                        2021/05/05
 ${Pet_Visit_Date_2}                        2021/05/19
+${Pet_Visit_Date_3}                        empty
 ${Pet_Visit_Description_1}                 check
 ${Pet_Visit_Description_2}                 Skeletal Checkup
-${Pet_Visit_Description_3}                 Dental Checkup
+${Pet_Visit_Description_3}                 Monsoon Checkup
 ${Pet_Visit_Description_4}                 BowelMovements Checkup
 ${Verify_Pet_Visit_Date_Added_1}           2021/05/05
 ${Verify_Pet_Visit_Description_Added_1}    check
@@ -62,6 +63,7 @@ All Owners
     Click Element                            xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/a
     Click Element                            xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a
 Select A Owner From The List
+    Set Selenium speed                       .25
     Click Element                            xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[2]/td[1]/a
     Set Selenium speed                       .25
     Wait Until Page Contains                 Betty Davis
@@ -82,8 +84,11 @@ Description
     Input Text                               xpath://*[@id="description"]     ${PetVisit_Description}
     Click Button                             xpath://*[@id="visit"]/div[2]/div/button[2]
 Verify Visit Added To A Pet
+     Set Selenium Speed                       .5
      ${Pet_Visit_Date_Added}                 get text        xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[2]/app-visit-list/table/tr[3]/td[1]
+     Set Selenium Speed                       .5
      ${Pet_Visit_Description_Added}          get text        xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[2]/app-visit-list/table/tr[4]/td[2]
+     Set Selenium Speed                       .5
      Table should contain                    xpath:/html/body/app-root/app-owner-detail/div/div/table[2]/tr/app-pet-list/table/tr/td[2]/app-visit-list/table     ${Pet_Visit_Date_Added}  ${Pet_Visit_Description_Added}
      Set Selenium Speed                      .5
 Verify able to add multiple pet visits
