@@ -48,18 +48,8 @@ pipeline {
         }
     }
     post{
-        always{
+        success{
             script{
-                    if ($build_error){
-                        step(
-                            emailext (
-                              subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                              body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-                                        <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
-                              recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-                            )
-                         )
-                    }else {
                         step(
                             emailext (
                               subject: "PASSED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
@@ -70,6 +60,19 @@ pipeline {
                         )
                     }
             }
+        failure{
+            script{
+                step(
+                            emailext (
+                              subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                              body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+                                        <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+                              recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+                            )
+                         )
+                
+            }
+          }
         }
     }
 
