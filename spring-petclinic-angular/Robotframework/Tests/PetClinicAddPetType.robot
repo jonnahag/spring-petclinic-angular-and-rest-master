@@ -11,6 +11,7 @@ ${URL}                                 http://localhost:4200/
 ${Welcome_Message}                     Welcome to Petclinic
 ${EXPECTED_PETTYPES_PAGE}              Pet Types
 ${NEW_PETTYPE_NAME}                    bunny
+${Existing_Pettype_Name}               Get Value     xpath://*[@id="0"]
 
 *** Test Cases ***
 
