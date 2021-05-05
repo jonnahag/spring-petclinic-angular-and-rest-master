@@ -49,6 +49,9 @@ pipeline {
 
        
     }
+    stage ('Email Notification') {
+        emailext body: '', recipientProviders: [brokenBuildSuspects()], subject: '', to: 'jenkins.iths.mailer@gmail.com'
+    }
 }
 
 
