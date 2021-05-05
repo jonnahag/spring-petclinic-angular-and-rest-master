@@ -3,7 +3,7 @@ Test Navigates to chrome Home Page
 Begin WebTest
     OPEN BROWSER                                       about:blank                         chrome
     #Maximize Browser Window
-    #Set Selenium Speed                                
+    #Set Selenium Speed                                                                
 Go To Web Page
      Load Page
      Verify Page Loaded
@@ -15,6 +15,7 @@ Verify Page Loaded
 All Owners
     Click Element                                    xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/a
     Click Element                                    xpath:/html/body/app-root/div[1]/nav/div/ul/li[2]/ul/li[1]/a
+    Set Selenium Speed                               .25
 Select A Owner From The List
     Click Element                                    xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[9]/td[1]/a
 Add New Pet
