@@ -275,7 +275,41 @@ a user should be able to see the new Pet Type in the list
   Verify added Pet Type
   Teardown Add New Pet Type
 
+
+#Add existing Pet Type - Jonna
+
+Add existing pet
+   Click element                                 xpath://*[@id="0"]
+   ${Existing_Pettype_Name}                      Get Value     xpath://*[@id="0"]
+   Sleep                                         0.2
+   Click button                                  xpath:/html/body/app-root/app-pettype-list/div/div/div/button[2]
+   Wait until page contains                      New Pet Type
+   Click element                                 id:name
+   Input Text                                    id:name           ${Existing_Pettype_Name}
+   Click element                                 xpath://*[@id="pettype"]/div[2]/div/button
+   Sleep                                         0.2 s
+
+Verify added existing Pet Type
+   ${Existing_Pettype_Name}                      Get Value     xpath://*[@id="0"]
+   ${Actual_New_Pettype_Name}                    Get Value     xpath://*[@id="6"]
+   Should be equal                               ${Actual_New_Pettype_Name}    ${Existing_Pettype_Name}
+   Sleep                                         0.2 s
+
+a user has added a new Pet Type that already exists
+  Add existing pet
+
+a user should see two fields with the same Pet Type
+  Verify added existing Pet Type
+  Teardown Add New Pet Type
+
+
+
+
+
+
+
 #------------------------------------
+
 
 End Web Test
     close browser

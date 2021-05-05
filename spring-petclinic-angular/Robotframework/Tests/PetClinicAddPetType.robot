@@ -22,4 +22,12 @@ Test add a new Pet Type
     When a user have added a new Pet Type
     Then a user should be able to see the new Pet Type in the list
 
+Test adding an existing Pet Type
+    [Documentation]                    Adding a new Pet Type
+    [Tags]                             Add  Pet Type
+
+    Given user is on the Pet Types page
+    When a user has added a new Pet Type that already exists
+    Then a user should see two fields with the same Pet Type
+
 

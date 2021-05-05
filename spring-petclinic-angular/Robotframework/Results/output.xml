@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.1 on darwin)" generated="20210505 11:24:13.058" rpa="false">
+<robot generator="Robot 3.2.2 (Python 3.9.1 on darwin)" generated="20210505 14:05:37.670" rpa="false">
 <suite id="s1" name="PetClinicAddPetType" source="/Users/jonnahagberg/Dropbox/IT-Högskolan/Kurser/Projekt - Agil &amp; Auto/PyCharm/spring-petclinic-angular-and-rest-master/spring-petclinic-angular/Robotframework/Tests/PetClinicAddPetType.robot">
 <test id="s1-t1" name="Test add a new Pet Type">
 <kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
@@ -9,10 +9,17 @@
 <arg>about:blank</arg>
 <arg>${BROWSER}</arg>
 </arguments>
-<msg timestamp="20210505 11:24:13.287" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
-<status status="PASS" starttime="20210505 11:24:13.287" endtime="20210505 11:24:14.945"></status>
+<msg timestamp="20210505 14:05:37.865" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210505 14:05:37.865" endtime="20210505 14:05:39.456"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:13.287" endtime="20210505 11:24:14.945"></status>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.04</arg>
+</arguments>
+<status status="PASS" starttime="20210505 14:05:39.457" endtime="20210505 14:05:39.457"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:37.864" endtime="20210505 14:05:39.457"></status>
 </kw>
 <kw name="Given user is on the Pet Types page" library="PetclinicKeywords">
 <kw name="Go to Pet Types" library="PetclinicKeywords">
@@ -24,10 +31,10 @@
 <arguments>
 <arg>${URL}</arg>
 </arguments>
-<msg timestamp="20210505 11:24:14.949" level="INFO">Opening url 'http://localhost:4200/'</msg>
-<status status="PASS" starttime="20210505 11:24:14.948" endtime="20210505 11:24:15.295"></status>
+<msg timestamp="20210505 14:05:39.460" level="INFO">Opening url 'http://localhost:4200/'</msg>
+<status status="PASS" starttime="20210505 14:05:39.460" endtime="20210505 14:05:39.784"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:14.948" endtime="20210505 11:24:15.295"></status>
+<status status="PASS" starttime="20210505 14:05:39.459" endtime="20210505 14:05:39.785"></status>
 </kw>
 <kw name="Verify Page Loaded" library="PetclinicKeywords">
 <kw name="Get Text" library="SeleniumLibrary">
@@ -38,8 +45,8 @@
 <assign>
 <var>${actualTerm}</var>
 </assign>
-<msg timestamp="20210505 11:24:15.318" level="INFO">${actualTerm} = Welcome to Petclinic</msg>
-<status status="PASS" starttime="20210505 11:24:15.295" endtime="20210505 11:24:15.318"></status>
+<msg timestamp="20210505 14:05:39.896" level="INFO">${actualTerm} = Welcome to Petclinic</msg>
+<status status="PASS" starttime="20210505 14:05:39.785" endtime="20210505 14:05:39.896"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -47,21 +54,21 @@
 <arg>${Welcome_Message}</arg>
 <arg>${actualTerm}</arg>
 </arguments>
-<status status="PASS" starttime="20210505 11:24:15.318" endtime="20210505 11:24:15.319"></status>
+<status status="PASS" starttime="20210505 14:05:39.896" endtime="20210505 14:05:39.897"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:15.295" endtime="20210505 11:24:15.319"></status>
+<status status="PASS" starttime="20210505 14:05:39.785" endtime="20210505 14:05:39.898"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:14.948" endtime="20210505 11:24:15.319"></status>
+<status status="PASS" starttime="20210505 14:05:39.459" endtime="20210505 14:05:39.898"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:14.948" endtime="20210505 11:24:15.319"></status>
+<status status="PASS" starttime="20210505 14:05:39.459" endtime="20210505 14:05:39.898"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]/a/span[2]</arg>
 </arguments>
-<msg timestamp="20210505 11:24:15.319" level="INFO">Clicking element 'xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]/a/span[2]'.</msg>
-<status status="PASS" starttime="20210505 11:24:15.319" endtime="20210505 11:24:15.386"></status>
+<msg timestamp="20210505 14:05:39.899" level="INFO">Clicking element 'xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]/a/span[2]'.</msg>
+<status status="PASS" starttime="20210505 14:05:39.898" endtime="20210505 14:05:40.080"></status>
 </kw>
 <kw name="Verify on the right page" library="PetclinicKeywords">
 <kw name="Get Text" library="SeleniumLibrary">
@@ -72,8 +79,8 @@
 <assign>
 <var>${Actual_Pettypes_Page}</var>
 </assign>
-<msg timestamp="20210505 11:24:15.429" level="INFO">${Actual_Pettypes_Page} = Pet Types</msg>
-<status status="PASS" starttime="20210505 11:24:15.388" endtime="20210505 11:24:15.429"></status>
+<msg timestamp="20210505 14:05:40.188" level="INFO">${Actual_Pettypes_Page} = Pet Types</msg>
+<status status="PASS" starttime="20210505 14:05:40.081" endtime="20210505 14:05:40.188"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -81,13 +88,13 @@
 <arg>${Actual_Pettypes_Page}</arg>
 <arg>${EXPECTED_PETTYPES_PAGE}</arg>
 </arguments>
-<status status="PASS" starttime="20210505 11:24:15.429" endtime="20210505 11:24:15.429"></status>
+<status status="PASS" starttime="20210505 14:05:40.189" endtime="20210505 14:05:40.189"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:15.386" endtime="20210505 11:24:15.430"></status>
+<status status="PASS" starttime="20210505 14:05:40.080" endtime="20210505 14:05:40.190"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:14.947" endtime="20210505 11:24:15.430"></status>
+<status status="PASS" starttime="20210505 14:05:39.458" endtime="20210505 14:05:40.190"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:14.946" endtime="20210505 11:24:15.430"></status>
+<status status="PASS" starttime="20210505 14:05:39.458" endtime="20210505 14:05:40.190"></status>
 </kw>
 <kw name="When a user have added a new Pet Type" library="PetclinicKeywords">
 <kw name="Add a new Pet Type" library="PetclinicKeywords">
@@ -96,23 +103,23 @@
 <arguments>
 <arg>xpath:/html/body/app-root/app-pettype-list/div/div/div/button[2]</arg>
 </arguments>
-<msg timestamp="20210505 11:24:15.431" level="INFO">Clicking button 'xpath:/html/body/app-root/app-pettype-list/div/div/div/button[2]'.</msg>
-<status status="PASS" starttime="20210505 11:24:15.431" endtime="20210505 11:24:15.494"></status>
+<msg timestamp="20210505 14:05:40.192" level="INFO">Clicking button 'xpath:/html/body/app-root/app-pettype-list/div/div/div/button[2]'.</msg>
+<status status="PASS" starttime="20210505 14:05:40.191" endtime="20210505 14:05:40.465"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>New Pet Type</arg>
 </arguments>
-<status status="PASS" starttime="20210505 11:24:15.494" endtime="20210505 11:24:15.503"></status>
+<status status="PASS" starttime="20210505 14:05:40.466" endtime="20210505 14:05:40.518"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>id:name</arg>
 </arguments>
-<msg timestamp="20210505 11:24:15.504" level="INFO">Clicking element 'id:name'.</msg>
-<status status="PASS" starttime="20210505 11:24:15.503" endtime="20210505 11:24:15.556"></status>
+<msg timestamp="20210505 14:05:40.519" level="INFO">Clicking element 'id:name'.</msg>
+<status status="PASS" starttime="20210505 14:05:40.518" endtime="20210505 14:05:40.652"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -120,28 +127,28 @@
 <arg>id:name</arg>
 <arg>${NEW_PETTYPE_NAME}</arg>
 </arguments>
-<msg timestamp="20210505 11:24:15.557" level="INFO">Typing text 'bunny' into text field 'id:name'.</msg>
-<status status="PASS" starttime="20210505 11:24:15.556" endtime="20210505 11:24:15.655"></status>
+<msg timestamp="20210505 14:05:40.653" level="INFO">Typing text 'bunny' into text field 'id:name'.</msg>
+<status status="PASS" starttime="20210505 14:05:40.653" endtime="20210505 14:05:40.880"></status>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
 <arg>xpath://*[@id="pettype"]/div[2]/div/button</arg>
 </arguments>
-<msg timestamp="20210505 11:24:15.656" level="INFO">Clicking element 'xpath://*[@id="pettype"]/div[2]/div/button'.</msg>
-<status status="PASS" starttime="20210505 11:24:15.656" endtime="20210505 11:24:15.696"></status>
+<msg timestamp="20210505 14:05:40.881" level="INFO">Clicking element 'xpath://*[@id="pettype"]/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20210505 14:05:40.880" endtime="20210505 14:05:41.007"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>0.2 s</arg>
 </arguments>
-<msg timestamp="20210505 11:24:15.898" level="INFO">Slept 200 milliseconds</msg>
-<status status="PASS" starttime="20210505 11:24:15.697" endtime="20210505 11:24:15.899"></status>
+<msg timestamp="20210505 14:05:41.210" level="INFO">Slept 200 milliseconds</msg>
+<status status="PASS" starttime="20210505 14:05:41.007" endtime="20210505 14:05:41.210"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:15.430" endtime="20210505 11:24:15.899"></status>
+<status status="PASS" starttime="20210505 14:05:40.191" endtime="20210505 14:05:41.211"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:15.430" endtime="20210505 11:24:15.899"></status>
+<status status="PASS" starttime="20210505 14:05:40.190" endtime="20210505 14:05:41.211"></status>
 </kw>
 <kw name="Then a user should be able to see the new Pet Type in the list" library="PetclinicKeywords">
 <kw name="Verify added Pet Type" library="PetclinicKeywords">
@@ -153,8 +160,8 @@
 <assign>
 <var>${Actual_Pettype_Name}</var>
 </assign>
-<msg timestamp="20210505 11:24:15.919" level="INFO">${Actual_Pettype_Name} = bunny</msg>
-<status status="PASS" starttime="20210505 11:24:15.901" endtime="20210505 11:24:15.919"></status>
+<msg timestamp="20210505 14:05:41.323" level="INFO">${Actual_Pettype_Name} = bunny</msg>
+<status status="PASS" starttime="20210505 14:05:41.212" endtime="20210505 14:05:41.323"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
@@ -162,17 +169,17 @@
 <arg>${Actual_Pettype_Name}</arg>
 <arg>${NEW_PETTYPE_NAME}</arg>
 </arguments>
-<status status="PASS" starttime="20210505 11:24:15.919" endtime="20210505 11:24:15.920"></status>
+<status status="PASS" starttime="20210505 14:05:41.324" endtime="20210505 14:05:41.324"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>0.2 s</arg>
 </arguments>
-<msg timestamp="20210505 11:24:16.120" level="INFO">Slept 200 milliseconds</msg>
-<status status="PASS" starttime="20210505 11:24:15.920" endtime="20210505 11:24:16.121"></status>
+<msg timestamp="20210505 14:05:41.526" level="INFO">Slept 200 milliseconds</msg>
+<status status="PASS" starttime="20210505 14:05:41.324" endtime="20210505 14:05:41.527"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:15.900" endtime="20210505 11:24:16.121"></status>
+<status status="PASS" starttime="20210505 14:05:41.212" endtime="20210505 14:05:41.527"></status>
 </kw>
 <kw name="Teardown Add New Pet Type" library="PetclinicKeywords">
 <kw name="Click Button" library="SeleniumLibrary">
@@ -180,57 +187,318 @@
 <arguments>
 <arg>xpath://*[@id="pettypes"]/tbody/tr[7]/td[2]/button[2]</arg>
 </arguments>
-<msg timestamp="20210505 11:24:16.122" level="INFO">Clicking button 'xpath://*[@id="pettypes"]/tbody/tr[7]/td[2]/button[2]'.</msg>
-<status status="PASS" starttime="20210505 11:24:16.121" endtime="20210505 11:24:16.175"></status>
+<msg timestamp="20210505 14:05:41.528" level="INFO">Clicking button 'xpath://*[@id="pettypes"]/tbody/tr[7]/td[2]/button[2]'.</msg>
+<status status="PASS" starttime="20210505 14:05:41.528" endtime="20210505 14:05:41.805"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>0.2 s</arg>
 </arguments>
-<msg timestamp="20210505 11:24:16.376" level="INFO">Slept 200 milliseconds</msg>
-<status status="PASS" starttime="20210505 11:24:16.175" endtime="20210505 11:24:16.376"></status>
+<msg timestamp="20210505 14:05:42.007" level="INFO">Slept 200 milliseconds</msg>
+<status status="PASS" starttime="20210505 14:05:41.805" endtime="20210505 14:05:42.008"></status>
 </kw>
 <kw name="Page Should Not Contain Element" library="SeleniumLibrary">
 <doc>Verifies that element ``locator`` is not found on the current page.</doc>
 <arguments>
 <arg>xpath://*[@id="6"]</arg>
 </arguments>
-<msg timestamp="20210505 11:24:16.383" level="INFO">Current page does not contain element 'xpath://*[@id="6"]'.</msg>
-<status status="PASS" starttime="20210505 11:24:16.377" endtime="20210505 11:24:16.383"></status>
+<msg timestamp="20210505 14:05:42.060" level="INFO">Current page does not contain element 'xpath://*[@id="6"]'.</msg>
+<status status="PASS" starttime="20210505 14:05:42.008" endtime="20210505 14:05:42.061"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:16.121" endtime="20210505 11:24:16.383"></status>
+<status status="PASS" starttime="20210505 14:05:41.527" endtime="20210505 14:05:42.061"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:15.900" endtime="20210505 11:24:16.384"></status>
+<status status="PASS" starttime="20210505 14:05:41.211" endtime="20210505 14:05:42.061"></status>
 </kw>
 <kw name="End Web Test" library="PetclinicKeywords" type="teardown">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20210505 11:24:16.385" endtime="20210505 11:24:16.449"></status>
+<status status="PASS" starttime="20210505 14:05:42.062" endtime="20210505 14:05:42.169"></status>
 </kw>
-<status status="PASS" starttime="20210505 11:24:16.385" endtime="20210505 11:24:16.450"></status>
+<status status="PASS" starttime="20210505 14:05:42.062" endtime="20210505 14:05:42.170"></status>
 </kw>
 <doc>Adding a new Pet Type</doc>
 <tags>
 <tag>Add</tag>
 <tag>Pet Type</tag>
 </tags>
-<status status="PASS" starttime="20210505 11:24:13.286" endtime="20210505 11:24:16.450" critical="yes"></status>
+<status status="PASS" starttime="20210505 14:05:37.862" endtime="20210505 14:05:42.170" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Test adding an existing Pet Type">
+<kw name="Begin WebTest" library="PetclinicKeywords" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210505 14:05:42.174" level="INFO">Opening browser 'headlesschrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210505 14:05:42.173" endtime="20210505 14:05:43.838"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.04</arg>
+</arguments>
+<status status="PASS" starttime="20210505 14:05:43.839" endtime="20210505 14:05:43.840"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:42.173" endtime="20210505 14:05:43.840"></status>
+</kw>
+<kw name="Given user is on the Pet Types page" library="PetclinicKeywords">
+<kw name="Go to Pet Types" library="PetclinicKeywords">
+<kw name="user is on the landing page" library="PetclinicKeywords">
+<kw name="Go To Web Page" library="PetclinicKeywords">
+<kw name="Load Page" library="PetclinicKeywords">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<msg timestamp="20210505 14:05:43.843" level="INFO">Opening url 'http://localhost:4200/'</msg>
+<status status="PASS" starttime="20210505 14:05:43.843" endtime="20210505 14:05:44.168"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:43.842" endtime="20210505 14:05:44.169"></status>
+</kw>
+<kw name="Verify Page Loaded" library="PetclinicKeywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/app-root/app-welcome/h1</arg>
+</arguments>
+<assign>
+<var>${actualTerm}</var>
+</assign>
+<msg timestamp="20210505 14:05:44.285" level="INFO">${actualTerm} = Welcome to Petclinic</msg>
+<status status="PASS" starttime="20210505 14:05:44.170" endtime="20210505 14:05:44.286"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Welcome_Message}</arg>
+<arg>${actualTerm}</arg>
+</arguments>
+<status status="PASS" starttime="20210505 14:05:44.286" endtime="20210505 14:05:44.286"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:44.169" endtime="20210505 14:05:44.287"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:43.842" endtime="20210505 14:05:44.287"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:43.842" endtime="20210505 14:05:44.287"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]/a/span[2]</arg>
+</arguments>
+<msg timestamp="20210505 14:05:44.288" level="INFO">Clicking element 'xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]/a/span[2]'.</msg>
+<status status="PASS" starttime="20210505 14:05:44.287" endtime="20210505 14:05:44.445"></status>
+</kw>
+<kw name="Verify on the right page" library="PetclinicKeywords">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/app-root/app-pettype-list/div/div/h2</arg>
+</arguments>
+<assign>
+<var>${Actual_Pettypes_Page}</var>
+</assign>
+<msg timestamp="20210505 14:05:44.551" level="INFO">${Actual_Pettypes_Page} = Pet Types</msg>
+<status status="PASS" starttime="20210505 14:05:44.446" endtime="20210505 14:05:44.552"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Actual_Pettypes_Page}</arg>
+<arg>${EXPECTED_PETTYPES_PAGE}</arg>
+</arguments>
+<status status="PASS" starttime="20210505 14:05:44.552" endtime="20210505 14:05:44.552"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:44.446" endtime="20210505 14:05:44.553"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:43.841" endtime="20210505 14:05:44.553"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:43.841" endtime="20210505 14:05:44.553"></status>
+</kw>
+<kw name="When a user has added a new Pet Type that already exists" library="PetclinicKeywords">
+<kw name="Add existing pet" library="PetclinicKeywords">
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="0"]</arg>
+</arguments>
+<msg timestamp="20210505 14:05:44.555" level="INFO">Clicking element 'xpath://*[@id="0"]'.</msg>
+<status status="PASS" starttime="20210505 14:05:44.554" endtime="20210505 14:05:44.685"></status>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="0"]</arg>
+</arguments>
+<assign>
+<var>${Existing_Pettype_Name}</var>
+</assign>
+<msg timestamp="20210505 14:05:44.788" level="INFO">${Existing_Pettype_Name} = cat</msg>
+<status status="PASS" starttime="20210505 14:05:44.686" endtime="20210505 14:05:44.788"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.2</arg>
+</arguments>
+<msg timestamp="20210505 14:05:44.991" level="INFO">Slept 200 milliseconds</msg>
+<status status="PASS" starttime="20210505 14:05:44.788" endtime="20210505 14:05:44.991"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/app-root/app-pettype-list/div/div/div/button[2]</arg>
+</arguments>
+<msg timestamp="20210505 14:05:44.992" level="INFO">Clicking button 'xpath:/html/body/app-root/app-pettype-list/div/div/div/button[2]'.</msg>
+<status status="PASS" starttime="20210505 14:05:44.991" endtime="20210505 14:05:45.269"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>New Pet Type</arg>
+</arguments>
+<status status="PASS" starttime="20210505 14:05:45.270" endtime="20210505 14:05:45.324"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id:name</arg>
+</arguments>
+<msg timestamp="20210505 14:05:45.325" level="INFO">Clicking element 'id:name'.</msg>
+<status status="PASS" starttime="20210505 14:05:45.324" endtime="20210505 14:05:45.462"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id:name</arg>
+<arg>${Existing_Pettype_Name}</arg>
+</arguments>
+<msg timestamp="20210505 14:05:45.463" level="INFO">Typing text 'cat' into text field 'id:name'.</msg>
+<status status="PASS" starttime="20210505 14:05:45.463" endtime="20210505 14:05:45.678"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="pettype"]/div[2]/div/button</arg>
+</arguments>
+<msg timestamp="20210505 14:05:45.679" level="INFO">Clicking element 'xpath://*[@id="pettype"]/div[2]/div/button'.</msg>
+<status status="PASS" starttime="20210505 14:05:45.679" endtime="20210505 14:05:45.809"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.2 s</arg>
+</arguments>
+<msg timestamp="20210505 14:05:46.011" level="INFO">Slept 200 milliseconds</msg>
+<status status="PASS" starttime="20210505 14:05:45.810" endtime="20210505 14:05:46.012"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:44.554" endtime="20210505 14:05:46.012"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:44.554" endtime="20210505 14:05:46.012"></status>
+</kw>
+<kw name="Then a user should see two fields with the same Pet Type" library="PetclinicKeywords">
+<kw name="Verify added existing Pet Type" library="PetclinicKeywords">
+<kw name="Get Value" library="SeleniumLibrary">
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="0"]</arg>
+</arguments>
+<assign>
+<var>${Existing_Pettype_Name}</var>
+</assign>
+<msg timestamp="20210505 14:05:46.111" level="INFO">${Existing_Pettype_Name} = cat</msg>
+<status status="PASS" starttime="20210505 14:05:46.014" endtime="20210505 14:05:46.111"></status>
+</kw>
+<kw name="Get Value" library="SeleniumLibrary">
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="6"]</arg>
+</arguments>
+<assign>
+<var>${Actual_New_Pettype_Name}</var>
+</assign>
+<msg timestamp="20210505 14:05:46.216" level="INFO">${Actual_New_Pettype_Name} = cat</msg>
+<status status="PASS" starttime="20210505 14:05:46.112" endtime="20210505 14:05:46.216"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${Actual_New_Pettype_Name}</arg>
+<arg>${Existing_Pettype_Name}</arg>
+</arguments>
+<status status="PASS" starttime="20210505 14:05:46.216" endtime="20210505 14:05:46.217"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.2 s</arg>
+</arguments>
+<msg timestamp="20210505 14:05:46.420" level="INFO">Slept 200 milliseconds</msg>
+<status status="PASS" starttime="20210505 14:05:46.217" endtime="20210505 14:05:46.420"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:46.013" endtime="20210505 14:05:46.421"></status>
+</kw>
+<kw name="Teardown Add New Pet Type" library="PetclinicKeywords">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="pettypes"]/tbody/tr[7]/td[2]/button[2]</arg>
+</arguments>
+<msg timestamp="20210505 14:05:46.422" level="INFO">Clicking button 'xpath://*[@id="pettypes"]/tbody/tr[7]/td[2]/button[2]'.</msg>
+<status status="PASS" starttime="20210505 14:05:46.421" endtime="20210505 14:05:46.703"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.2 s</arg>
+</arguments>
+<msg timestamp="20210505 14:05:46.905" level="INFO">Slept 200 milliseconds</msg>
+<status status="PASS" starttime="20210505 14:05:46.704" endtime="20210505 14:05:46.905"></status>
+</kw>
+<kw name="Page Should Not Contain Element" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` is not found on the current page.</doc>
+<arguments>
+<arg>xpath://*[@id="6"]</arg>
+</arguments>
+<msg timestamp="20210505 14:05:46.954" level="INFO">Current page does not contain element 'xpath://*[@id="6"]'.</msg>
+<status status="PASS" starttime="20210505 14:05:46.905" endtime="20210505 14:05:46.954"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:46.421" endtime="20210505 14:05:46.955"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:46.013" endtime="20210505 14:05:46.955"></status>
+</kw>
+<kw name="End Web Test" library="PetclinicKeywords" type="teardown">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210505 14:05:46.956" endtime="20210505 14:05:47.060"></status>
+</kw>
+<status status="PASS" starttime="20210505 14:05:46.955" endtime="20210505 14:05:47.060"></status>
+</kw>
+<doc>Adding a new Pet Type</doc>
+<tags>
+<tag>Add</tag>
+<tag>Pet Type</tag>
+</tags>
+<status status="PASS" starttime="20210505 14:05:42.171" endtime="20210505 14:05:47.061" critical="yes"></status>
 </test>
 <doc>Testar Selenium och RobotFramework</doc>
-<status status="PASS" starttime="20210505 11:24:13.059" endtime="20210505 11:24:16.453"></status>
+<status status="PASS" starttime="20210505 14:05:37.673" endtime="20210505 14:05:47.063"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="2" fail="0">Critical Tests</stat>
+<stat pass="2" fail="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0">Add</stat>
-<stat pass="1" fail="0">Pet Type</stat>
+<stat pass="2" fail="0">Add</stat>
+<stat pass="2" fail="0">Pet Type</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="PetClinicAddPetType">PetClinicAddPetType</stat>
+<stat pass="2" fail="0" id="s1" name="PetClinicAddPetType">PetClinicAddPetType</stat>
 </suite>
 </statistics>
 <errors>

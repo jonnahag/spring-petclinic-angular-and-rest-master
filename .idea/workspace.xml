@@ -78,13 +78,7 @@
       <workItem from="1620117336558" duration="175000" />
       <workItem from="1620117564535" duration="1181000" />
       <workItem from="1620119103547" duration="318000" />
-      <workItem from="1620198529932" duration="5691000" />
-    </task>
-    <task id="LOCAL−00047" summary="Update Jenkinsfile">
-      <created>1619035732573</created>
-      <option name="number" value="LOCAL−00047" />
-      <option name="presentableId" value="LOCAL−00047" />
-      <updated>1619035732573</updated>
+      <workItem from="1620198529932" duration="8226000" />
     </task>
     <task id="LOCAL−00048" summary="Update Jenkinsfile">
       <created>1619035800898</created>
@@ -374,7 +368,13 @@
       <option name="presentableId" value="LOCAL−00095" />
       <updated>1620136974418</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL−00096" summary="Finished tests for Add Pet Type">
+      <created>1620207233220</created>
+      <option name="number" value="LOCAL−00096" />
+      <option name="presentableId" value="LOCAL−00096" />
+      <updated>1620207233221</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,6 +399,7 @@
     <MESSAGE value="Updated keywords to make it run faster" />
     <MESSAGE value="Updated Jenkins with longer sleep for Postman" />
     <MESSAGE value="Updated with new tests and assertions for adding new pettypes. Assertions not working properly yet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated with new tests and assertions for adding new pettypes. Assertions not working properly yet." />
+    <MESSAGE value="Finished tests for Add Pet Type" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished tests for Add Pet Type" />
   </component>
 </project>
