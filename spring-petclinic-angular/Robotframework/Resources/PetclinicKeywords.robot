@@ -297,14 +297,7 @@ a user should see two fields with the same Pet Type
   Verify added existing Pet Type
   Teardown Add New Pet Type
 
-
-
-
-
-
-
 #------------------------------------
-
 
 End Web Test
     close browser
