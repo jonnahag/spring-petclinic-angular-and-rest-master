@@ -236,12 +236,13 @@ Verify whether selected Owner is with rightful pet(2 pets)
 #Add Pet Type - Jonna
 
 Go to Pet Types
-    Click element                                  xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]/a/span[2]
+    User is on the landing page
+    Click element                                 xpath:/html/body/app-root/div[1]/nav/div/ul/li[4]/a/span[2]
     Verify on the right page
 
 Verify on the right page
-    ${actual_pettypes_page}                       Get Text  xpath:/html/body/app-root/app-pettype-list/div/div/h2
-    Should be equal                               ${actual_pettypes_page}   ${EXPECTED_PETTYPES_PAGE}
+    ${Actual_Pettypes_Page}                       Get Text    xpath:/html/body/app-root/app-pettype-list/div/div/h2
+    Should be equal                               ${Actual_Pettypes_Page}   ${EXPECTED_PETTYPES_PAGE}
 
 Add a new Pet Type
     Click button                                  xpath:/html/body/app-root/app-pettype-list/div/div/div/button[2]
@@ -249,14 +250,31 @@ Add a new Pet Type
     Click element                                 id:name
     Input Text                                    id:name           ${NEW_PETTYPE_NAME}
     Click element                                 xpath://*[@id="pettype"]/div[2]/div/button
+    Sleep                                         0.2 s
 
 Verify added Pet Type
-    ${actual_pettype_name}                        Get text  xpath://*[@id="6"]
-    Should be equal                               ${actual_pettype_name}    ${NEW_PETTYPE_NAME}
+    ${Actual_Pettype_Name}                        Get Value     xpath://*[@id="6"]
+    Should be equal                               ${Actual_Pettype_Name}    ${NEW_PETTYPE_NAME}
+    Sleep                                         0.2 s
 
 Teardown Add New Pet Type
     Click button                                  xpath://*[@id="pettypes"]/tbody/tr[7]/td[2]/button[2]
+    Sleep                                         0.2 s
+    Page should not contain element               xpath://*[@id="6"]
 
+#Gherkin Syntax for Add New Pet Type:
+
+user is on the Pet Types page
+  Go to Pet Types
+
+a user have added a new Pet Type
+  Add a new Pet Type
+
+a user should be able to see the new Pet Type in the list
+  Verify added Pet Type
+  Teardown Add New Pet Type
+
+#------------------------------------
 
 End Web Test
     close browser

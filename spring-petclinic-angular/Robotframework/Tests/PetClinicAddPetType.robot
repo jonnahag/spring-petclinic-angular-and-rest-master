@@ -18,10 +18,8 @@ Test add a new Pet Type
     [Documentation]                    Adding a new Pet Type
     [Tags]                             Add  Pet Type
 
-    Given user is on the landing page
-    Go to Pet Types
-    Add a new Pet Type
-    #Verify added Pet Type
-    Teardown Add New Pet Type
+    Given user is on the Pet Types page
+    When a user have added a new Pet Type
+    Then a user should be able to see the new Pet Type in the list
 
 

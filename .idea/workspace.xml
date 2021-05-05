@@ -7,7 +7,6 @@
     <list default="true" id="4b4efe24-22f2-4a11-b483-62641d1bc52d" name="Default Changelist" comment="Update Jenkinsfile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources/PetclinicKeywords.robot" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources/PetclinicKeywords.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Resources/PetclinicKeywords_copy.robot" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Results/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Results/log.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Results/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Results/output.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Results/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/spring-petclinic-angular/Robotframework/Results/report.html" afterDir="false" />
@@ -79,12 +78,7 @@
       <workItem from="1620117336558" duration="175000" />
       <workItem from="1620117564535" duration="1181000" />
       <workItem from="1620119103547" duration="318000" />
-    </task>
-    <task id="LOCAL−00046" summary="Update Jenkinsfile">
-      <created>1619035356052</created>
-      <option name="number" value="LOCAL−00046" />
-      <option name="presentableId" value="LOCAL−00046" />
-      <updated>1619035356052</updated>
+      <workItem from="1620198529932" duration="5691000" />
     </task>
     <task id="LOCAL−00047" summary="Update Jenkinsfile">
       <created>1619035732573</created>
@@ -374,7 +368,13 @@
       <option name="presentableId" value="LOCAL−00094" />
       <updated>1620131954648</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL−00095" summary="Updated with new tests and assertions for adding new pettypes. Assertions not working properly yet.">
+      <created>1620136974418</created>
+      <option name="number" value="LOCAL−00095" />
+      <option name="presentableId" value="LOCAL−00095" />
+      <updated>1620136974418</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -398,6 +398,7 @@
     <MESSAGE value="Updated JonnasBranch with start of PetClinicAddPetType.robot" />
     <MESSAGE value="Updated keywords to make it run faster" />
     <MESSAGE value="Updated Jenkins with longer sleep for Postman" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated Jenkins with longer sleep for Postman" />
+    <MESSAGE value="Updated with new tests and assertions for adding new pettypes. Assertions not working properly yet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated with new tests and assertions for adding new pettypes. Assertions not working properly yet." />
   </component>
 </project>
