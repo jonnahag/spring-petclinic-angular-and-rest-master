@@ -51,12 +51,22 @@ pipeline {
         always{
             script{
                 step(
-                    emailext (
-                      subject: "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
-                      body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
-                                <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
-                      recipientProviders: [[$class: 'DevelopersRecipientProvider']]
-                    )
+                    if ($build_error){
+                        emailext (
+                          subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                          body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+                                    <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+                          recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+                        )
+                    }else {
+                        emailext (
+                          subject: "PASSED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+                          body: """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+                                    <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+                          recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+                        )
+                        
+                    }
                 )
             }
         }
