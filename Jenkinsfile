@@ -26,7 +26,13 @@ pipeline {
 
         }
         
-        stage('newman') {
+        stage('DelayPostManTest') {
+           steps {
+               sh 'sleep 20'
+          }
+        }
+        
+        stage('PostMan') {
             steps {
               sh 'newman run Spring_PetClinic.postman_collection.json -e PetClinic_Environment.postman_environment.json -- reporters junit'
             }
@@ -39,11 +45,7 @@ pipeline {
         }
         
         
-        stage('DelayRobotTest') {
-           steps {
-               sh 'sleep 20'
-          }
-        }
+        
 
                 stage('Robot') {
             steps {
