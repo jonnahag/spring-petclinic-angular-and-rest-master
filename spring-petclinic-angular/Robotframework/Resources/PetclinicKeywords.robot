@@ -3,6 +3,7 @@ Test Navigates to chrome Home Page
 Begin WebTest
     OPEN BROWSER                                       about:blank                         ${BROWSER}
     #Maximize Browser Window
+    Set Selenium Speed                                  0.04
 Go To Web Page
      Load Page
      Verify Page Loaded
