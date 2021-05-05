@@ -18,6 +18,7 @@ All Owners
     Set Selenium Speed                               .25
 Select A Owner From The List
     Click Element                                    xpath:/html/body/app-root/app-owner-list/div/div/div/table/tbody/tr[9]/td[1]/a
+    Set Selenium Speed                               .25
 Add New Pet
      Click Element                                   xpath:/html/body/app-root/app-owner-detail/div/div/button[3]
 Input New Pet Detalis
